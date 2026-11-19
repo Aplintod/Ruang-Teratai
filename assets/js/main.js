@@ -46,7 +46,8 @@ const NAV = [
   ] },
   { href: "halaman/hak-kewajiban.html", label: "Hak & Kewajiban" },
   { href: "halaman/caregiver.html", label: "Caregiver" },
-  { href: "halaman/orientasi.html", label: "Orientasi" },
+  // Orientasi disembunyikan sementara. Untuk memunculkan lagi, hapus tanda // di baris berikut:
+  // { href: "halaman/orientasi.html", label: "Orientasi" },
 ];
 
 /* ---------- Ilustrasi garis (dipakai dengan <svg class="ill"><use href="#nama"/></svg>) ---------- */
@@ -243,11 +244,14 @@ function fillSiteData() {
    assets/img/ruangan/lorong.jpg / .jpeg / .png / .webp.
    Kalau ada, foto dipasang. Kalau tidak, placeholder tetap tampil. */
 const EXT = ["jpg", "png", "webp", "jpeg"];
-function findImage(base, done) {
+function findImage(list, done) {
+  // list boleh berisi beberapa nama dipisah koma: dicoba berurutan, yang pertama ada dipakai
+  const tries = list.split(",").map((b) => b.trim()).filter(Boolean)
+    .flatMap((b) => EXT.map((e) => `${ROOT}assets/img/${b}.${e}`));
   let i = 0;
   const next = () => {
-    if (i >= EXT.length) return;
-    const src = `${ROOT}assets/img/${base}.${EXT[i++]}`;
+    if (i >= tries.length) return;
+    const src = tries[i++];
     const im = new Image();
     im.onload = () => done(src);
     im.onerror = next;

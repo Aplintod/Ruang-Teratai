@@ -15,7 +15,7 @@ Situs statis (HTML, CSS, JavaScript biasa). Tidak ada build step, tidak ada back
 │   ├── fasilitas.html       Kondisi & fasilitas kamar           (poin 3, 4)
 │   ├── hak-kewajiban.html   Hak & kewajiban pasien              (poin 5)
 │   ├── caregiver.html       Panduan keluarga pendamping         (poin 6)
-│   └── orientasi.html       Orientasi mahasiswa (segera hadir)
+│   └── orientasi.html       Orientasi mahasiswa (disembunyikan dari menu, file disimpan)
 ├── assets/
 │   ├── css/style.css        Seluruh tampilan
 │   ├── js/main.js           Header, footer, data kontak, jadwal, ilustrasi, foto otomatis
@@ -45,7 +45,7 @@ Halaman di folder `halaman/` memakai path `../assets/...`. Link menu dan foto di
 Data yang belum pasti diberi garis bawah titik-titik (class `tbd`, muncul tulisan "Data contoh" saat kursor diarahkan). Catatan untuk tim ditulis di blok `note`. Cari `tbd` atau `note` di kode.
 
 - **Kontak, alamat, jam besuk** → `assets/js/main.js`, objek `SITE` di bagian atas. Sekali ubah, berlaku di semua halaman.
-- **Menu navigasi** → `assets/js/main.js`, array `NAV`.
+- **Menu navigasi** → `assets/js/main.js`, array `NAV`. Halaman Orientasi sedang disembunyikan: untuk memunculkannya lagi, hapus tanda `//` pada baris Orientasi di `NAV`, lalu tambahkan kembali barisnya di daftar isi `index.html`.
 - **Foto (ruangan & pegawai)** → lihat **[dokumentasi/FOTO.md](dokumentasi/FOTO.md)**. Cukup simpan foto dengan nama yang tercantum di sana, foto langsung terpasang tanpa mengubah kode.
 - **Data pegawai** → `assets/js/data-pegawai.js`.
 - **Jadwal harian** ("Sehari di Teratai 1" di beranda) → `assets/js/main.js`, array `JADWAL`. Jam ditulis desimal (7.5 = 07.30).
