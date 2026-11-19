@@ -18,7 +18,7 @@ Foto akan **terpasang otomatis** kalau disimpan dengan nama dan folder yang pers
 | `nurse-station.jpg` | Galeri | Nurse station, boleh ada perawat sedang bekerja | Tegak |
 | `kamar-pasien.jpg` | Galeri | Kamar pasien secara umum | Mendatar atau persegi |
 | `kamar-mandi.jpg` | Galeri | Kamar mandi dalam kamar | Persegi |
-| `ruang-tunggu.jpg` | Galeri | Ruang tunggu keluarga | Persegi |
+| `taman.jpg` | Galeri | Taman di area Paviliun Teratai | Persegi atau tegak |
 | `kamar-vip.jpg` | Fasilitas | Kamar VIP dari sudut pintu, terlihat tempat tidur dan sofa | Mendatar |
 | `kamar-kelas-1.jpg` | Fasilitas | Kamar Kelas I dari sudut pintu | Mendatar |
 | `cuci-tangan.jpg` | Fasilitas | Wastafel atau hand rub di depan kamar | Tegak |
