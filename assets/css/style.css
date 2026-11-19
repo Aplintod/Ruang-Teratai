@@ -644,3 +644,4 @@ html[data-size="xl"] { zoom: 1.2; }
 }
 .brand-name { white-space: nowrap; }
 @media (max-width: 560px) { .ill-grid.six > div:nth-child(2n+1) { border-left: 0; padding-left: 0; } }
+.hero.has-photo .hero-art { display: none; }

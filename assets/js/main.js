@@ -259,7 +259,7 @@ function initImages() {
   document.querySelectorAll("[data-img]:not([data-img-done])").forEach((el) => {
     el.setAttribute("data-img-done", "");
     findImage(el.dataset.img, (src) => {
-      if (el.classList.contains("hero")) { el.style.setProperty("--hero-img", `url('${src}')`); return; }
+      if (el.classList.contains("hero")) { el.style.setProperty("--hero-img", `url('${src}')`); el.classList.add("has-photo"); return; }
       const img = document.createElement("img");
       img.src = src;
       img.alt = el.dataset.cap || "";
