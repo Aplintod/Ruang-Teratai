@@ -37,16 +37,16 @@ const JADWAL = [
 
 const NAV = [
   { label: "Profil", children: [
-    { href: "profil.html", label: "Profil Ruangan" },
-    { href: "tim.html", label: "Profil Pegawai" },
+    { href: "halaman/profil.html", label: "Profil Ruangan" },
+    { href: "halaman/tim.html", label: "Profil Pegawai" },
   ] },
   { label: "Ruangan", children: [
-    { href: "ruangan.html", label: "Pengenalan & Denah" },
-    { href: "fasilitas.html", label: "Kondisi & Fasilitas" },
+    { href: "halaman/ruangan.html", label: "Pengenalan & Denah" },
+    { href: "halaman/fasilitas.html", label: "Kondisi & Fasilitas" },
   ] },
-  { href: "hak-kewajiban.html", label: "Hak & Kewajiban" },
-  { href: "caregiver.html", label: "Caregiver" },
-  { href: "orientasi.html", label: "Orientasi" },
+  { href: "halaman/hak-kewajiban.html", label: "Hak & Kewajiban" },
+  { href: "halaman/caregiver.html", label: "Caregiver" },
+  { href: "halaman/orientasi.html", label: "Orientasi" },
 ];
 
 /* ---------- Ilustrasi garis (dipakai dengan <svg class="ill"><use href="#nama"/></svg>) ---------- */
@@ -80,7 +80,14 @@ const SPRITE = `<svg xmlns="http://www.w3.org/2000/svg" style="display:none" ari
 const LOTUS = `<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M20 7c4.2 4.6 5.3 10.4 0 17.5C14.7 17.4 15.8 11.6 20 7Z"/><path d="M20 24.5c-4.6-1-9.2-4.9-10.6-11.6 6 .8 9.4 4.9 10.6 11.6Zm0 0c4.6-1 9.2-4.9 10.6-11.6-6 .8-9.4 4.9-10.6 11.6Z"/><path d="M20 25c-6 .2-12-2.2-15-6.8 6-.3 11 2.4 15 6.8Zm0 0c6 .2 12-2.2 15-6.8-6-.3-11 2.4-15 6.8Z"/><path d="M8 30.5h24M13 34h14"/></svg>`;
 const CHEV = `<svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="m2 3.5 3 3 3-3"/></svg>`;
 
-const page = location.pathname.split("/").pop() || "index.html";
+/* ROOT = alamat folder utama situs, dihitung dari lokasi file script ini.
+   Dengan begitu link & foto tetap benar, baik dari index.html maupun dari halaman/*.html */
+const ROOT = (document.currentScript && document.currentScript.src)
+  ? document.currentScript.src.replace(/assets\/js\/main\.js.*$/, "")
+  : "";
+const url = (h) => ROOT + h;
+const herePath = location.pathname.replace(/\/$/, "/index.html");
+const isHere = (h) => { try { return new URL(url(h), location.href).pathname === herePath; } catch (e) { return false; } };
 const flatNav = () => NAV.flatMap((n) => n.children || [n]);
 
 /* ---------- Ukuran teks ---------- */
@@ -103,29 +110,29 @@ function renderHeader() {
   if (!el) return;
 
   const items = NAV.map((n) => {
-    if (!n.children) return `<a href="${n.href}"${n.href === page ? ' class="active" aria-current="page"' : ""}>${n.label}</a>`;
-    const act = n.children.some((c) => c.href === page);
+    if (!n.children) return `<a href="${url(n.href)}"${isHere(n.href) ? ' class="active" aria-current="page"' : ""}>${n.label}</a>`;
+    const act = n.children.some((c) => isHere(c.href));
     return `<div class="nav-group">
       <button type="button" aria-expanded="false"${act ? ' class="active"' : ""}>${n.label}${CHEV}</button>
       <div class="nav-menu">${n.children.map((c, i) =>
-        `<a href="${c.href}"${c.href === page ? ' class="active" aria-current="page"' : ""}>${c.label}<span>0${i + 1}</span></a>`).join("")}</div>
+        `<a href="${url(c.href)}"${isHere(c.href) ? ' class="active" aria-current="page"' : ""}>${c.label}<span>0${i + 1}</span></a>`).join("")}</div>
     </div>`;
   }).join("");
 
-  const mobile = flatNav().map((n, i) => `<li><a href="${n.href}"><small>0${i + 1}</small>${n.label}</a></li>`).join("");
+  const mobile = flatNav().map((n, i) => `<li><a href="${url(n.href)}"><small>0${i + 1}</small>${n.label}</a></li>`).join("");
   const sizeBtn = `<button class="size-btn" type="button"><b>Aa</b><span class="t">Ukuran teks</span><span class="dots"><i></i><i></i><i></i></span></button>`;
 
   el.className = "site-header";
   el.innerHTML = `
     <div class="wrap">
-      <a class="brand" href="index.html" aria-label="${SITE.nama}, beranda">
+      <a class="brand" href="${url("index.html")}" aria-label="${SITE.nama}, beranda">
         ${LOTUS}
         <span><span class="brand-name">${SITE.nama}</span><span class="brand-sub">${SITE.rs}</span></span>
       </a>
       <nav class="nav" aria-label="Menu utama">${items}</nav>
       <div class="head-right">
         ${sizeBtn}
-        <a class="nav-cta" href="profil.html#kontak">Kontak</a>
+        <a class="nav-cta" href="${url("halaman/profil.html#kontak")}">Kontak</a>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu <i></i></button>
       </div>
     </div>`;
@@ -133,7 +140,7 @@ function renderHeader() {
   const mm = document.createElement("div");
   mm.className = "mobile-menu";
   mm.id = "mobile-menu";
-  mm.innerHTML = `<ol><li><a href="index.html"><small>00</small>Beranda</a></li>${mobile}</ol>
+  mm.innerHTML = `<ol><li><a href="${url("index.html")}"><small>00</small>Beranda</a></li>${mobile}</ol>
     <div class="meta">${SITE.rs}<br><a href="tel:${SITE.telpRsLink}">Telepon ${SITE.telpRs}</a></div>`;
   el.after(mm);
 
@@ -185,11 +192,11 @@ function renderFooter() {
         </div>
         <div>
           <h4>Halaman</h4>
-          <ul>${flatNav().slice(0, 4).map((n) => `<li><a href="${n.href}">${n.label}</a></li>`).join("")}</ul>
+          <ul>${flatNav().slice(0, 4).map((n) => `<li><a href="${url(n.href)}">${n.label}</a></li>`).join("")}</ul>
         </div>
         <div>
           <h4>Pasien &amp; keluarga</h4>
-          <ul>${flatNav().slice(4).map((n) => `<li><a href="${n.href}">${n.label}</a></li>`).join("")}</ul>
+          <ul>${flatNav().slice(4).map((n) => `<li><a href="${url(n.href)}">${n.label}</a></li>`).join("")}</ul>
         </div>
         <div>
           <h4>Kontak</h4>
@@ -240,7 +247,7 @@ function findImage(base, done) {
   let i = 0;
   const next = () => {
     if (i >= EXT.length) return;
-    const src = `assets/img/${base}.${EXT[i++]}`;
+    const src = `${ROOT}assets/img/${base}.${EXT[i++]}`;
     const im = new Image();
     im.onload = () => done(src);
     im.onerror = next;
