@@ -1,7 +1,7 @@
 /* =========================================================
    DATA PEGAWAI — semua masih DUMMY.
    Cara mengganti:
-   1. Simpan foto di assets/img/pegawai/ (disarankan rasio 4:5, mis. 800x1000 px, format .jpg/.webp)
+   1. Simpan foto di assets/img/pegawai/ (potret tegak: kepala ruangan 4:5, pegawai lain 3:4; .jpg/.webp, lebar ±800 px)
    2. Isi "foto" dengan path-nya, contoh: "assets/img/pegawai/kepala-ruangan.jpg"
    3. Kalau "foto" dikosongkan (""), yang tampil adalah kotak placeholder.
    ========================================================= */
@@ -12,7 +12,7 @@ const KEPALA_RUANGAN = {
   foto: "",
   pendidikan: "S1 Keperawatan + Profesi Ners",
   sambutan:
-    "Selamat datang di Ruang Teratai 1. Kami merawat pasien dewasa di Paviliun Teratai dan berusaha agar setiap pasien dan keluarganya tahu apa yang sedang terjadi selama perawatan. Jika ada yang ingin ditanyakan, silakan sampaikan ke perawat yang bertugas.",
+    "Selamat datang di Ruang Teratai 1. Kami berusaha agar setiap pasien dan keluarganya tahu apa yang sedang terjadi selama perawatan. Jika ada yang ingin ditanyakan, silakan sampaikan ke perawat yang bertugas.",
 };
 
 // kelompok: "pengelola" | "perawat" | "pendukung"

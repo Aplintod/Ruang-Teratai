@@ -15,21 +15,29 @@ Situs statis (HTML, CSS, JavaScript biasa). Tidak ada build step, tidak ada back
 | `caregiver.html` | Panduan keluarga pendamping: aturan menunggu, peran, bawaan, FAQ | 6 |
 | `orientasi.html` | Orientasi online mahasiswa (masih "segera hadir") | katalog berikutnya |
 
-## Cara mengganti data dummy
+## Desain
 
-Semua bagian yang belum pasti ditandai label kuning **dummy** atau kotak kuning "Perlu dilengkapi". Cari di kode dengan kata `dummy`.
+- Huruf: **Instrument Serif** (judul) dan **Geist** (teks), dari Google Fonts.
+- Warna: gading `#f5f1ea`, hijau tua `#17352f`, aksen terakota `#a65d4c`. Semua ada di `:root` paling atas `assets/css/style.css`.
+- Animasi muncul saat di-scroll memakai class `reveal`. Animasi otomatis mati untuk pengguna yang mengaktifkan "kurangi gerakan" di perangkatnya.
+
+## Cara mengganti data contoh
+
+Data yang belum pasti diberi garis bawah titik-titik (class `tbd`, muncul tulisan "Data contoh" saat kursor diarahkan). Catatan untuk tim ditulis di blok `note`. Cari `tbd` atau `note` di kode.
 
 - **Kontak, alamat, jam besuk** → `assets/js/main.js`, objek `SITE` di bagian atas. Sekali ubah, berlaku di semua halaman.
 - **Menu navigasi** → `assets/js/main.js`, array `NAV`.
-- **Pegawai** → `assets/js/data-pegawai.js`. Isi nama, jabatan, dan path foto. Foto taruh di `assets/img/pegawai/` (rasio 4:5).
-- **Foto ruangan** → taruh di `assets/img/ruangan/`, lalu ganti kotak placeholder:
+- **Pegawai** → `assets/js/data-pegawai.js`. Isi nama, jabatan, dan path foto. Foto taruh di `assets/img/pegawai/`, potret tegak (kepala ruangan 4:5, pegawai lain 3:4).
+- **Foto ruangan** → taruh di `assets/img/ruangan/`, lalu ganti blok placeholder (warna polos dengan tulisan "Foto"). Class rasio (`r-3x2`, `r-4x5`, dst.) dipertahankan:
 
   ```html
   <!-- sebelum -->
-  <div class="ph ph-tall">Foto kamar VIP</div>
+  <div class="media r-3x2" data-cap="Kamar VIP"></div>
   <!-- sesudah -->
-  <img class="photo" src="assets/img/ruangan/kamar-vip.jpg" alt="Kamar VIP Ruang Teratai 1">
+  <figure class="media r-3x2"><img src="assets/img/ruangan/kamar-vip.jpg" alt="Kamar VIP Ruang Teratai 1"></figure>
   ```
+
+- **Foto hero beranda** → di `index.html`, tambahkan pada `<section class="hero on-dark">` atribut `style="--hero-img:url('assets/img/ruangan/hero.jpg')"`. Lapisan hijau gelap di atas foto dibuat otomatis supaya teks tetap terbaca.
 
 - **Warna** → variabel di `:root` paling atas `assets/css/style.css`.
 

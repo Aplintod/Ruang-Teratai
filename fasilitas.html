@@ -1,13 +1,14 @@
 <!doctype html>
-<html lang="id">
+<html lang="id" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kondisi &amp; Fasilitas Kamar – Ruang Teratai 1</title>
+  <title>Kondisi &amp; Fasilitas Kamar · Ruang Teratai 1</title>
   <meta name="description" content="Tipe kamar, perlengkapan, dan kondisi ruangan di Ruang Teratai 1 RSUD Abdoel Wahab Sjahranie Samarinda.">
+  <meta name="theme-color" content="#f5f1ea">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -16,58 +17,67 @@
   <header id="site-header"></header>
 
   <main id="konten">
-    <section class="page-hero">
-      <div class="container">
-        <div class="breadcrumb"><a href="index.html">Beranda</a> / Kondisi &amp; Fasilitas Kamar</div>
-        <h1>Kondisi &amp; Fasilitas Kamar</h1>
-        <p>Apa saja yang tersedia di kamar, dan bagaimana kami menjaga ruangan tetap bersih dan aman. <span class="dummy">tipe &amp; isi kamar masih dummy</span></p>
+    <section class="page-head">
+      <div class="wrap">
+        <div class="crumbs"><a href="index.html">Beranda</a><span>/</span><span>Kondisi &amp; fasilitas</span></div>
+        <div class="grid-head">
+          <h1 class="h1 reveal">Kamar <em>&amp;</em> fasilitas</h1>
+          <p class="lead reveal d1">Apa saja yang ada di kamar, dan bagaimana kami menjaga ruangan tetap bersih, tenang, dan aman.</p>
+        </div>
       </div>
     </section>
 
     <!-- TIPE KAMAR -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Tipe kamar</span>
-          <h2>Pilihan kamar</h2>
+    <section class="sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label reveal"><span class="n">01</span> Tipe kamar</span>
+          <div>
+            <h2 class="h2 reveal">Pilihan kamar</h2>
+            <p class="lead reveal">Tipe dan isi kamar di bawah masih contoh, menunggu data dari RS.</p>
+          </div>
         </div>
         <div class="tabs" role="tablist" data-tabs>
-          <button class="tab" role="tab" aria-selected="true" aria-controls="k-vip" id="tk-vip">VIP</button>
-          <button class="tab" role="tab" aria-selected="false" aria-controls="k-kelas1" id="tk-kelas1">Kelas I</button>
+          <button class="tab" role="tab" aria-selected="true" aria-controls="k-vip" id="t-vip">VIP</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="k-1" id="t-1">Kelas I</button>
         </div>
 
-        <div class="tab-panel" id="k-vip" role="tabpanel" aria-labelledby="tk-vip">
-          <div class="split">
-            <div class="ph ph-tall">Foto kamar VIP</div>
-            <div>
-              <h3 style="font-size:1.5rem">Kamar VIP</h3>
-              <p class="muted">1 pasien per kamar &middot; ... kamar tersedia</p>
-              <ul class="check-list mt-2">
-                <li>Tempat tidur pasien elektrik dengan pagar pengaman</li>
-                <li>Kamar mandi dalam dengan air panas</li>
-                <li>AC dan televisi</li>
-                <li>Sofa bed untuk satu pendamping</li>
-                <li>Lemari pakaian dan kulkas kecil</li>
-                <li>Bel pemanggil perawat di samping tempat tidur dan di kamar mandi</li>
+        <div class="tab-panel" id="k-vip" role="tabpanel" aria-labelledby="t-vip">
+          <div class="cols cols-2-1">
+            <div class="media r-3x2 reveal" data-cap="Kamar VIP"></div>
+            <div class="reveal d1">
+              <h3 class="h3">Kamar VIP</h3>
+              <dl class="specs mt-m">
+                <div><dt>Kapasitas</dt><dd>1 pasien per kamar</dd></div>
+                <div><dt>Jumlah kamar</dt><dd class="tbd" title="Data contoh" style="justify-self:start">—</dd></div>
+                <div><dt>Pendamping</dt><dd>Sofa bed untuk 1 orang</dd></div>
+                <div><dt>Kamar mandi</dt><dd>Di dalam kamar, air panas</dd></div>
+              </dl>
+              <ul class="ticks mt-m">
+                <li>Tempat tidur elektrik dengan pagar pengaman</li>
+                <li>AC, televisi, kulkas kecil</li>
+                <li>Bel perawat di samping tempat tidur dan kamar mandi</li>
                 <li>Saluran oksigen dan suction sentral</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div class="tab-panel" id="k-kelas1" role="tabpanel" aria-labelledby="tk-kelas1" hidden>
-          <div class="split">
-            <div class="ph ph-tall">Foto kamar Kelas I</div>
-            <div>
-              <h3 style="font-size:1.5rem">Kamar Kelas I</h3>
-              <p class="muted">... pasien per kamar &middot; ... kamar tersedia</p>
-              <ul class="check-list mt-2">
-                <li>Tempat tidur pasien dengan pagar pengaman</li>
-                <li>Kamar mandi dalam</li>
-                <li>AC</li>
-                <li>Kursi pendamping</li>
-                <li>Nakas (meja samping tempat tidur)</li>
-                <li>Bel pemanggil perawat</li>
+        <div class="tab-panel" id="k-1" role="tabpanel" aria-labelledby="t-1" hidden>
+          <div class="cols cols-2-1">
+            <div class="media r-3x2 tone-clay reveal" data-cap="Kamar Kelas I"></div>
+            <div class="reveal d1">
+              <h3 class="h3">Kamar Kelas I</h3>
+              <dl class="specs mt-m">
+                <div><dt>Kapasitas</dt><dd class="tbd" title="Data contoh" style="justify-self:start">— pasien per kamar</dd></div>
+                <div><dt>Jumlah kamar</dt><dd class="tbd" title="Data contoh" style="justify-self:start">—</dd></div>
+                <div><dt>Pendamping</dt><dd>Kursi pendamping</dd></div>
+                <div><dt>Kamar mandi</dt><dd>Di dalam kamar</dd></div>
+              </dl>
+              <ul class="ticks mt-m">
+                <li>Tempat tidur dengan pagar pengaman</li>
+                <li>AC dan nakas</li>
+                <li>Bel perawat</li>
                 <li>Saluran oksigen sentral</li>
               </ul>
             </div>
@@ -76,52 +86,41 @@
       </div>
     </section>
 
-    <!-- FASILITAS UMUM -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Fasilitas bersama</span>
-          <h2>Tersedia di area ruangan</h2>
+    <!-- FASILITAS BERSAMA -->
+    <section class="sec bg-2">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label reveal"><span class="n">02</span> Fasilitas bersama</span>
+          <h2 class="h2 reveal">Tersedia di area ruangan</h2>
         </div>
-        <div class="grid grid-4">
-          <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v6M8 6h8M5 22V12a7 7 0 0 1 14 0v10"/></svg></div><h3>Wastafel &amp; hand rub</h3><p class="muted">Di depan setiap kamar dan di nurse station.</p></div>
-          <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg></div><h3>Bel perawat</h3><p class="muted">Tersambung langsung ke nurse station.</p></div>
-          <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0M12 7v5l3 3"/></svg></div><h3>Perawat 24 jam</h3><p class="muted">Tiga shift: pagi, sore, malam.</p></div>
-          <div class="card"><div class="icon lotus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12.6a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 20h.01M2 9a15 15 0 0 1 20 0"/></svg></div><h3>Wi-Fi</h3><p class="muted"><span class="dummy">perlu konfirmasi</span></p></div>
+        <div class="figures reveal">
+          <div class="figure"><span class="h3">Hand rub</span><span class="cap">Di depan setiap kamar dan di nurse station.</span></div>
+          <div class="figure"><span class="h3">Bel perawat</span><span class="cap">Tersambung langsung ke nurse station.</span></div>
+          <div class="figure"><span class="h3">Tiga shift</span><span class="cap">Pagi, sore, dan malam, tanpa jeda.</span></div>
+          <div class="figure"><span class="h3">Wi-Fi</span><span class="cap tbd" title="Data contoh" style="display:inline-block">Perlu konfirmasi.</span></div>
         </div>
       </div>
     </section>
 
     <!-- KONDISI RUANGAN -->
-    <section class="section" id="kondisi">
-      <div class="container split">
-        <div>
-          <span class="eyebrow">Kondisi ruangan</span>
-          <h2>Bersih, tenang, dan aman</h2>
-          <p class="muted">Bagian ini menjelaskan standar kondisi ruangan yang dijaga setiap hari. Isinya masih contoh dan akan disesuaikan dengan data dari RS.</p>
-          <div class="table-wrap mt-2">
-            <table>
-              <thead><tr><th>Aspek</th><th>Yang kami lakukan</th></tr></thead>
-              <tbody>
-                <tr><td>Kebersihan</td><td>Lantai dan kamar mandi dibersihkan minimal 2 kali sehari; linen diganti setiap hari atau saat kotor.</td></tr>
-                <tr><td>Pencegahan infeksi</td><td>Hand rub di setiap kamar, pemilahan sampah medis dan non-medis.</td></tr>
-                <tr><td>Keselamatan</td><td>Pagar tempat tidur, gelang identitas pasien, penanda risiko jatuh, APAR dan jalur evakuasi.</td></tr>
-                <tr><td>Kenyamanan</td><td>Pencahayaan diredupkan di malam hari dan jam istirahat pasien dijaga.</td></tr>
-                <tr><td>Bebas asap rokok</td><td>Seluruh area RS adalah kawasan tanpa rokok.</td></tr>
-              </tbody>
-            </table>
+    <section class="sec" id="kondisi">
+      <div class="wrap">
+        <div class="cols cols-1-2">
+          <div class="sticky">
+            <span class="label reveal"><span class="n">03</span> Kondisi ruangan</span>
+            <h2 class="h2 mt-s reveal">Bersih, tenang, dan aman</h2>
+            <p class="muted mt-s reveal">Standar yang dijaga setiap hari. Isinya masih contoh dan akan disesuaikan dengan data RS.</p>
+            <div class="media r-4x5 mt-m reveal" data-cap="Area cuci tangan"></div>
           </div>
+          <ol class="rows reveal">
+            <li><div><h3>Kebersihan</h3><p>Lantai dan kamar mandi dibersihkan minimal dua kali sehari. Linen diganti setiap hari atau saat kotor.</p></div></li>
+            <li><div><h3>Pencegahan infeksi</h3><p>Hand rub di setiap kamar. Sampah medis dan non-medis dipisahkan sejak dari kamar.</p></div></li>
+            <li><div><h3>Keselamatan</h3><p>Pagar tempat tidur, gelang identitas, penanda risiko jatuh, alat pemadam api, dan jalur evakuasi.</p></div></li>
+            <li><div><h3>Kenyamanan</h3><p>Lampu diredupkan pada malam hari dan jam istirahat pasien dijaga.</p></div></li>
+            <li><div><h3>Kawasan tanpa rokok</h3><p>Seluruh area rumah sakit bebas asap rokok, termasuk rokok elektrik.</p></div></li>
+          </ol>
         </div>
-        <div class="grid" style="gap:16px">
-          <div class="ph">Foto kebersihan / kamar mandi</div>
-          <div class="ph">Foto area hand hygiene</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container">
-        <div class="note mt-0">Biaya kamar mengikuti tarif resmi RSUD AWS. Untuk informasi tarif dan kelas yang ditanggung asuransi/BPJS, silakan tanyakan ke bagian pendaftaran rawat inap.</div>
+        <div class="note reveal"><b>Tarif</b><span>Biaya kamar mengikuti tarif resmi RSUD AWS. Untuk tarif dan kelas yang ditanggung asuransi atau BPJS, tanyakan ke bagian pendaftaran rawat inap.</span></div>
       </div>
     </section>
   </main>

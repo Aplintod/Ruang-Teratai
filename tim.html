@@ -1,13 +1,14 @@
 <!doctype html>
-<html lang="id">
+<html lang="id" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Profil Pegawai – Ruang Teratai 1</title>
-  <meta name="description" content="Kenali kepala ruangan, ketua tim, perawat, dan staf Ruang Teratai 1 RSUD Abdoel Wahab Sjahranie Samarinda.">
+  <title>Profil Pegawai · Ruang Teratai 1</title>
+  <meta name="description" content="Kepala ruangan, ketua tim, perawat pelaksana, dan staf pendukung Ruang Teratai 1 RSUD Abdoel Wahab Sjahranie Samarinda.">
+  <meta name="theme-color" content="#f5f1ea">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -16,44 +17,49 @@
   <header id="site-header"></header>
 
   <main id="konten">
-    <section class="page-hero">
-      <div class="container">
-        <div class="breadcrumb"><a href="index.html">Beranda</a> / Profil Pegawai</div>
-        <h1>Profil Pegawai</h1>
-        <p>Orang-orang yang merawat Anda di Ruang Teratai 1. <span class="dummy">nama &amp; foto masih dummy</span></p>
+    <section class="page-head">
+      <div class="wrap">
+        <div class="crumbs"><a href="index.html">Beranda</a><span>/</span><span>Profil pegawai</span></div>
+        <div class="grid-head">
+          <h1 class="h1 reveal">Orang-orang <em>di balik</em> perawatan Anda</h1>
+          <p class="lead reveal d1">Kepala ruangan, ketua tim, perawat pelaksana, dan staf pendukung Ruang Teratai 1.</p>
+        </div>
       </div>
     </section>
 
     <!-- KEPALA RUANGAN -->
-    <section class="section">
-      <div class="container">
-        <div class="lead-card" id="kepala-ruangan"></div>
+    <section class="sec">
+      <div class="wrap">
+        <div class="cols cols-2 al-c" id="kepala-ruangan"></div>
       </div>
     </section>
 
     <!-- TIM -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Tim kami</span>
-          <h2>Perawat dan staf</h2>
+    <section class="sec bg-2">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label reveal"><span class="n">02</span> Tim</span>
+          <h2 class="h2 reveal">Perawat dan staf</h2>
         </div>
         <div class="tabs" role="tablist" data-tabs>
-          <button class="tab" role="tab" aria-selected="true" aria-controls="tab-pengelola" id="t-pengelola">Ketua Tim</button>
-          <button class="tab" role="tab" aria-selected="false" aria-controls="tab-perawat" id="t-perawat">Perawat Pelaksana</button>
-          <button class="tab" role="tab" aria-selected="false" aria-controls="tab-pendukung" id="t-pendukung">Staf Pendukung</button>
+          <button class="tab" role="tab" aria-selected="true" aria-controls="p-pengelola" id="t-pengelola">Ketua tim<sup data-count="pengelola"></sup></button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p-perawat" id="t-perawat">Perawat pelaksana<sup data-count="perawat"></sup></button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p-pendukung" id="t-pendukung">Staf pendukung<sup data-count="pendukung"></sup></button>
         </div>
-        <div class="tab-panel" id="tab-pengelola" role="tabpanel" aria-labelledby="t-pengelola"><div class="grid grid-4" data-kelompok="pengelola"></div></div>
-        <div class="tab-panel" id="tab-perawat" role="tabpanel" aria-labelledby="t-perawat" hidden><div class="grid grid-4" data-kelompok="perawat"></div></div>
-        <div class="tab-panel" id="tab-pendukung" role="tabpanel" aria-labelledby="t-pendukung" hidden><div class="grid grid-4" data-kelompok="pendukung"></div></div>
+        <div class="tab-panel" id="p-pengelola" role="tabpanel" aria-labelledby="t-pengelola"><div class="people" data-kelompok="pengelola"></div></div>
+        <div class="tab-panel" id="p-perawat" role="tabpanel" aria-labelledby="t-perawat" hidden><div class="people" data-kelompok="perawat"></div></div>
+        <div class="tab-panel" id="p-pendukung" role="tabpanel" aria-labelledby="t-pendukung" hidden><div class="people" data-kelompok="pendukung"></div></div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="card">
-          <h3>Bagaimana tahu siapa perawat saya hari ini?</h3>
-          <p class="muted">Nama perawat penanggung jawab ditulis di papan informasi dekat tempat tidur pasien dan diperbarui setiap pergantian shift. Perawat juga akan memperkenalkan diri saat mulai bertugas. Pegawai RS memakai kartu identitas yang bisa Anda lihat kapan saja.</p>
+    <section class="sec">
+      <div class="wrap">
+        <div class="cols cols-1-2">
+          <span class="label reveal"><span class="n">03</span> Perawat Anda hari ini</span>
+          <div class="reveal">
+            <p class="statement">Nama perawat penanggung jawab tertulis di papan dekat tempat tidur dan diperbarui setiap pergantian shift.</p>
+            <p class="muted mt-m max-36">Perawat juga memperkenalkan diri saat mulai bertugas. Semua pegawai memakai kartu identitas yang boleh Anda lihat kapan saja.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -64,29 +70,36 @@
   <script src="assets/js/data-pegawai.js"></script>
   <script>
     const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-    const foto = (p, label) => p.foto
-      ? `<img src="${esc(p.foto)}" alt="Foto ${esc(p.nama)}" loading="lazy">`
-      : `<div class="ph">${label}<small>Rasio 4:5</small></div>`;
+    const foto = (p, ratio, cap) => p.foto
+      ? `<figure class="media ${ratio}"><img src="${esc(p.foto)}" alt="Foto ${esc(p.nama)}" loading="lazy"></figure>`
+      : `<div class="media ${ratio}" data-cap="${cap}"></div>`;
 
     const k = KEPALA_RUANGAN;
     document.getElementById("kepala-ruangan").innerHTML = `
-      ${foto(k, "Foto Kepala Ruangan")}
+      ${foto(k, "r-4x5", "Kepala ruangan")}
       <div>
-        <span class="eyebrow">${esc(k.jabatan)}</span>
-        <h2>${esc(k.nama)}</h2>
-        <p class="muted">${esc(k.pendidikan)}</p>
-        <p style="font-size:1.08rem">${esc(k.sambutan)}</p>
+        <span class="label"><span class="n">01</span> ${esc(k.jabatan)}</span>
+        <h2 class="h2 mt-s">${esc(k.nama)}</h2>
+        <p class="small mt-s">${esc(k.pendidikan)}</p>
+        <blockquote class="quote mt-m" style="font-size:clamp(1.35rem,2.2vw,1.9rem)">${esc(k.sambutan)}</blockquote>
       </div>`;
 
     document.querySelectorAll("[data-kelompok]").forEach((wrap) => {
-      wrap.innerHTML = PEGAWAI.filter((p) => p.kelompok === wrap.dataset.kelompok).map((p) => `
-        <article class="card staff-card">
-          ${foto(p, "Foto pegawai")}
-          <div class="role">${esc(p.jabatan)}</div>
+      const list = PEGAWAI.filter((p) => p.kelompok === wrap.dataset.kelompok);
+      document.querySelector(`[data-count="${wrap.dataset.kelompok}"]`).textContent = list.length;
+      wrap.innerHTML = list.map((p, i) => `
+        <article class="person reveal${i % 4 ? " d" + (i % 4) : ""}">
+          ${foto(p, "r-3x4", "Foto pegawai")}
+          <span class="role">${esc(p.jabatan)}</span>
           <h3>${esc(p.nama)}</h3>
           ${p.pendidikan ? `<p class="meta">${esc(p.pendidikan)}</p>` : ""}
         </article>`).join("");
     });
+    // daftarkan elemen baru ke animasi
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }));
+      document.querySelectorAll(".person.reveal").forEach((el) => io.observe(el));
+    } else document.querySelectorAll(".person.reveal").forEach((el) => el.classList.add("in"));
   </script>
 </body>
 </html>
