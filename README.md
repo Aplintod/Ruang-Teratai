@@ -19,6 +19,8 @@ Situs statis (HTML, CSS, JavaScript biasa). Tidak ada build step, tidak ada back
 
 - Huruf: **Instrument Serif** (judul) dan **Geist** (teks), dari Google Fonts.
 - Warna: gading `#f5f1ea`, hijau tua `#17352f`, aksen terakota `#a65d4c`. Semua ada di `:root` paling atas `assets/css/style.css`.
+- Ilustrasi garis ada di `assets/js/main.js` (konstanta `SPRITE`), dipakai dengan `<svg class="ill"><use href="#nama"/></svg>`.
+- Tombol **Aa** di header memperbesar tampilan (3 tingkat) dan pilihannya diingat browser.
 - Animasi muncul saat di-scroll memakai class `reveal`. Animasi otomatis mati untuk pengguna yang mengaktifkan "kurangi gerakan" di perangkatnya.
 
 ## Cara mengganti data contoh
@@ -27,17 +29,10 @@ Data yang belum pasti diberi garis bawah titik-titik (class `tbd`, muncul tulisa
 
 - **Kontak, alamat, jam besuk** → `assets/js/main.js`, objek `SITE` di bagian atas. Sekali ubah, berlaku di semua halaman.
 - **Menu navigasi** → `assets/js/main.js`, array `NAV`.
-- **Pegawai** → `assets/js/data-pegawai.js`. Isi nama, jabatan, dan path foto. Foto taruh di `assets/img/pegawai/`, potret tegak (kepala ruangan 4:5, pegawai lain 3:4).
-- **Foto ruangan** → taruh di `assets/img/ruangan/`, lalu ganti blok placeholder (warna polos dengan tulisan "Foto"). Class rasio (`r-3x2`, `r-4x5`, dst.) dipertahankan:
-
-  ```html
-  <!-- sebelum -->
-  <div class="media r-3x2" data-cap="Kamar VIP"></div>
-  <!-- sesudah -->
-  <figure class="media r-3x2"><img src="assets/img/ruangan/kamar-vip.jpg" alt="Kamar VIP Ruang Teratai 1"></figure>
-  ```
-
-- **Foto hero beranda** → di `index.html`, tambahkan pada `<section class="hero on-dark">` atribut `style="--hero-img:url('assets/img/ruangan/hero.jpg')"`. Lapisan hijau gelap di atas foto dibuat otomatis supaya teks tetap terbaca.
+- **Foto (ruangan & pegawai)** → lihat **[FOTO.md](FOTO.md)**. Cukup simpan foto dengan nama yang tercantum di sana, foto langsung terpasang tanpa mengubah kode.
+- **Data pegawai** → `assets/js/data-pegawai.js`.
+- **Jadwal harian** ("Sehari di Teratai 1" di beranda) → `assets/js/main.js`, array `JADWAL`. Jam ditulis desimal (7.5 = 07.30).
+- **Denah** → denah sekarang skematik sementara di `ruangan.html`. Begitu `assets/img/ruangan/denah.png` ada, otomatis diganti gambar resmi. Keterangan tiap area ada di atribut `data-desc` pada SVG denah.
 
 - **Warna** → variabel di `:root` paling atas `assets/css/style.css`.
 

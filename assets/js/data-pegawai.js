@@ -1,9 +1,14 @@
 /* =========================================================
    DATA PEGAWAI — semua masih DUMMY.
-   Cara mengganti:
-   1. Simpan foto di assets/img/pegawai/ (potret tegak: kepala ruangan 4:5, pegawai lain 3:4; .jpg/.webp, lebar ±800 px)
-   2. Isi "foto" dengan path-nya, contoh: "assets/img/pegawai/kepala-ruangan.jpg"
-   3. Kalau "foto" dikosongkan (""), yang tampil adalah kotak placeholder.
+
+   Foto bisa dipasang dengan dua cara:
+   A. Otomatis: simpan foto dengan nama sesuai urutan di daftar ini.
+      - Kepala ruangan      → assets/img/pegawai/kepala-ruangan.jpg
+      - Pegawai ke-1, ke-2… → assets/img/pegawai/pegawai-01.jpg, pegawai-02.jpg, dst.
+      (urutan = urutan baris di array PEGAWAI di bawah)
+   B. Manual: isi "foto" dengan path lengkap, contoh "assets/img/pegawai/budi.jpg"
+
+   Potret tegak: kepala ruangan 4:5, pegawai lain 3:4. Format .jpg/.png/.webp, lebar ±800 px.
    ========================================================= */
 
 const KEPALA_RUANGAN = {

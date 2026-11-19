@@ -70,13 +70,14 @@
   <script src="assets/js/data-pegawai.js"></script>
   <script>
     const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-    const foto = (p, ratio, cap) => p.foto
+    // Jika "foto" kosong, situs mencari otomatis assets/img/pegawai/<file>.jpg (lihat FOTO.md)
+    const foto = (p, ratio, cap, file) => p.foto
       ? `<figure class="media ${ratio}"><img src="${esc(p.foto)}" alt="Foto ${esc(p.nama)}" loading="lazy"></figure>`
-      : `<div class="media ${ratio}" data-cap="${cap}"></div>`;
+      : `<div class="media ${ratio}" data-img="pegawai/${esc(p.file || file)}" data-cap="${cap}"></div>`;
 
     const k = KEPALA_RUANGAN;
     document.getElementById("kepala-ruangan").innerHTML = `
-      ${foto(k, "r-4x5", "Kepala ruangan")}
+      ${foto(k, "r-4x5", "Kepala ruangan", "kepala-ruangan")}
       <div>
         <span class="label"><span class="n">01</span> ${esc(k.jabatan)}</span>
         <h2 class="h2 mt-s">${esc(k.nama)}</h2>
@@ -89,12 +90,13 @@
       document.querySelector(`[data-count="${wrap.dataset.kelompok}"]`).textContent = list.length;
       wrap.innerHTML = list.map((p, i) => `
         <article class="person reveal${i % 4 ? " d" + (i % 4) : ""}">
-          ${foto(p, "r-3x4", "Foto pegawai")}
+          ${foto(p, "r-3x4", "Foto pegawai", "pegawai-" + String(PEGAWAI.indexOf(p) + 1).padStart(2, "0"))}
           <span class="role">${esc(p.jabatan)}</span>
           <h3>${esc(p.nama)}</h3>
           ${p.pendidikan ? `<p class="meta">${esc(p.pendidikan)}</p>` : ""}
         </article>`).join("");
     });
+    initImages();
     // daftarkan elemen baru ke animasi
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }));
