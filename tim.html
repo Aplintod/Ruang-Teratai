@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profil Pegawai – Ruang Teratai 1</title>
+  <meta name="description" content="Kenali kepala ruangan, ketua tim, perawat, dan staf Ruang Teratai 1 RSUD Abdoel Wahab Sjahranie Samarinda.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#konten">Langsung ke konten</a>
+  <header id="site-header"></header>
+
+  <main id="konten">
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Beranda</a> / Profil Pegawai</div>
+        <h1>Profil Pegawai</h1>
+        <p>Orang-orang yang merawat Anda di Ruang Teratai 1. <span class="dummy">nama &amp; foto masih dummy</span></p>
+      </div>
+    </section>
+
+    <!-- KEPALA RUANGAN -->
+    <section class="section">
+      <div class="container">
+        <div class="lead-card" id="kepala-ruangan"></div>
+      </div>
+    </section>
+
+    <!-- TIM -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Tim kami</span>
+          <h2>Perawat dan staf</h2>
+        </div>
+        <div class="tabs" role="tablist" data-tabs>
+          <button class="tab" role="tab" aria-selected="true" aria-controls="tab-pengelola" id="t-pengelola">Ketua Tim</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="tab-perawat" id="t-perawat">Perawat Pelaksana</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="tab-pendukung" id="t-pendukung">Staf Pendukung</button>
+        </div>
+        <div class="tab-panel" id="tab-pengelola" role="tabpanel" aria-labelledby="t-pengelola"><div class="grid grid-4" data-kelompok="pengelola"></div></div>
+        <div class="tab-panel" id="tab-perawat" role="tabpanel" aria-labelledby="t-perawat" hidden><div class="grid grid-4" data-kelompok="perawat"></div></div>
+        <div class="tab-panel" id="tab-pendukung" role="tabpanel" aria-labelledby="t-pendukung" hidden><div class="grid grid-4" data-kelompok="pendukung"></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h3>Bagaimana tahu siapa perawat saya hari ini?</h3>
+          <p class="muted">Nama perawat penanggung jawab ditulis di papan informasi dekat tempat tidur pasien dan diperbarui setiap pergantian shift. Perawat juga akan memperkenalkan diri saat mulai bertugas. Pegawai RS memakai kartu identitas yang bisa Anda lihat kapan saja.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/data-pegawai.js"></script>
+  <script>
+    const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    const foto = (p, label) => p.foto
+      ? `<img src="${esc(p.foto)}" alt="Foto ${esc(p.nama)}" loading="lazy">`
+      : `<div class="ph">${label}<small>Rasio 4:5</small></div>`;
+
+    const k = KEPALA_RUANGAN;
+    document.getElementById("kepala-ruangan").innerHTML = `
+      ${foto(k, "Foto Kepala Ruangan")}
+      <div>
+        <span class="eyebrow">${esc(k.jabatan)}</span>
+        <h2>${esc(k.nama)}</h2>
+        <p class="muted">${esc(k.pendidikan)}</p>
+        <p style="font-size:1.08rem">${esc(k.sambutan)}</p>
+      </div>`;
+
+    document.querySelectorAll("[data-kelompok]").forEach((wrap) => {
+      wrap.innerHTML = PEGAWAI.filter((p) => p.kelompok === wrap.dataset.kelompok).map((p) => `
+        <article class="card staff-card">
+          ${foto(p, "Foto pegawai")}
+          <div class="role">${esc(p.jabatan)}</div>
+          <h3>${esc(p.nama)}</h3>
+          ${p.pendidikan ? `<p class="meta">${esc(p.pendidikan)}</p>` : ""}
+        </article>`).join("");
+    });
+  </script>
+</body>
+</html>
