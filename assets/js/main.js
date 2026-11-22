@@ -4,18 +4,20 @@
    ========================================================= */
 
 const SITE = {
-  nama: "Ruang Teratai 1",
   rs: "RSUD Abdoel Wahab Sjahranie",
+  rsPendek: "RSUD AWS",
+  kota: "Samarinda, Kalimantan Timur",
   alamat: "Jl. Palang Merah Indonesia No. 1, Sidodadi, Samarinda Ulu, Samarinda, Kalimantan Timur 75123",
   telpRs: "(0541) 738070",
   telpRsLink: "+62541738070",
-  // TODO: data di bawah masih contoh, ganti setelah ada konfirmasi RS
-  telpRuang: "Ext. —",
-  besukSiang: "11.00–13.00",
-  besukSore: "17.00–19.00",
+  peta: "https://www.google.com/maps/search/?api=1&query=RSUD+Abdoel+Wahab+Sjahranie+Samarinda",
+  // Ruang Teratai
+  telpRuang: "Ext. —", // TODO: belum ada data
+  besuk: "16.00–18.00", // dari lembar Tata Tertib Ruang Teratai
 };
 
-/* Jadwal harian (beranda). Jam ditulis desimal: 7.5 = 07.30. MASIH CONTOH. */
+/* Jadwal harian Ruang Teratai. Jam ditulis desimal: 7.5 = 07.30.
+   Jam besuk dari tata tertib RS; kegiatan lain MASIH PERKIRAAN. */
 const JADWAL = [
   // baris 1: pergantian shift
   { jenis: "titik", jam: 7, teks: "Ganti shift pagi", baris: 1 },
@@ -26,29 +28,39 @@ const JADWAL = [
   { jenis: "istirahat", dari: 13, sampai: 16, teks: "Istirahat siang", baris: 2 },
   { jenis: "istirahat", dari: 21, sampai: 23, teks: "Lampu redup", baris: 2 },
   // baris 3: besuk
-  { jenis: "besuk", dari: 11, sampai: 13, teks: "Besuk siang", baris: 3 },
-  { jenis: "besuk", dari: 17, sampai: 19, teks: "Besuk sore", baris: 3 },
+  { jenis: "besuk", dari: 16, sampai: 18, teks: "Jam besuk", baris: 3 },
   // baris 4: makan & pemeriksaan rutin
   { jenis: "titik", jam: 6, teks: "Cek tanda vital", baris: 4 },
   { jenis: "titik", jam: 7.5, teks: "Sarapan", baris: 4 },
   { jenis: "titik", jam: 12, teks: "Makan siang", baris: 4 },
-  { jenis: "titik", jam: 17.5, teks: "Makan sore", baris: 4 },
+  { jenis: "titik", jam: 18.5, teks: "Makan sore", baris: 4 },
 ];
 
+/* Menu utama. "cocok" = awalan alamat yang ikut membuat menu itu aktif. */
 const NAV = [
-  { label: "Profil", children: [
-    { href: "halaman/profil.html", label: "Profil Ruangan" },
-    { href: "halaman/tim.html", label: "Profil Pegawai" },
-  ] },
-  { label: "Ruangan", children: [
-    { href: "halaman/ruangan.html", label: "Pengenalan & Denah" },
-    { href: "halaman/fasilitas.html", label: "Kondisi & Fasilitas" },
-  ] },
+  { href: "halaman/profil.html", label: "Profil RS" },
+  { href: "halaman/ruangan.html", label: "Ruangan", cocok: "halaman/ruangan/" },
+  { href: "halaman/edukasi.html", label: "Edukasi" },
   { href: "halaman/hak-kewajiban.html", label: "Hak & Kewajiban" },
-  { href: "halaman/caregiver.html", label: "Caregiver" },
+  { href: "halaman/review.html", label: "Review" },
   // Orientasi disembunyikan sementara. Untuk memunculkan lagi, hapus tanda // di baris berikut:
   // { href: "halaman/orientasi.html", label: "Orientasi" },
 ];
+
+/* Sub-menu tiap ruangan. Ruangan baru cukup ditambahkan di sini + dibuatkan foldernya. */
+const RUANGAN = {
+  teratai: {
+    nama: "Ruang Teratai",
+    folder: "halaman/ruangan/teratai/",
+    menu: [
+      ["index.html", "Beranda"],
+      ["petugas.html", "Petugas & Struktur"],
+      ["denah.html", "Denah"],
+      ["fasilitas.html", "Fasilitas"],
+      ["tata-tertib.html", "Tata Tertib"],
+    ],
+  },
+};
 
 /* ---------- Ilustrasi garis (dipakai dengan <svg class="ill"><use href="#nama"/></svg>) ---------- */
 const SPRITE = `<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -75,11 +87,15 @@ const SPRITE = `<svg xmlns="http://www.w3.org/2000/svg" style="display:none" ari
 <symbol id="chat" viewBox="0 0 64 64"><path d="M10 14h44v28H30l-12 10V42h-8z"/><path d="M20 25h24M20 32h16"/></symbol>
 <symbol id="shield" viewBox="0 0 64 64"><path d="M32 8 12 16v14c0 13 9 22 20 26 11-4 20-13 20-26V16Z"/><path d="m23 32 6 6 12-12"/></symbol>
 <symbol id="wifi" viewBox="0 0 64 64"><path d="M8 26a34 34 0 0 1 48 0M16 34a22 22 0 0 1 32 0M24 42a10 10 0 0 1 16 0"/><circle cx="32" cy="50" r="2"/></symbol>
+<symbol id="mask" viewBox="0 0 64 64"><path d="M14 22c6-3 12-4 18-4s12 1 18 4v12c0 9-8 14-18 14s-18-5-18-14Z"/><path d="M14 26H8a4 4 0 0 0 0 8h6M50 26h6a4 4 0 0 1 0 8h-6M22 28h20M22 35h20"/></symbol>
+<symbol id="trash" viewBox="0 0 64 64"><path d="M12 18h40M26 18v-6h12v6M16 18l3 38h26l3-38M27 28v18M37 28v18"/></symbol>
+<symbol id="hand" viewBox="0 0 64 64"><path d="M22 34V14a4 4 0 0 1 8 0v16M30 30V10a4 4 0 0 1 8 0v20M38 30V14a4 4 0 0 1 8 0v22c0 12-7 20-17 20-7 0-11-4-15-10l-6-10a4 4 0 0 1 7-4l5 7"/></symbol>
+<symbol id="building" viewBox="0 0 64 64"><path d="M10 56V20l22-10 22 10v36M6 56h52M26 56V42h12v14M32 20v10M27 25h10M18 30h4M42 30h4M18 40h4M42 40h4"/></symbol>
+<symbol id="star" viewBox="0 0 64 64"><path d="m32 8 7 15 16 2-12 11 3 16-14-8-14 8 3-16L9 25l16-2Z"/></symbol>
 <symbol id="arrow" viewBox="0 0 16 16"><path d="M2 8h12M9 3l5 5-5 5"/></symbol>
 </svg>`;
 
 const LOTUS = `<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M20 7c4.2 4.6 5.3 10.4 0 17.5C14.7 17.4 15.8 11.6 20 7Z"/><path d="M20 24.5c-4.6-1-9.2-4.9-10.6-11.6 6 .8 9.4 4.9 10.6 11.6Zm0 0c4.6-1 9.2-4.9 10.6-11.6-6 .8-9.4 4.9-10.6 11.6Z"/><path d="M20 25c-6 .2-12-2.2-15-6.8 6-.3 11 2.4 15 6.8Zm0 0c6 .2 12-2.2 15-6.8-6-.3-11 2.4-15 6.8Z"/><path d="M8 30.5h24M13 34h14"/></svg>`;
-const CHEV = `<svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="m2 3.5 3 3 3-3"/></svg>`;
 
 /* ROOT = alamat folder utama situs, dihitung dari lokasi file script ini.
    Dengan begitu link & foto tetap benar, baik dari index.html maupun dari halaman/*.html */
@@ -89,7 +105,8 @@ const ROOT = (document.currentScript && document.currentScript.src)
 const url = (h) => ROOT + h;
 const herePath = location.pathname.replace(/\/$/, "/index.html");
 const isHere = (h) => { try { return new URL(url(h), location.href).pathname === herePath; } catch (e) { return false; } };
-const flatNav = () => NAV.flatMap((n) => n.children || [n]);
+const isUnder = (prefix) => { try { return herePath.startsWith(new URL(url(prefix), location.href).pathname); } catch (e) { return false; } };
+const isActive = (n) => isHere(n.href) || (n.cocok && isUnder(n.cocok));
 
 /* ---------- Ukuran teks ---------- */
 const SIZES = ["", "l", "xl"];
@@ -110,25 +127,15 @@ function renderHeader() {
   const el = document.getElementById("site-header");
   if (!el) return;
 
-  const items = NAV.map((n) => {
-    if (!n.children) return `<a href="${url(n.href)}"${isHere(n.href) ? ' class="active" aria-current="page"' : ""}>${n.label}</a>`;
-    const act = n.children.some((c) => isHere(c.href));
-    return `<div class="nav-group">
-      <button type="button" aria-expanded="false"${act ? ' class="active"' : ""}>${n.label}${CHEV}</button>
-      <div class="nav-menu">${n.children.map((c, i) =>
-        `<a href="${url(c.href)}"${isHere(c.href) ? ' class="active" aria-current="page"' : ""}>${c.label}<span>0${i + 1}</span></a>`).join("")}</div>
-    </div>`;
-  }).join("");
-
-  const mobile = flatNav().map((n, i) => `<li><a href="${url(n.href)}"><small>0${i + 1}</small>${n.label}</a></li>`).join("");
+  const items = NAV.map((n) => `<a href="${url(n.href)}"${isActive(n) ? ' class="active" aria-current="page"' : ""}>${n.label}</a>`).join("");
+  const mobile = NAV.map((n, i) => `<li><a href="${url(n.href)}"><small>0${i + 1}</small>${n.label}</a></li>`).join("");
   const sizeBtn = `<button class="size-btn" type="button"><b>Aa</b><span class="t">Ukuran teks</span><span class="dots"><i></i><i></i><i></i></span></button>`;
 
   el.className = "site-header";
   el.innerHTML = `
     <div class="wrap">
-      <a class="brand" href="${url("index.html")}" aria-label="${SITE.nama}, beranda">
-        ${LOTUS}
-        <span><span class="brand-name">${SITE.nama}</span><span class="brand-sub">${SITE.rs}</span></span>
+      <a class="brand" href="${url("index.html")}" aria-label="${SITE.rs}, beranda">
+        <span><span class="brand-name"><span class="brand-full">${SITE.rs}</span><span class="brand-short">${SITE.rsPendek}</span></span><span class="brand-sub">${SITE.kota}</span></span>
       </a>
       <nav class="nav" aria-label="Menu utama">${items}</nav>
       <div class="head-right">
@@ -159,58 +166,63 @@ function renderHeader() {
     btn.setAttribute("aria-expanded", String(open));
   });
 
-  el.querySelectorAll(".nav-group > button").forEach((b) => {
-    b.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const g = b.parentElement;
-      const was = g.classList.contains("open");
-      el.querySelectorAll(".nav-group").forEach((x) => { x.classList.remove("open"); x.firstElementChild.setAttribute("aria-expanded", "false"); });
-      if (!was) { g.classList.add("open"); b.setAttribute("aria-expanded", "true"); }
-    });
-  });
-  document.addEventListener("click", () => el.querySelectorAll(".nav-group").forEach((x) => x.classList.remove("open")));
-  document.addEventListener("keydown", (e) => {
-    if (e.key !== "Escape") return;
-    el.querySelectorAll(".nav-group").forEach((x) => x.classList.remove("open"));
-    document.body.classList.remove("menu-open");
-  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") document.body.classList.remove("menu-open"); });
 
   const onScroll = () => el.classList.toggle("scrolled", window.scrollY > 40);
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 }
 
+/* Sub-menu ruangan: <nav id="sub-nav" data-ruangan="teratai"></nav> */
+function renderSubnav() {
+  const el = document.getElementById("sub-nav");
+  if (!el) return;
+  const r = RUANGAN[el.dataset.ruangan];
+  if (!r) return;
+  el.className = "subnav";
+  el.setAttribute("aria-label", `Menu ${r.nama}`);
+  el.innerHTML = `<div class="wrap">
+    <a class="ward" href="${url(r.folder + "index.html")}">${LOTUS}${r.nama}</a>
+    <ul>${r.menu.map(([f, label]) => `<li><a href="${url(r.folder + f)}"${isHere(r.folder + f) ? ' class="active" aria-current="page"' : ""}>${label}</a></li>`).join("")}</ul>
+  </div>`;
+  // geser sub-menu hanya bila menu yang aktif tidak terlihat penuh di layar
+  const act = el.querySelector("a.active"), w = el.querySelector(".wrap");
+  if (act && act.offsetLeft + act.offsetWidth > w.clientWidth) w.scrollLeft = act.offsetLeft - 20;
+}
+
 function renderFooter() {
   const el = document.getElementById("site-footer");
   if (!el) return;
+  const t = RUANGAN.teratai;
   el.className = "site-footer";
   el.innerHTML = `
     <div class="wrap">
       <div class="foot-top">
         <div>
           <h4>Alamat</h4>
-          <p>Paviliun Teratai<br>${SITE.rs}<br>${SITE.alamat}</p>
+          <p>${SITE.rs}<br>${SITE.alamat}</p>
+          <p><a href="${SITE.peta}" target="_blank" rel="noopener">Buka di Google Maps</a></p>
         </div>
         <div>
-          <h4>Halaman</h4>
-          <ul>${flatNav().slice(0, 4).map((n) => `<li><a href="${url(n.href)}">${n.label}</a></li>`).join("")}</ul>
+          <h4>Menu</h4>
+          <ul>${NAV.map((n) => `<li><a href="${url(n.href)}">${n.label}</a></li>`).join("")}</ul>
         </div>
         <div>
-          <h4>Pasien &amp; keluarga</h4>
-          <ul>${flatNav().slice(4).map((n) => `<li><a href="${url(n.href)}">${n.label}</a></li>`).join("")}</ul>
+          <h4>${t.nama}</h4>
+          <ul>${t.menu.map(([f, label]) => `<li><a href="${url(t.folder + f)}">${label}</a></li>`).join("")}</ul>
         </div>
         <div>
           <h4>Kontak</h4>
           <ul>
-            <li><a href="tel:${SITE.telpRsLink}">RS ${SITE.telpRs}</a></li>
-            <li>Ruangan <span class="tbd" title="Data contoh">${SITE.telpRuang}</span></li>
-            <li>Besuk <span class="tbd" title="Data contoh">${SITE.besukSiang} &amp; ${SITE.besukSore}</span></li>
+            <li><a href="tel:${SITE.telpRsLink}">Telepon RS ${SITE.telpRs}</a></li>
+            <li>${t.nama} <span class="tbd" title="Data belum ada">${SITE.telpRuang}</span></li>
+            <li>Jam besuk ${t.nama}: ${SITE.besuk}</li>
           </ul>
         </div>
       </div>
-      <div class="foot-word" aria-hidden="true">Teratai <em>1</em></div>
+      <div class="foot-word" aria-hidden="true">RSUD <em>AWS</em></div>
       <div class="foot-bottom">
-        <span>&copy; ${new Date().getFullYear()} ${SITE.nama}, ${SITE.rs}</span>
+        <span>&copy; ${new Date().getFullYear()} ${SITE.rs}, ${SITE.kota}</span>
         <span>Keadaan darurat di kamar: tekan bel pasien atau panggil perawat jaga.</span>
       </div>
     </div>`;
@@ -240,8 +252,8 @@ function fillSiteData() {
 }
 
 /* ---------- Foto otomatis ----------
-   <div class="media" data-img="ruangan/lorong"> akan mencari
-   assets/img/ruangan/lorong.jpg / .jpeg / .png / .webp.
+   <div class="media" data-img="teratai/lorong"> akan mencari
+   assets/img/teratai/lorong.jpg / .jpeg / .png / .webp.
    Kalau ada, foto dipasang. Kalau tidak, placeholder tetap tampil. */
 const EXT = ["jpg", "png", "webp", "jpeg"];
 function findImage(list, done) {
@@ -275,7 +287,7 @@ function initImages() {
   });
 }
 
-/* ---------- Sehari di Teratai 1 ---------- */
+/* ---------- Jadwal harian ruangan ---------- */
 const fmt = (h) => `${String(Math.floor(h)).padStart(2, "0")}.${h % 1 ? String(Math.round((h % 1) * 60)).padStart(2, "0") : "00"}`;
 function renderDay() {
   const el = document.querySelector("[data-day]");
@@ -342,6 +354,7 @@ function initReveal() {
 document.body.insertAdjacentHTML("afterbegin", SPRITE);
 document.documentElement.classList.remove("no-js");
 renderHeader();
+renderSubnav();
 renderFooter();
 fillSiteData();
 renderDay();

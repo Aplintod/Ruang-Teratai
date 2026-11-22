@@ -3,26 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Profil Pegawai · Ruang Teratai 1</title>
-  <meta name="description" content="Kepala ruangan, ketua tim, perawat pelaksana, dan staf pendukung Ruang Teratai 1 RSUD Abdoel Wahab Sjahranie Samarinda.">
+  <title>Petugas & Struktur · Ruang Teratai</title>
+  <meta name="description" content="Kepala ruangan, ketua tim, perawat pelaksana, staf pendukung, dan struktur organisasi Ruang Teratai RSUD Abdoel Wahab Sjahranie.">
   <meta name="theme-color" content="#f5f1ea">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&family=Newsreader:opsz,wght@6..72,400..600&display=swap" rel="stylesheet">
+  <link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
 </head>
 <body>
   <a class="skip-link" href="#konten">Langsung ke konten</a>
   <header id="site-header"></header>
 
   <main id="konten">
+    <nav id="sub-nav" data-ruangan="teratai"></nav>
     <section class="page-head">
       <div class="wrap">
-        <div class="crumbs"><a href="../index.html">Beranda</a><span>/</span><span>Profil pegawai</span></div>
+        <div class="crumbs"><a href="../../../index.html">Beranda</a><span>/</span><a href="../../ruangan.html">Ruangan</a><span>/</span><a href="index.html">Ruang Teratai</a><span>/</span><span>Petugas &amp; struktur</span></div>
         <div class="grid-head">
-          <h1 class="h1 reveal">Orang-orang <em>di balik</em> perawatan Anda</h1>
-          <p class="lead reveal d1">Kepala ruangan, ketua tim, perawat pelaksana, dan staf pendukung Ruang Teratai 1.</p>
+          <h1 class="h1 reveal">Petugas <em>&amp;</em> struktur</h1>
+          <p class="lead reveal d1">Kepala ruangan, ketua tim, perawat pelaksana, dan staf pendukung Ruang Teratai.</p>
         </div>
       </div>
     </section>
@@ -63,17 +64,31 @@
         </div>
       </div>
     </section>
+
+    <!-- STRUKTUR -->
+    <section class="sec bg-2" id="struktur">
+      <div class="wrap">
+        <div class="cols cols-1-2">
+          <div class="reveal">
+            <span class="label"><span class="n">04</span> Struktur</span>
+            <h2 class="h2 mt-s">Struktur organisasi</h2>
+            <p class="muted mt-s">Kepala ruangan memimpin beberapa ketua tim. Tiap ketua tim membawahi perawat pelaksana dalam satu shift.</p>
+          </div>
+          <div class="media contain r-16x9 reveal d1" data-img="teratai/struktur-organisasi" data-cap="Bagan struktur organisasi Ruang Teratai"></div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer id="site-footer"></footer>
-  <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/data-pegawai.js"></script>
+  <script src="../../../assets/js/main.js"></script>
+  <script src="../../../assets/js/data-pegawai.js"></script>
   <script>
     const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-    // Jika "foto" kosong, situs mencari otomatis assets/img/pegawai/<file>.jpg (lihat dokumentasi/FOTO.md)
+    // Jika "foto" kosong, situs mencari otomatis assets/img/teratai/pegawai/<file>.jpg (lihat dokumentasi/FOTO.md)
     const foto = (p, ratio, cap, file) => p.foto
       ? `<figure class="media ${ratio}"><img src="${esc(p.foto)}" alt="Foto ${esc(p.nama)}" loading="lazy"></figure>`
-      : `<div class="media ${ratio}" data-img="pegawai/${esc(p.file || file)}" data-cap="${cap}"></div>`;
+      : `<div class="media ${ratio}" data-img="teratai/pegawai/${esc(p.file || file)}" data-cap="${cap}"></div>`;
 
     const k = KEPALA_RUANGAN;
     document.getElementById("kepala-ruangan").innerHTML = `

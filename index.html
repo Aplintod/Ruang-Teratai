@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ruang Teratai 1 · RSUD Abdoel Wahab Sjahranie Samarinda</title>
-  <meta name="description" content="Ruang rawat inap Paviliun Teratai RSUD Abdoel Wahab Sjahranie Samarinda: tim perawat, kamar, hak dan kewajiban pasien, serta panduan bagi keluarga pendamping.">
+  <title>RSUD Abdoel Wahab Sjahranie Samarinda</title>
+  <meta name="description" content="Informasi untuk pasien dan keluarga di RSUD Abdoel Wahab Sjahranie Samarinda: profil rumah sakit, ruang rawat inap, edukasi, serta hak dan kewajiban pasien.">
   <meta name="theme-color" content="#17352f">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&family=Newsreader:opsz,wght@6..72,400..600&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -17,39 +17,27 @@
   <header id="site-header"></header>
 
   <main id="konten">
-    <!-- HERO: foto otomatis dipasang jika ada file assets/img/ruangan/hero.jpg -->
-    <section class="hero on-dark" data-img="ruangan/hero">
-      <svg class="hero-art" viewBox="0 0 400 300" aria-hidden="true">
-        <path d="M200 30C236 78 244 140 200 206 156 140 164 78 200 30Z"/>
-        <path d="M200 206C156 194 112 156 100 92c46 8 86 44 100 114Z"/>
-        <path d="M200 206c44-12 88-50 100-114-46 8-86 44-100 114Z"/>
-        <path d="M200 210c-62 2-120-24-152-74 60-2 112 26 152 74Z"/>
-        <path d="M200 210c62 2 120-24 152-74-60-2-112 26-152 74Z"/>
-        <path d="M200 212c-80 10-150-6-196-44 70-16 140 6 196 44Z"/>
-        <path d="M200 212c80 10 150-6 196-44-70-16-140 6-196 44Z"/>
-        <path class="w" d="M30 236h340M70 252h260M110 268h180M150 284h100"/>
-      </svg>
-
+    <!-- HERO: foto dari assets/img/rs/hero.jpg -->
+    <section class="hero on-dark" data-img="rs/hero">
       <div class="wrap hero-top">
-        <span class="label">Paviliun Teratai &nbsp;·&nbsp; RSUD Abdoel Wahab Sjahranie, Samarinda</span>
+        <span class="label">Rumah sakit rujukan Kalimantan Timur</span>
       </div>
-
       <div class="wrap">
         <div class="hero-title">
           <h1 class="display">
-            <span class="line"><span>Ruang Teratai 1</span></span>
-            <span class="line"><span><em>rawat inap paviliun</em></span></span>
+            <span class="line"><span>RSUD Abdoel Wahab Sjahranie</span></span>
+            <span class="line"><span><em>Samarinda</em></span></span>
           </h1>
         </div>
         <div class="hero-foot">
-          <p>Informasi untuk pasien dan keluarga selama dirawat: siapa yang merawat Anda, seperti apa kamarnya, aturan berkunjung, serta hak dan kewajiban pasien.</p>
+          <p>Informasi untuk pasien dan keluarga: profil rumah sakit, ruang rawat inap, edukasi pencegahan infeksi, serta hak dan kewajiban pasien.</p>
           <div>
-            <span class="k">Jam besuk</span>
-            <span class="v tbd" title="Data contoh"><span data-site="besukSiang"></span><br><span data-site="besukSore"></span></span>
+            <span class="k">Telepon</span>
+            <span class="v" data-site="telpRs"></span>
           </div>
           <div>
-            <span class="k">Perawat jaga</span>
-            <span class="v">24 jam,<br>tiga shift</span>
+            <span class="k">Alamat</span>
+            <span class="v">Jl. Palang Merah<br>Indonesia No. 1</span>
           </div>
         </div>
       </div>
@@ -58,20 +46,20 @@
     <!-- INFO CEPAT -->
     <nav class="quick" aria-label="Info cepat">
       <div class="wrap">
-        <a href="halaman/caregiver.html#aturan">
-          <svg class="ill" aria-hidden="true"><use href="#clock"/></svg>
-          <span><span class="k">Jam besuk</span><span class="v tbd" title="Data contoh"><span data-site="besukSiang"></span> · <span data-site="besukSore"></span></span></span>
-          <svg class="go" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
+        <a href="halaman/ruangan.html">
+          <svg class="ill" aria-hidden="true"><use href="#bed"/></svg>
+          <span><span class="k">Ruang rawat inap</span><span class="v">Pilih ruangan</span></span>
+          <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span>
         </a>
         <a href="tel:+62541738070">
           <svg class="ill" aria-hidden="true"><use href="#phone"/></svg>
           <span><span class="k">Telepon rumah sakit</span><span class="v" data-site="telpRs"></span></span>
-          <svg class="go" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
+          <span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span>
         </a>
-        <a href="halaman/ruangan.html">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=RSUD+Abdoel+Wahab+Sjahranie+Samarinda" target="_blank" rel="noopener">
           <svg class="ill" aria-hidden="true"><use href="#map"/></svg>
-          <span><span class="k">Lokasi &amp; denah</span><span class="v">Paviliun Teratai</span></span>
-          <svg class="go" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
+          <span><span class="k">Lokasi</span><span class="v">Buka di Google Maps</span></span>
+          <span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span>
         </a>
       </div>
     </nav>
@@ -80,97 +68,70 @@
     <section class="sec">
       <div class="wrap">
         <div class="cols cols-1-2">
-          <span class="label reveal"><span class="n">i.</span> Tentang ruangan</span>
+          <span class="label reveal"><span class="n">i.</span> Tentang</span>
           <div>
-            <p class="statement reveal">Ruang Teratai 1 adalah ruang rawat inap di Paviliun Teratai, gedung perawatan kelas paviliun di rumah sakit rujukan tertinggi Kalimantan Timur.</p>
+            <p class="statement reveal">RSUD Abdoel Wahab Sjahranie adalah rumah sakit milik Pemerintah Provinsi Kalimantan Timur, rumah sakit kelas A pendidikan, dan rujukan tertinggi di provinsi ini.</p>
             <div class="cols cols-2 mt-m">
-              <p class="muted reveal d1">Perawat kami bekerja dalam sistem tim. Setiap pasien punya satu perawat penanggung jawab per shift, dan namanya tertulis di papan dekat tempat tidur.</p>
+              <p class="muted reveal d1">Berawal dari Landschap Hospital yang dibangun tahun 1933, rumah sakit ini sekarang melayani pasien dari seluruh Kalimantan Timur dan sudah meraih akreditasi paripurna dari Komisi Akreditasi Rumah Sakit (KARS).</p>
               <div class="reveal d2">
-                <p class="muted">Keluarga kami libatkan sejak hari pertama, mulai dari penjelasan rencana perawatan sampai persiapan pulang.</p>
-                <a class="link mt-s" href="halaman/profil.html">Profil ruangan <span class="arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a>
+                <p class="muted">Situs ini disusun agar pasien dan keluarga mudah menemukan informasi yang dibutuhkan selama dirawat.</p>
+                <a class="link mt-s" href="halaman/profil.html">Profil rumah sakit <span class="arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="wrap mt-l">
-        <div class="media r-21x9 reveal" data-img="ruangan/lorong" data-cap="Lorong dan nurse station Ruang Teratai 1"></div>
-      </div>
     </section>
 
-    <!-- INDEKS -->
+    <!-- INDEKS MENU -->
     <section class="sec bg-2">
       <div class="wrap">
         <div class="sec-head">
           <span class="label reveal"><span class="n">ii.</span> Isi situs</span>
-          <h2 class="h2 reveal">Semua yang perlu diketahui sebelum dan selama dirawat</h2>
+          <h2 class="h2 reveal">Informasi untuk pasien dan keluarga</h2>
         </div>
         <ol class="index">
-          <li class="reveal"><a href="halaman/profil.html"><span class="no">01</span><span class="t">Profil ruangan</span><span class="d">Visi, layanan, struktur organisasi, dan kontak ruangan.</span><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a></li>
-          <li class="reveal"><a href="halaman/tim.html"><span class="no">02</span><span class="t">Profil pegawai</span><span class="d">Kepala ruangan, ketua tim, perawat pelaksana, dan staf pendukung.</span><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a></li>
-          <li class="reveal"><a href="halaman/ruangan.html"><span class="no">03</span><span class="t">Pengenalan &amp; denah</span><span class="d">Cara menuju ruangan, denah lantai, dan foto area.</span><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a></li>
-          <li class="reveal"><a href="halaman/fasilitas.html"><span class="no">04</span><span class="t">Kondisi &amp; fasilitas kamar</span><span class="d">Tipe kamar, perlengkapan, dan standar kebersihan ruangan.</span><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a></li>
-          <li class="reveal"><a href="halaman/hak-kewajiban.html"><span class="no">05</span><span class="t">Hak &amp; kewajiban pasien</span><span class="d">Ketentuan UU Kesehatan yang berlaku selama Anda dirawat.</span><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a></li>
-          <li class="reveal"><a href="halaman/caregiver.html"><span class="no">06</span><span class="t">Caregiver</span><span class="d">Aturan menunggu dan peran keluarga pendamping.</span><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a></li>
+          <li class="reveal"><a href="halaman/profil.html"><span class="no">01</span><span class="t">Profil RS</span><span class="d">Sejarah, visi, misi, nilai, dan layanan unggulan RSUD AWS.</span><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a></li>
+          <li class="reveal"><a href="halaman/ruangan.html"><span class="no">02</span><span class="t">Ruangan</span><span class="d">Informasi tiap ruang rawat inap: petugas, denah, fasilitas, dan tata tertib.</span><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a></li>
+          <li class="reveal"><a href="halaman/edukasi.html"><span class="no">03</span><span class="t">Edukasi</span><span class="d">Kebersihan tangan dan pencegahan infeksi bagi pasien dan pengunjung.</span><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a></li>
+          <li class="reveal"><a href="halaman/hak-kewajiban.html"><span class="no">04</span><span class="t">Hak &amp; kewajiban</span><span class="d">Ketentuan Undang-Undang Kesehatan yang berlaku selama dirawat.</span><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a></li>
+          <li class="reveal"><a href="halaman/review.html"><span class="no">05</span><span class="t">Review</span><span class="d">Penilaian dan saran Anda tentang situs ini. Segera hadir.</span><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a></li>
         </ol>
       </div>
     </section>
 
-    <!-- KEPALA RUANGAN -->
+    <!-- RUANG TERATAI -->
     <section class="sec">
       <div class="wrap">
-        <div class="cols cols-2 al-c">
-          <div class="media r-4x5 reveal" data-img="pegawai/kepala-ruangan" data-cap="Kepala Ruang Teratai 1"></div>
-          <div>
-            <span class="label reveal"><span class="n">iii.</span> Sambutan</span>
-            <blockquote class="quote mt-m reveal">Kami ingin setiap pasien dan keluarganya tahu apa yang sedang terjadi selama perawatan. Kalau ada yang belum jelas, tanyakan saja ke perawat yang bertugas.</blockquote>
-            <div class="quote-by reveal"><strong class="tbd" title="Data contoh">Ns. Nama Kepala Ruangan, S.Kep.</strong>Kepala Ruang Teratai 1</div>
-            <a class="link mt-m reveal" href="halaman/tim.html">Kenali tim kami <span class="arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEHARI DI TERATAI 1 -->
-    <section class="sec bg-2">
-      <div class="wrap">
         <div class="sec-head">
-          <span class="label reveal"><span class="n">iv.</span> Jadwal harian</span>
-          <div>
-            <h2 class="h2 reveal">Sehari di Teratai 1</h2>
-            <p class="lead reveal">Gambaran kegiatan dari pagi sampai malam, supaya keluarga tahu kapan sebaiknya datang dan kapan pasien perlu istirahat. <span class="tbd" title="Data contoh">Jam masih perkiraan.</span></p>
+          <span class="label reveal"><span class="n">iii.</span> Ruang rawat inap</span>
+          <h2 class="h2 reveal">Sudah tersedia: Ruang Teratai</h2>
+        </div>
+        <a class="ward-feature reveal" href="halaman/ruangan/teratai/index.html">
+          <div class="media" data-img="teratai/hero, teratai/gedung-paviliun" data-cap="Paviliun Teratai"></div>
+          <div class="body">
+            <div>
+              <span class="tag">Paviliun Teratai</span>
+              <h3>Ruang Teratai</h3>
+              <p>Petugas, denah, fasilitas kamar, tata tertib, dan jadwal harian ruangan.</p>
+            </div>
+            <span class="go-btn">Masuk ke Ruang Teratai <span class="arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></span>
           </div>
-        </div>
-        <div class="day reveal" data-day></div>
+        </a>
       </div>
     </section>
 
-    <!-- ANGKA -->
-    <section class="sec-tight">
-      <div class="wrap">
-        <div class="figures reveal">
-          <div class="figure"><span class="num tbd" title="Data contoh">00</span><span class="cap">Tempat tidur</span></div>
-          <div class="figure"><span class="num tbd" title="Data contoh">00</span><span class="cap">Kamar perawatan</span></div>
-          <div class="figure"><span class="num tbd" title="Data contoh">00</span><span class="cap">Perawat &amp; staf</span></div>
-          <div class="figure"><span class="num">24/7</span><span class="cap">Perawat jaga</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BESUK -->
+    <!-- NILAI -->
     <section class="sec bg-dark on-dark">
       <div class="wrap">
         <div class="sec-head">
-          <span class="label"><span class="n">v.</span> Berkunjung</span>
-          <div>
-            <h2 class="h2">Datang menjenguk? Mohon ikuti jam besuk agar pasien tetap bisa beristirahat.</h2>
-          </div>
+          <span class="label"><span class="n">iv.</span> Nilai kami</span>
+          <h2 class="h2">Ramah, cekatan, santun, dan profesional.</h2>
         </div>
-        <div class="band">
-          <p class="muted">Satu penunggu per pasien. Pengunjung yang sedang demam, batuk, atau pilek sebaiknya menunda kunjungan.</p>
-          <div><span class="k">Siang</span><span class="v tbd" title="Data contoh" data-site="besukSiang"></span></div>
-          <div><span class="k">Sore</span><span class="v tbd" title="Data contoh" data-site="besukSore"></span></div>
-          <a class="btn btn-ghost" href="halaman/caregiver.html#aturan">Aturan berkunjung</a>
+        <div class="band" style="grid-template-columns:1.4fr 1fr auto">
+          <p class="muted">Empat nilai yang dipegang seluruh petugas RSUD AWS dalam melayani pasien dan keluarga.</p>
+          <div></div>
+          <a class="btn btn-ghost" href="halaman/profil.html#nilai">Visi, misi &amp; nilai</a>
         </div>
       </div>
     </section>

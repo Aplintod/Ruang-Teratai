@@ -3,10 +3,10 @@
 
    Foto bisa dipasang dengan dua cara:
    A. Otomatis: simpan foto dengan nama sesuai urutan di daftar ini.
-      - Kepala ruangan      → assets/img/pegawai/kepala-ruangan.jpg
-      - Pegawai ke-1, ke-2… → assets/img/pegawai/pegawai-01.jpg, pegawai-02.jpg, dst.
+      - Kepala ruangan      → assets/img/teratai/pegawai/kepala-ruangan.jpg
+      - Pegawai ke-1, ke-2… → assets/img/teratai/pegawai/pegawai-01.jpg, pegawai-02.jpg, dst.
       (urutan = urutan baris di array PEGAWAI di bawah)
-   B. Manual: isi "foto" dengan path lengkap, contoh "assets/img/pegawai/budi.jpg"
+   B. Manual: isi "foto" dengan path lengkap, contoh "assets/img/teratai/pegawai/budi.jpg"
 
    Potret tegak: kepala ruangan 4:5, pegawai lain 3:4. Format .jpg/.png/.webp, lebar ±800 px.
    ========================================================= */
@@ -17,7 +17,7 @@ const KEPALA_RUANGAN = {
   foto: "",
   pendidikan: "S1 Keperawatan + Profesi Ners",
   sambutan:
-    "Selamat datang di Ruang Teratai 1. Kami berusaha agar setiap pasien dan keluarganya tahu apa yang sedang terjadi selama perawatan. Jika ada yang ingin ditanyakan, silakan sampaikan ke perawat yang bertugas.",
+    "Selamat datang di Ruang Teratai. Kami berusaha agar setiap pasien dan keluarganya tahu apa yang sedang terjadi selama perawatan. Jika ada yang ingin ditanyakan, silakan sampaikan ke perawat yang bertugas.",
 };
 
 // kelompok: "pengelola" | "perawat" | "pendukung"

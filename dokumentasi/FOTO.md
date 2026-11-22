@@ -7,26 +7,33 @@ Foto akan **terpasang otomatis** kalau disimpan dengan nama dan folder yang pers
 - Besar file: usahakan di bawah 400 KB. Kompres dulu lewat squoosh.app atau tinypng.com.
 - Kalau sebuah file belum ada, tempatnya tetap menampilkan kotak placeholder seperti sekarang.
 
-## Foto ruangan → `assets/img/ruangan/`
+## Foto rumah sakit → `assets/img/rs/`
 
 | Nama file | Dipakai di | Isi foto | Posisi HP |
 |---|---|---|---|
-| `hero.jpg` | Beranda, latar paling atas | Foto paling bagus: lorong atau nurse station dengan cahaya terang. Teks putih ditaruh di atasnya, jadi sisakan area yang agak polos. | Mendatar |
-| `lorong.jpg` | Beranda & galeri | Lorong ruangan, diambil dari ujung lorong | Mendatar |
-| `pintu-masuk.jpg` | Profil ruangan | Pintu masuk atau papan nama Ruang Teratai 1 | Mendatar |
-| `gedung-paviliun.jpg` | Pengenalan | Gedung Paviliun Teratai dari luar | Mendatar |
+| `hero.jpg` | Beranda (latar paling atas) dan Profil RS | Foto gedung atau gerbang RSUD AWS | Mendatar |
+| `profil.jpg` | Profil RS (opsional) | Foto lain RSUD AWS. Kalau tidak ada, Profil RS memakai `hero.jpg` | Mendatar |
+
+## Foto Ruang Teratai → `assets/img/teratai/`
+
+| Nama file | Dipakai di | Isi foto | Posisi HP |
+|---|---|---|---|
+| `hero.jpg` | Beranda Ruang Teratai (opsional) | Foto utama Ruang Teratai. Kalau tidak ada, dipakai `gedung-paviliun` | Mendatar |
+| `lorong.jpg` | Galeri | Lorong ruangan, diambil dari ujung lorong | Mendatar |
+| `pintu-masuk.jpg` | (cadangan, belum dipakai) | Pintu masuk atau papan nama Ruang Teratai 1 | Mendatar |
+| `gedung-paviliun.jpg` | Beranda Ruang Teratai & kartu ruangan | Gedung Paviliun Teratai dari luar | Mendatar |
 | `nurse-station.jpg` | Galeri | Nurse station, boleh ada perawat sedang bekerja | Tegak |
 | `kamar-pasien.jpg` | Galeri | Kamar pasien secara umum | Mendatar atau persegi |
 | `kamar-mandi.jpg` | Galeri | Kamar mandi dalam kamar | Persegi |
 | `taman.jpg` | Galeri | Taman di area Paviliun Teratai | Persegi atau tegak |
-| `kamar-vip.jpg` | Fasilitas | Kamar VIP dari sudut pintu, terlihat tempat tidur dan sofa | Mendatar |
-| `kamar-kelas-1.jpg` | Fasilitas | Kamar Kelas I dari sudut pintu | Mendatar |
-| `cuci-tangan.jpg` | Fasilitas | Wastafel atau hand rub di depan kamar | Tegak |
-| `edukasi-keluarga.jpg` | Caregiver | Perawat sedang menjelaskan sesuatu kepada keluarga pasien | Tegak |
-| `struktur-organisasi.png` | Profil ruangan | Bagan struktur organisasi (gambar dari RS) | – |
-| `denah.png` | Pengenalan | Denah resmi dari RS. Begitu file ini ada, denah skematik otomatis diganti. | – |
+| `kamar-vip.jpg` | Fasilitas | Kamar VIP dari sudut pintu. Kalau tidak ada, dipakai `kamar-pasien` | Mendatar |
+| `kamar-vvip.jpg` | Fasilitas | Kamar VVIP dari sudut pintu. Kalau tidak ada, dipakai `kamar-pasien` | Mendatar |
+| `cuci-tangan.jpg` | Fasilitas & Edukasi | Wastafel atau hand rub di depan kamar | Tegak |
+| `edukasi-keluarga.jpg` | Edukasi | Papan informasi atau poster pencegahan infeksi | Tegak |
+| `struktur-organisasi.png` | Petugas & Struktur | Bagan struktur organisasi (gambar dari RS) | – |
+| `denah.png` | Denah | Denah resmi dari RS. Begitu file ini ada, denah skematik otomatis diganti. | – |
 
-## Foto pegawai → `assets/img/pegawai/`
+## Foto petugas Ruang Teratai → `assets/img/teratai/pegawai/`
 
 | Nama file | Siapa |
 |---|---|
