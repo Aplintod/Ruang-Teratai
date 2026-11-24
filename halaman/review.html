@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Review · RSUD Abdoel Wahab Sjahranie</title>
-  <meta name="description" content="Penilaian dan saran pengguna untuk situs informasi RSUD Abdoel Wahab Sjahranie. Segera hadir.">
-  <meta name="theme-color" content="#f5f1ea">
+  <meta name="description" content="Beri penilaian dan saran untuk situs informasi pasien RSUD Abdoel Wahab Sjahranie.">
+  <meta name="theme-color" content="#ffffff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&family=Newsreader:opsz,wght@6..72,400..600&display=swap" rel="stylesheet">
@@ -22,28 +22,88 @@
         <div class="crumbs"><a href="../index.html">Beranda</a><span>/</span><span>Review</span></div>
         <div class="grid-head">
           <h1 class="h1 reveal">Review <em>situs</em></h1>
-          <p class="lead reveal d1">Kami ingin tahu apakah situs ini membantu Anda. Formulir penilaian sedang disiapkan.</p>
+          <p class="lead reveal d1">Bantu kami memperbaiki situs ini. Pengisian kurang dari satu menit, tanpa nama dan nomor HP.</p>
         </div>
       </div>
     </section>
 
     <section class="sec">
       <div class="wrap">
-        <div class="cols cols-2 al-c">
-          <div class="reveal">
-            <svg class="ill ill-lg ill-accent" aria-hidden="true"><use href="#star"/></svg>
-            <span class="label mt-m" style="display:flex"><span class="n">*</span> Segera hadir</span>
-            <h2 class="h2 mt-s">Formulir penilaian dan saran</h2>
-            <p class="muted mt-s max-36">Nantinya Anda dapat memberi nilai dan menuliskan saran tentang isi dan kemudahan penggunaan situs ini. Masukan Anda membantu kami memperbaiki informasi untuk pasien dan keluarga.</p>
-          </div>
-          <div class="reveal d1">
-            <h3 class="h4">Sementara itu</h3>
-            <ul class="ticks mt-s">
-              <li>Keluhan tentang pelayanan dapat disampaikan langsung kepada perawat jaga atau kepala ruangan.</li>
-              <li><a href="hak-kewajiban.html#keluhan">Cara menyampaikan saran dan keluhan</a></li>
-              <li>Telepon rumah sakit: <a href="tel:+62541738070" data-site="telpRs"></a></li>
-            </ul>
-          </div>
+        <div class="review-layout">
+          <form class="review-form" id="form-review" novalidate>
+            <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <fieldset>
+              <legend class="q">1. Anda mengisi sebagai</legend>
+              <div class="chips"><label><input type="radio" name="peran" value="Pasien" required><span>Pasien</span></label><label><input type="radio" name="peran" value="Keluarga pasien" required><span>Keluarga pasien</span></label><label><input type="radio" name="peran" value="Pengunjung" required><span>Pengunjung</span></label><label><input type="radio" name="peran" value="Mahasiswa" required><span>Mahasiswa</span></label><label><input type="radio" name="peran" value="Petugas RS" required><span>Petugas RS</span></label><label><input type="radio" name="peran" value="Lainnya" required><span>Lainnya</span></label></div>
+            </fieldset>
+
+            <fieldset>
+              <legend class="q">2. Ruangan</legend>
+              <div class="chips"><label><input type="radio" name="ruangan" value="Ruang Teratai" required><span>Ruang Teratai</span></label><label><input type="radio" name="ruangan" value="Ruangan lain" required><span>Ruangan lain</span></label><label><input type="radio" name="ruangan" value="Tidak sedang dirawat" required><span>Tidak sedang dirawat</span></label></div>
+            </fieldset>
+
+            <fieldset>
+              <legend class="q">3. Secara keseluruhan, berapa bintang untuk situs ini?</legend>
+              <div class="stars" role="radiogroup"><label title="1 bintang"><input type="radio" name="bintang" value="1" required><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.4.9-4.6 4.5 1.1 6.3L12 17.3l-5.7 3 1.1-6.3-4.6-4.5 6.4-.9Z"/></svg><span class="sr">1 bintang</span></label><label title="2 bintang"><input type="radio" name="bintang" value="2" required><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.4.9-4.6 4.5 1.1 6.3L12 17.3l-5.7 3 1.1-6.3-4.6-4.5 6.4-.9Z"/></svg><span class="sr">2 bintang</span></label><label title="3 bintang"><input type="radio" name="bintang" value="3" required><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.4.9-4.6 4.5 1.1 6.3L12 17.3l-5.7 3 1.1-6.3-4.6-4.5 6.4-.9Z"/></svg><span class="sr">3 bintang</span></label><label title="4 bintang"><input type="radio" name="bintang" value="4" required><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.4.9-4.6 4.5 1.1 6.3L12 17.3l-5.7 3 1.1-6.3-4.6-4.5 6.4-.9Z"/></svg><span class="sr">4 bintang</span></label><label title="5 bintang"><input type="radio" name="bintang" value="5" required><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.4.9-4.6 4.5 1.1 6.3L12 17.3l-5.7 3 1.1-6.3-4.6-4.5 6.4-.9Z"/></svg><span class="sr">5 bintang</span></label></div>
+              <p class="star-text small" id="star-text">Pilih 1 sampai 5 bintang</p>
+            </fieldset>
+
+            <div class="q-block">
+              <p class="q">4. Seberapa setuju Anda dengan pernyataan berikut?</p>
+          <fieldset class="likert">
+            <legend>Informasi yang saya cari mudah ditemukan.</legend>
+            <div class="likert-scale"><span class="end">Sangat tidak setuju</span><div class="likert-opts"><label><input type="radio" name="mudah" value="1" required><span>1</span></label><label><input type="radio" name="mudah" value="2" required><span>2</span></label><label><input type="radio" name="mudah" value="3" required><span>3</span></label><label><input type="radio" name="mudah" value="4" required><span>4</span></label><label><input type="radio" name="mudah" value="5" required><span>5</span></label></div><span class="end">Sangat setuju</span></div>
+          </fieldset>
+          <fieldset class="likert">
+            <legend>Bahasanya mudah dipahami.</legend>
+            <div class="likert-scale"><span class="end">Sangat tidak setuju</span><div class="likert-opts"><label><input type="radio" name="bahasa" value="1" required><span>1</span></label><label><input type="radio" name="bahasa" value="2" required><span>2</span></label><label><input type="radio" name="bahasa" value="3" required><span>3</span></label><label><input type="radio" name="bahasa" value="4" required><span>4</span></label><label><input type="radio" name="bahasa" value="5" required><span>5</span></label></div><span class="end">Sangat setuju</span></div>
+          </fieldset>
+          <fieldset class="likert">
+            <legend>Informasinya membantu saya selama di rumah sakit (jam besuk, tata tertib, denah, dan lainnya).</legend>
+            <div class="likert-scale"><span class="end">Sangat tidak setuju</span><div class="likert-opts"><label><input type="radio" name="membantu" value="1" required><span>1</span></label><label><input type="radio" name="membantu" value="2" required><span>2</span></label><label><input type="radio" name="membantu" value="3" required><span>3</span></label><label><input type="radio" name="membantu" value="4" required><span>4</span></label><label><input type="radio" name="membantu" value="5" required><span>5</span></label></div><span class="end">Sangat setuju</span></div>
+          </fieldset>
+          <fieldset class="likert">
+            <legend>Tampilannya nyaman dibaca di HP.</legend>
+            <div class="likert-scale"><span class="end">Sangat tidak setuju</span><div class="likert-opts"><label><input type="radio" name="hp" value="1" required><span>1</span></label><label><input type="radio" name="hp" value="2" required><span>2</span></label><label><input type="radio" name="hp" value="3" required><span>3</span></label><label><input type="radio" name="hp" value="4" required><span>4</span></label><label><input type="radio" name="hp" value="5" required><span>5</span></label></div><span class="end">Sangat setuju</span></div>
+          </fieldset>
+            </div>
+
+            <fieldset>
+              <legend class="q">5. Bagian yang paling membantu <span class="small">(boleh lebih dari satu)</span></legend>
+              <div class="chips"><label><input type="checkbox" name="bagian" value="Profil RS"><span>Profil RS</span></label><label><input type="checkbox" name="bagian" value="Petugas &amp; struktur"><span>Petugas &amp; struktur</span></label><label><input type="checkbox" name="bagian" value="Denah"><span>Denah</span></label><label><input type="checkbox" name="bagian" value="Fasilitas"><span>Fasilitas</span></label><label><input type="checkbox" name="bagian" value="Tata tertib &amp; jam besuk"><span>Tata tertib &amp; jam besuk</span></label><label><input type="checkbox" name="bagian" value="Edukasi"><span>Edukasi</span></label><label><input type="checkbox" name="bagian" value="Hak &amp; kewajiban"><span>Hak &amp; kewajiban</span></label></div>
+            </fieldset>
+
+            <div>
+              <label class="q" for="saran">6. Kritik dan saran untuk situs ini</label>
+              <textarea id="saran" name="saran" rows="5" maxlength="1000" placeholder="Misalnya: informasi yang belum ada, bagian yang membingungkan, atau usulan perbaikan."></textarea>
+              <p class="small mt-s" style="margin-top:6px"><span id="sisa">1000</span> karakter tersisa</p>
+            </div>
+
+            <p class="form-error" id="form-error" role="alert" hidden></p>
+            <button class="btn" type="submit" id="kirim">Kirim penilaian</button>
+          </form>
+
+          <aside class="review-side">
+            <div class="side-box">
+              <svg class="ill" aria-hidden="true"><use href="#shield"/></svg>
+              <h3 class="h4">Privasi</h3>
+              <p class="small">Kami tidak meminta nama, nomor HP, atau data pribadi lain. Jawaban hanya dipakai untuk memperbaiki situs.</p>
+            </div>
+            <div class="side-box warn">
+              <svg class="ill" aria-hidden="true"><use href="#chat"/></svg>
+              <h3 class="h4">Keluhan pelayanan?</h3>
+              <p class="small">Formulir ini khusus untuk situs. Keluhan tentang pelayanan rumah sakit sampaikan kepada perawat jaga, kepala ruangan, atau unit pengaduan RS.</p>
+              <a class="link mt-s" href="hak-kewajiban.html#keluhan">Cara menyampaikan keluhan <span class="arrow"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span></a>
+            </div>
+          </aside>
+        </div>
+
+        <div class="review-done" id="review-done" hidden>
+          <svg class="ill ill-lg" aria-hidden="true"><use href="#star"/></svg>
+          <h2 class="h2 mt-s">Terima kasih</h2>
+          <p class="lead">Penilaian Anda sudah kami terima dan akan dipakai untuk memperbaiki situs ini.</p>
+          <a class="btn mt-m" href="../index.html">Kembali ke beranda</a>
         </div>
       </div>
     </section>
@@ -51,5 +111,61 @@
 
   <footer id="site-footer"></footer>
   <script src="../assets/js/main.js"></script>
+  <script>
+    (function () {
+      const form = document.getElementById("form-review");
+      const err = document.getElementById("form-error");
+      const starText = document.getElementById("star-text");
+      const teks = ["", "Sangat kurang", "Kurang", "Cukup", "Baik", "Sangat baik"];
+
+      // bintang: sorot sampai bintang yang dipilih
+      const stars = form.querySelectorAll(".stars label");
+      form.querySelectorAll('input[name="bintang"]').forEach((r) => r.addEventListener("change", () => {
+        const v = Number(r.value);
+        stars.forEach((l, i) => l.classList.toggle("on", i < v));
+        starText.textContent = `${v} bintang: ${teks[v]}`;
+      }));
+
+      const saran = document.getElementById("saran");
+      saran.addEventListener("input", () => { document.getElementById("sisa").textContent = 1000 - saran.value.length; });
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        err.hidden = true;
+        const data = new FormData(form);
+        const wajib = { peran: "peran Anda", ruangan: "ruangan", bintang: "jumlah bintang", mudah: "pernyataan 4", bahasa: "pernyataan 4", membantu: "pernyataan 4", hp: "pernyataan 4" };
+        const kurang = [...new Set(Object.keys(wajib).filter((k) => !data.get(k)).map((k) => wajib[k]))];
+        if (kurang.length) {
+          err.textContent = "Mohon lengkapi: " + kurang.join(", ") + ".";
+          err.hidden = false;
+          return;
+        }
+        const kirim = new URLSearchParams();
+        for (const [k, v] of data.entries()) if (k !== "bagian") kirim.append(k, v);
+        kirim.append("bagian", data.getAll("bagian").join(", "));
+        kirim.append("halaman", location.href);
+
+        if (!SITE.reviewUrl) {
+          err.textContent = "Formulir belum tersambung ke penyimpanan data. Penilaian Anda belum terkirim.";
+          err.hidden = false;
+          return;
+        }
+        const btn = document.getElementById("kirim");
+        btn.disabled = true;
+        btn.textContent = "Mengirim...";
+        try {
+          await fetch(SITE.reviewUrl, { method: "POST", mode: "no-cors", body: kirim });
+          form.closest(".review-layout").hidden = true;
+          document.getElementById("review-done").hidden = false;
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } catch (x) {
+          err.textContent = "Gagal mengirim. Periksa koneksi internet lalu coba lagi.";
+          err.hidden = false;
+          btn.disabled = false;
+          btn.textContent = "Kirim penilaian";
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

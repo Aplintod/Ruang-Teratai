@@ -13,7 +13,7 @@ Situs statis (HTML, CSS, JavaScript biasa) berisi informasi untuk pasien dan kel
 │   ├── ruangan.html            Pilih ruangan (Teratai aktif, ruangan lain "segera hadir")
 │   ├── edukasi.html            Kebersihan tangan & pencegahan infeksi
 │   ├── hak-kewajiban.html      Hak & kewajiban pasien (UU 17/2023)
-│   ├── review.html             Review situs (segera hadir)
+│   ├── review.html             Formulir review situs (bintang, skala 1–5, saran) → Google Sheets
 │   ├── orientasi.html          Orientasi mahasiswa (disembunyikan dari menu, file disimpan)
 │   └── ruangan/
 │       └── teratai/            Ruang Teratai (punya sub-menu sendiri)
@@ -31,7 +31,9 @@ Situs statis (HTML, CSS, JavaScript biasa) berisi informasi untuk pasien dan kel
 │       └── teratai/            Foto Ruang Teratai (+ pegawai/ untuk foto petugas)
 ├── dokumentasi/
 │   ├── FOTO.md                 Daftar foto + nama filenya
-│   └── VERIFIKASI.md           Semua isi web + sumbernya, untuk dicek klien
+│   ├── VERIFIKASI.md           Semua isi web + sumbernya, untuk dicek klien
+│   ├── REVIEW.md               Cara menyambungkan formulir review ke Google Sheets
+│   └── apps-script/Code.gs     Kode Apps Script untuk review
 ├── netlify.toml
 └── .nojekyll
 ```
@@ -48,7 +50,7 @@ Link menu dan foto diatur otomatis oleh `main.js`, jadi tetap benar dari folder 
 ## Desain
 
 - Huruf: **Newsreader** (judul, serif yang mudah dibaca) dan **Geist** (teks), dari Google Fonts.
-- Warna: gading `#f5f1ea`, hijau tua `#17352f`, aksen terakota `#a65d4c`. Semua ada di `:root` paling atas `assets/css/style.css`.
+- Warna mengikuti logo RSUD AWS: biru `#0c54cc`, biru tua `#0b3478`, hijau `#00843a`, hijau-kuning `#b7d433`, kuning `#f4c623`, dan putih. Semua ada di `:root` paling atas `assets/css/style.css`.
 - Ilustrasi garis ada di `assets/js/main.js` (konstanta `SPRITE`), dipakai dengan `<svg class="ill"><use href="#nama"/></svg>`.
 - Tombol **Aa** di header memperbesar tampilan (3 tingkat) dan pilihannya diingat browser.
 - Animasi muncul saat di-scroll memakai class `reveal`. Animasi otomatis mati untuk pengguna yang mengaktifkan "kurangi gerakan" di perangkatnya.

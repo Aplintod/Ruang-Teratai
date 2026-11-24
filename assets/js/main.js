@@ -14,6 +14,9 @@ const SITE = {
   // Ruang Teratai
   telpRuang: "Ext. —", // TODO: belum ada data
   besuk: "16.00–18.00", // dari lembar Tata Tertib Ruang Teratai
+  // Alamat Web App Google Apps Script untuk menyimpan review (lihat dokumentasi/REVIEW.md).
+  // Selama masih kosong, formulir review tampil tetapi belum bisa mengirim data.
+  reviewUrl: "",
 };
 
 /* Jadwal harian Ruang Teratai. Jam ditulis desimal: 7.5 = 07.30.
@@ -312,10 +315,10 @@ function renderDay() {
     <ul class="day-list">${sorted.map((j) => `<li><time>${j.jam !== undefined ? fmt(j.jam) : fmt(j.dari) + "–" + fmt(j.sampai)}</time>
       <span class="t">${j.teks}${j.jenis === "besuk" ? '<span class="chip besuk">besuk</span>' : j.jenis === "visite" ? '<span class="chip visite">dokter</span>' : ""}</span></li>`).join("")}</ul>
     <div class="day-legend">
-      <span><i style="background:var(--clay)"></i>Jam besuk</span>
-      <span><i style="background:var(--green-2)"></i>Visite dokter</span>
+      <span><i style="background:var(--yellow)"></i>Jam besuk</span>
+      <span><i style="background:var(--blue)"></i>Visite dokter</span>
       <span><i style="background:repeating-linear-gradient(135deg,var(--paper-3) 0 3px,var(--paper-2) 3px 6px)"></i>Waktu istirahat</span>
-      <span><i style="border:1.5px solid var(--green);border-radius:50%;background:var(--paper)"></i>Kegiatan rutin</span>
+      <span><i style="border:1.5px solid var(--dark);border-radius:50%;background:var(--paper)"></i>Kegiatan rutin</span>
     </div>`;
 }
 

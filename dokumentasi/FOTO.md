@@ -13,13 +13,15 @@ Foto akan **terpasang otomatis** kalau disimpan dengan nama dan folder yang pers
 |---|---|---|---|
 | `hero.jpg` | Beranda (latar paling atas) dan Profil RS | Foto gedung atau gerbang RSUD AWS | Mendatar |
 | `profil.jpg` | Profil RS (opsional) | Foto lain RSUD AWS. Kalau tidak ada, Profil RS memakai `hero.jpg` | Mendatar |
+| `ilustrasi-cuci-tangan.jpg` | Edukasi (cadangan) | Sudah ada: foto domain publik dari Wikimedia Commons, dipakai sampai ada `bukti-cuci-tangan-1` | – |
 
 ## Foto Ruang Teratai → `assets/img/teratai/`
 
 | Nama file | Dipakai di | Isi foto | Posisi HP |
 |---|---|---|---|
 | `hero.jpg` | Beranda Ruang Teratai (opsional) | Foto utama Ruang Teratai. Kalau tidak ada, dipakai `gedung-paviliun` | Mendatar |
-| `lorong.jpg` | Galeri | Lorong ruangan, diambil dari ujung lorong | Mendatar |
+| `lorong-1.jpg`, `lorong-2.jpg`, `lorong-3.jpg` | Beranda Ruang Teratai (3 foto berjejer) | Tiga lorong atau tiga sudut berbeda. `lorong-1` kalau belum ada memakai `lorong.jpg` | Tegak lebih baik |
+| `lorong.jpg` | Cadangan untuk `lorong-1` | Lorong ruangan, diambil dari ujung lorong | Mendatar |
 | `pintu-masuk.jpg` | (cadangan, belum dipakai) | Pintu masuk atau papan nama Ruang Teratai 1 | Mendatar |
 | `gedung-paviliun.jpg` | Beranda Ruang Teratai & kartu ruangan | Gedung Paviliun Teratai dari luar | Mendatar |
 | `nurse-station.jpg` | Galeri | Nurse station, boleh ada perawat sedang bekerja | Tegak |
@@ -28,6 +30,7 @@ Foto akan **terpasang otomatis** kalau disimpan dengan nama dan folder yang pers
 | `taman.jpg` | Galeri | Taman di area Paviliun Teratai | Persegi atau tegak |
 | `kamar-vip.jpg` | Fasilitas | Kamar VIP dari sudut pintu. Kalau tidak ada, dipakai `kamar-pasien` | Mendatar |
 | `kamar-vvip.jpg` | Fasilitas | Kamar VVIP dari sudut pintu. Kalau tidak ada, dipakai `kamar-pasien` | Mendatar |
+| `bukti-cuci-tangan-1.jpg` s.d. `-3.jpg` | Edukasi: praktik cuci tangan | Petugas Ruang Teratai sedang mencuci tangan / memakai hand rub | Tegak |
 | `cuci-tangan.jpg` | Fasilitas & Edukasi | Wastafel atau hand rub di depan kamar | Tegak |
 | `edukasi-keluarga.jpg` | Edukasi | Papan informasi atau poster pencegahan infeksi | Tegak |
 | `struktur-organisasi.png` | Petugas & Struktur | Bagan struktur organisasi (gambar dari RS) | – |
@@ -35,12 +38,17 @@ Foto akan **terpasang otomatis** kalau disimpan dengan nama dan folder yang pers
 
 ## Foto petugas Ruang Teratai → `assets/img/teratai/pegawai/`
 
+Nama file memakai kode jabatan. Nama orang dan jabatan diisi di `assets/js/data-pegawai.js`.
+
 | Nama file | Siapa |
 |---|---|
-| `kepala-ruangan.jpg` | Kepala ruangan (potret tegak 4:5) |
-| `pegawai-01.jpg`, `pegawai-02.jpg`, … | Pegawai sesuai **urutan baris** di `assets/js/data-pegawai.js` (potret tegak 3:4) |
+| `karu.jpg` | Kepala Ruangan |
+| `ccm-01.jpg` | Clinical Case Manager |
+| `katim-01.jpg`, `katim-02.jpg`, … | Ketua Tim |
+| `pp-01.jpg` s.d. `pp-15.jpg` | Perawat Pelaksana |
+| `staf-01.jpg`, … | Staf |
 
-Contoh: baris pertama di array `PEGAWAI` adalah Ketua Tim A, jadi fotonya `pegawai-01.jpg`. Baris ketiga belas berarti `pegawai-13.jpg`. Kalau urutan pegawai diubah, nama fotonya ikut disesuaikan.
+Kalau pembagiannya belum diketahui, foto boleh di-push dulu dengan nama apa saja (misalnya nama bawaan WhatsApp) ke folder ini. Nanti diganti namanya setelah jabatan tiap orang jelas.
 
 ## Tips memotret pakai HP
 

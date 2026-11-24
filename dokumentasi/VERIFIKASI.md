@@ -23,6 +23,7 @@ Semua informasi di web beserta asal sumbernya. Kolom **Info fix** diisi setelah 
 | A3 | Telepon/ekstensi Ruang Teratai: belum ada ("Ext. —") | [4] | |
 | A4 | Jam besuk Ruang Teratai: sore 16.00–18.00 | [R] lembar tata tertib | |
 | A5 | Nama situs di header: "RSUD Abdoel Wahab Sjahranie" tanpa logo | keputusan tim | |
+| A6 | Warna situs mengikuti logo AWS: biru #0c54cc, hijau #00843a, hijau-kuning, kuning, putih | logo dari klien | |
 
 ## B. Beranda umum (`index.html`)
 
@@ -57,20 +58,23 @@ Semua informasi di web beserta asal sumbernya. Kolom **Info fix** diisi setelah 
 
 ## D. Ruangan (`halaman/ruangan.html`)
 
-Daftar dan pengelompokan dari halaman Instalasi Rawat Inap situs RSUD AWS, yang mungkin belum mutakhir.
+Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 
-| # | Ruangan | Kelompok di web | Sumber | Info fix |
+| # | Ruangan | Keterangan di web | Sumber | Info fix |
 |---|---|---|---|---|
-| D1 | Anggrek | Kelas 1 & 2 | [R] | |
-| D2 | Aster | Bedah | [R] | |
-| D3 | Bougenville | Penyakit dalam | [R] | |
-| D4 | Cempaka | Bedah (di sumber juga disebut Kelas 2) | [R] | |
-| D5 | Edelweis | Kelas 1 & 2 | [R] | |
-| D6 | Flamboyan | Penyakit dalam | [R] | |
-| D7 | Melati | Kelas 2 | [R] | |
-| D8 | Sakura | Paviliun (Sakura 2 ICU/ICCU, Sakura 3 ibu & anak, Sakura 4 dewasa) | [R] | |
-| D9 | Seruni | Jantung & paru | [R] | |
-| D10 | Ruangan lain yang belum tercantum (mis. Tulip, disebut di berita 2020) | – | [1] | |
+| D1 | Anggrek | Kelas 1 | klien | |
+| D2 | Asoka | Paru | klien | |
+| D3 | Aster | Bedah, kelas 3 | klien | |
+| D4 | Bougenville | Jantung | klien | |
+| D5 | Cempaka | Kelas 1, 2, dan 3 | klien | |
+| D6 | Edelweis | Kelas 1, 2, dan 3 | klien | |
+| D7 | Flamboyan | Penyakit dalam, kelas 3 | klien | |
+| D8 | Lily | "Rawat inap" (jenis & kelas belum diketahui) | klien | |
+| D9 | Mawar | "Rawat inap" (jenis & kelas belum diketahui) | klien | |
+| D10 | Melati | Anak | klien | |
+| D11 | Seruni | HCU, ditampilkan di kelompok Perawatan Intensif | klien | |
+| D12 | ICU, ICCU, PICU | Perawatan Intensif | klien | |
+| D13 | Sakura | dihapus (tidak ada di daftar klien) | – | |
 
 ## E. Edukasi (`halaman/edukasi.html`)
 
@@ -85,6 +89,9 @@ Daftar dan pengelompokan dari halaman Instalasi Rawat Inap situs RSUD AWS, yang 
 | E7 | Jangan menyentuh alat medis | [3] | |
 | E8 | Kantong kuning = sampah infeksius, kantong hitam = sampah biasa | [3] | |
 | E9 | Materi PPI resmi RSUD AWS (kalau ada, sebaiknya dipakai) | perlu ditanyakan | |
+| E10 | Foto praktik cuci tangan: sementara foto ilustrasi domain publik (Wikimedia Commons, Sgt. Grace L. Waladkewics) | – | |
+| E11 | Persiapan pulang: obat, jadwal kontrol, dokumen, makan & aktivitas, perawatan di rumah | [3] | |
+| E12 | Tanda bahaya setelah pulang (demam tinggi, sesak/nyeri dada, perdarahan, luka bernanah, muntah terus, lemas/bingung) | [3] | |
 
 ## F. Hak & Kewajiban (`halaman/hak-kewajiban.html`)
 
@@ -100,7 +107,8 @@ Daftar dan pengelompokan dari halaman Instalasi Rawat Inap situs RSUD AWS, yang 
 
 | # | Isi di web | Sumber | Info fix |
 |---|---|---|---|
-| G1 | Halaman "segera hadir"; formulir penilaian & saran direncanakan memakai Google Apps Script + Sheets | rencana proyek | |
+| G1 | Formulir: peran, ruangan, bintang 1–5, 4 pernyataan skala 1–5, bagian paling membantu, kritik & saran (tanpa nama/HP) | rancangan tim | |
+| G2 | Data tersimpan ke Google Sheets setelah Apps Script dipasang (lihat `dokumentasi/REVIEW.md`) | belum dipasang | |
 
 ## H. Ruang Teratai – Beranda (`halaman/ruangan/teratai/index.html`)
 
@@ -115,16 +123,19 @@ Daftar dan pengelompokan dari halaman Instalasi Rawat Inap situs RSUD AWS, yang 
 | H7 | Alur pasien 5 tahap (pendaftaran → masuk kamar → perawatan → persiapan pulang → pulang) | [3] | |
 | H8 | Jadwal harian: jam besuk 16.00–18.00 | [R] | |
 | H9 | Jadwal harian lain: cek tanda vital 06.00, shift 07.00/14.00/21.00, sarapan 07.30, visite 08.00–12.00, makan siang 12.00, istirahat 13.00–16.00, makan sore 18.30, lampu redup 21.00–23.00 | [4] | |
-| H10 | Galeri: lorong, nurse station, kamar pasien, kamar mandi, taman | foto dari klien | |
+| H10 | Tiga foto lorong di bagian atas (baru ada 1 foto) | foto dari klien | |
+| H11 | Galeri: gedung, nurse station, kamar pasien, kamar mandi, taman | foto dari klien | |
 
 ## I. Ruang Teratai – Petugas & Struktur (`petugas.html`, data di `assets/js/data-pegawai.js`)
 
 | # | Isi di web | Sumber | Info fix |
 |---|---|---|---|
-| I1 | Nama, gelar, pendidikan, dan foto kepala ruangan | [4] | |
-| I2 | Susunan: Ketua Tim A, Ketua Tim B, Perawat Penanggung Jawab Shift, 6 perawat pelaksana, 3 staf pendukung | [4] | |
-| I3 | Nama perawat penanggung jawab ditulis di papan dekat tempat tidur; pegawai memakai kartu identitas | [3] | |
-| I4 | Bagan struktur organisasi | belum ada | |
+| I1 | Kelompok petugas: Karu, CCM, Katim, PP, Staf | klien | |
+| I2 | Jumlah per kelompok: 1 Karu, 1 CCM, 3 Katim, 15 PP, 5 Staf (total 25, sesuai jumlah foto) | [4] tebakan | |
+| I3 | Nama, gelar, dan jabatan tiap petugas ("Nama menyusul") | belum ada | |
+| I4 | Sambutan kepala ruangan | [4] | |
+| I5 | Bagan struktur dibuat otomatis dari data petugas: Karu → CCM & Katim → PP; Staf langsung di bawah Karu | [3] perlu dicek | |
+| I6 | Bagan resmi (gambar) akan muncul otomatis bila ada `assets/img/teratai/struktur-organisasi.png` | belum ada | |
 
 ## J. Ruang Teratai – Denah (`denah.html`)
 
@@ -162,6 +173,6 @@ Daftar dan pengelompokan dari halaman Instalasi Rawat Inap situs RSUD AWS, yang 
 5. Daftar petugas (nama, gelar, jabatan, pendidikan, foto) dan bagan struktur organisasi.
 6. Denah resmi dan lantai ruangan.
 7. Jadwal harian ruangan: visite, jam makan, jam istirahat.
-8. Daftar ruang rawat inap RSUD AWS yang mutakhir untuk halaman Ruangan.
+8. Ruang Mawar dan Lily itu ruangan apa dan kelas berapa?
 9. Motto RSUD AWS, dan apakah redaksi misi di web sudah sesuai dokumen resmi.
 10. Materi PPI/edukasi resmi dan leaflet hak & kewajiban pasien versi RSUD AWS, kalau ada.
