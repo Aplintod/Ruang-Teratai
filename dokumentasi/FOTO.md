@@ -23,11 +23,11 @@ Foto akan **terpasang otomatis** kalau disimpan dengan nama dan folder yang pers
 | `lorong-1.jpg`, `lorong-2.jpg`, `lorong-3.jpg` | Beranda Ruang Teratai (3 foto berjejer) | Tiga lorong atau tiga sudut berbeda. `lorong-1` kalau belum ada memakai `lorong.jpg` | Tegak lebih baik |
 | `lorong.jpg` | Cadangan untuk `lorong-1` | Lorong ruangan, diambil dari ujung lorong | Mendatar |
 | `pintu-masuk.jpg` | (cadangan, belum dipakai) | Pintu masuk atau papan nama Ruang Teratai 1 | Mendatar |
-| `gedung-paviliun.jpg` | Beranda Ruang Teratai & kartu ruangan | Gedung Paviliun Teratai dari luar | Mendatar |
+| `gedung-paviliun.jpg` | Beranda Ruang Teratai & kartu ruangan | Gedung Ruang Teratai dari luar | Mendatar |
 | `nurse-station.jpg` | Galeri | Nurse station, boleh ada perawat sedang bekerja | Tegak |
 | `kamar-pasien.jpg` | Galeri | Kamar pasien secara umum | Mendatar atau persegi |
 | `kamar-mandi.jpg` | Galeri | Kamar mandi dalam kamar | Persegi |
-| `taman.jpg` | Galeri | Taman di area Paviliun Teratai | Persegi atau tegak |
+| `taman.jpg` | Galeri | Taman di area Ruang Teratai | Persegi atau tegak |
 | `kamar-vip.jpg` | Fasilitas | Kamar VIP dari sudut pintu. Kalau tidak ada, dipakai `kamar-pasien` | Mendatar |
 | `kamar-vvip.jpg` | Fasilitas | Kamar VVIP dari sudut pintu. Kalau tidak ada, dipakai `kamar-pasien` | Mendatar |
 | `bukti-cuci-tangan-1.jpg` s.d. `-3.jpg` | Edukasi: praktik cuci tangan | Petugas Ruang Teratai sedang mencuci tangan / memakai hand rub | Tegak |

@@ -114,7 +114,7 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 
 | # | Isi di web | Sumber | Info fix |
 |---|---|---|---|
-| H1 | Ruang Teratai melayani pasien rawat inap kelas paviliun | [R] (paviliun Teratai = layanan VVIP & VIP) | |
+| H1 | Ruang Teratai melayani pasien rawat inap (istilah "Paviliun" diganti "Ruangan" atas permintaan klien) | klien | |
 | H2 | Teratai 1: 12 tempat tidur | [R] halaman Instalasi Rawat Inap | |
 | H3 | Teratai 2: 7 tempat tidur | [R] | |
 | H4 | Teratai 3: 27 tempat tidur | [R] | |
@@ -149,7 +149,7 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 
 | # | Isi di web | Sumber | Info fix |
 |---|---|---|---|
-| K1 | Tipe kamar: VIP dan VVIP | [R] (kelas paviliun) – apakah keduanya ada di Teratai perlu dicek | |
+| K1 | Tipe kamar: VIP dan VVIP | [R] – apakah keduanya ada di Teratai perlu dicek | |
 | K2 | Isi kamar VIP dan VVIP (kapasitas, sofa bed, AC, TV, kulkas, dll.) | [4] | |
 | K3 | Foto kamar VIP & VVIP sementara memakai foto `kamar-pasien` | – | |
 | K4 | Fasilitas bersama: hand rub, bel perawat, tiga shift, Wi-Fi (belum dikonfirmasi) | [3] / [4] | |
