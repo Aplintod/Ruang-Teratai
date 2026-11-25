@@ -27,6 +27,21 @@
       </div>
     </section>
 
+    <!-- PILIH TOPIK -->
+    <nav class="topics-wrap" aria-label="Pilih topik edukasi">
+      <div class="wrap">
+        <p class="topics-title">Pilih topik</p>
+        <div class="topics">
+          <a href="#kebersihan-tangan"><svg class="ill" aria-hidden="true"><use href="#wash"/></svg><span>Kapan cuci tangan</span></a>
+          <a href="#cara-cuci-tangan"><svg class="ill" aria-hidden="true"><use href="#hand"/></svg><span>6 langkah cuci tangan</span></a>
+          <a href="#pencegahan-infeksi"><svg class="ill" aria-hidden="true"><use href="#mask"/></svg><span>Pencegahan infeksi</span></a>
+          <a href="#sampah"><svg class="ill" aria-hidden="true"><use href="#trash"/></svg><span>Memilah sampah</span></a>
+          <a href="#persiapan-pulang"><svg class="ill" aria-hidden="true"><use href="#home"/></svg><span>Persiapan pulang</span></a>
+          <a href="#tanda-bahaya"><svg class="ill" aria-hidden="true"><use href="#bell"/></svg><span>Tanda bahaya</span></a>
+        </div>
+      </div>
+    </nav>
+
     <!-- INTINYA -->
     <section>
       <div class="wrap">
@@ -44,68 +59,83 @@
     <!-- KEBERSIHAN TANGAN -->
     <section class="sec" id="kebersihan-tangan">
       <div class="wrap">
-        <div class="cols cols-2 al-c">
-          <div class="reveal">
-            <span class="label"><span class="n">01</span> Kebersihan tangan</span>
-            <h2 class="h2 mt-s">Kapan harus membersihkan tangan</h2>
-            <p class="muted mt-s">Tangan adalah jalan utama perpindahan kuman di rumah sakit. Bersihkan tangan pada saat-saat berikut:</p>
-            <ul class="ticks mt-s">
-              <li>Sebelum menyentuh pasien</li>
-              <li>Sesudah menyentuh pasien</li>
-              <li>Sesudah menyentuh barang di sekitar pasien, seperti tempat tidur, meja, dan pagar tempat tidur</li>
-              <li>Sebelum makan atau menyuapi pasien</li>
-              <li>Sesudah dari kamar mandi atau terkena cairan tubuh</li>
-            </ul>
-          </div>
-          <div class="media r-4x5 reveal d1" data-img="teratai/cuci-tangan" data-cap="Tempat cuci tangan"></div>
+        <div class="sec-head">
+          <span class="label reveal"><span class="n">01</span> Kebersihan tangan</span>
+          <h2 class="h2 reveal">Kapan harus membersihkan tangan</h2>
+          <p class="lead reveal">Tangan adalah jalan utama perpindahan kuman di rumah sakit. Bersihkan tangan pada saat-saat berikut:</p>
         </div>
+        <ul class="ticks ticks-2 reveal">
+          <li>Sebelum menyentuh pasien</li>
+          <li>Sesudah menyentuh pasien</li>
+          <li>Sesudah menyentuh barang di sekitar pasien, seperti tempat tidur, meja, dan pagar tempat tidur</li>
+          <li>Sebelum makan atau menyuapi pasien</li>
+          <li>Sesudah dari kamar mandi atau terkena cairan tubuh</li>
+        </ul>
       </div>
     </section>
 
-    <!-- ENAM LANGKAH -->
-    <section class="sec bg-2">
+    <!-- CARA MENCUCI TANGAN (ilustrasi) -->
+    <section class="sec bg-2" id="cara-cuci-tangan">
       <div class="wrap">
         <div class="sec-head">
           <span class="label reveal"><span class="n">02</span> Cara</span>
-          <div>
-            <h2 class="h2 reveal">Enam langkah membersihkan tangan</h2>
-            <p class="lead reveal">Pakai cairan pembersih tangan (hand rub) selama 20–30 detik, atau sabun dan air mengalir selama 40–60 detik. Bila tangan tampak kotor, gunakan sabun dan air.</p>
-          </div>
+          <h2 class="h2 reveal">Enam langkah mencuci tangan</h2>
+          <p class="lead reveal">Pakai cairan pembersih tangan (hand rub) selama 20–30 detik, atau sabun dan air mengalir selama 40–60 detik. Bila tangan tampak kotor, gunakan sabun dan air.</p>
         </div>
-        <div class="ill-grid reveal">
-          <div><span class="big-no">1</span><h3 class="h4">Langkah 1</h3><p>Gosok kedua telapak tangan.</p></div>
-          <div><span class="big-no">2</span><h3 class="h4">Langkah 2</h3><p>Gosok punggung tangan dan sela-sela jari, bergantian kanan dan kiri.</p></div>
-          <div><span class="big-no">3</span><h3 class="h4">Langkah 3</h3><p>Gosok telapak tangan dan sela-sela jari dengan jari saling terkait.</p></div>
-          <div><span class="big-no">4</span><h3 class="h4">Langkah 4</h3><p>Gosok punggung jari dengan posisi kedua tangan saling mengunci.</p></div>
-          <div><span class="big-no">5</span><h3 class="h4">Langkah 5</h3><p>Gosok ibu jari secara memutar dalam genggaman tangan lainnya, bergantian.</p></div>
-          <div><span class="big-no">6</span><h3 class="h4">Langkah 6</h3><p>Gosok ujung jari pada telapak tangan lainnya dengan gerakan memutar, bergantian.</p></div>
+        <div class="hand-steps reveal">
+          <figure class="hand-step">
+            <svg viewBox="0 0 200 170" role="img" aria-label="Langkah 1: gosok kedua telapak tangan" class="hand-ill">
+  <defs><marker id="ah1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#00843a"/></marker></defs>
+  <g stroke="#12233d" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><g transform="translate(88 98) rotate(10)"><g fill="#ffffff"><rect x="-5.5" y="-30" width="11" height="34" rx="5.5" transform="translate(-21 16) rotate(-38)"/><rect x="-22" y="-46" width="11" height="46" rx="5.5"/><rect x="-10.5" y="-55" width="11" height="55" rx="5.5"/><rect x="1" y="-53" width="11" height="53" rx="5.5"/><rect x="12.5" y="-42" width="11" height="42" rx="5.5"/><path d="M-23 -6 C-25 18 -20 34 -13 40 L-12 64 L12 64 L13 40 C21 32 25 18 23.5 -6 Z"/><path d="M-14 24 Q0 30 14 22" fill="none"/></g></g><g transform="translate(112 100) rotate(-10) scale(-1 1)"><g fill="#d6e4fa"><rect x="-5.5" y="-30" width="11" height="34" rx="5.5" transform="translate(-21 16) rotate(-38)"/><rect x="-22" y="-46" width="11" height="46" rx="5.5"/><rect x="-10.5" y="-55" width="11" height="55" rx="5.5"/><rect x="1" y="-53" width="11" height="53" rx="5.5"/><rect x="12.5" y="-42" width="11" height="42" rx="5.5"/><path d="M-23 -6 C-25 18 -20 34 -13 40 L-12 64 L12 64 L13 40 C21 32 25 18 23.5 -6 Z"/><path d="M-14 24 Q0 30 14 22" fill="none"/></g></g><circle cx="70" cy="60" r="4" fill="#fff" stroke="#7fa8e6" stroke-width="1.6"/><circle cx="132" cy="62" r="3.5" fill="#fff" stroke="#7fa8e6" stroke-width="1.6"/><circle cx="128" cy="118" r="3" fill="#fff" stroke="#7fa8e6" stroke-width="1.6"/><path d="M34 64 A 16 16 0 1 1 40 96" fill="none" stroke="#00843a" stroke-width="3" stroke-linecap="round" marker-end="url(#ah1)"/><path d="M166 96 A 16 16 0 1 1 160 64" fill="none" stroke="#00843a" stroke-width="3" stroke-linecap="round" marker-end="url(#ah1)"/></g>
+</svg>
+            <figcaption><span class="big-no">1</span><span>Gosok kedua telapak tangan.</span></figcaption>
+          </figure>
+          <figure class="hand-step">
+            <svg viewBox="0 0 200 170" role="img" aria-label="Langkah 2: gosok punggung tangan dan sela jari bergantian" class="hand-ill">
+  <defs><marker id="ah2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#00843a"/></marker></defs>
+  <g stroke="#12233d" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><g transform="translate(98 104) rotate(0) scale(-1 1)"><g fill="#d6e4fa"><rect x="-5.5" y="-30" width="11" height="34" rx="5.5" transform="translate(-21 16) rotate(-38)"/><rect x="-22" y="-46" width="11" height="46" rx="5.5"/><rect x="-10.5" y="-55" width="11" height="55" rx="5.5"/><rect x="1" y="-53" width="11" height="53" rx="5.5"/><rect x="12.5" y="-42" width="11" height="42" rx="5.5"/><path d="M-23 -6 C-25 18 -20 34 -13 40 L-12 64 L12 64 L13 40 C21 32 25 18 23.5 -6 Z"/><path d="M-14 24 Q0 30 14 22" fill="none"/></g></g><g transform="translate(112 86) rotate(-24)"><g fill="#ffffff"><rect x="-5.5" y="-30" width="11" height="34" rx="5.5" transform="translate(-21 16) rotate(-38)"/><rect x="-22" y="-46" width="11" height="46" rx="5.5"/><rect x="-10.5" y="-55" width="11" height="55" rx="5.5"/><rect x="1" y="-53" width="11" height="53" rx="5.5"/><rect x="12.5" y="-42" width="11" height="42" rx="5.5"/><path d="M-23 -6 C-25 18 -20 34 -13 40 L-12 64 L12 64 L13 40 C21 32 25 18 23.5 -6 Z"/><path d="M-14 24 Q0 30 14 22" fill="none"/></g></g><circle cx="60" cy="58" r="3.5" fill="#fff" stroke="#7fa8e6" stroke-width="1.6"/><circle cx="150" cy="120" r="3" fill="#fff" stroke="#7fa8e6" stroke-width="1.6"/><path d="M150 36 L176 72" fill="none" stroke="#00843a" stroke-width="3" stroke-linecap="round" marker-start="url(#ah2)" marker-end="url(#ah2)"/></g>
+</svg>
+            <figcaption><span class="big-no">2</span><span>Gosok punggung tangan dan sela-sela jari, bergantian kanan dan kiri.</span></figcaption>
+          </figure>
+          <figure class="hand-step">
+            <svg viewBox="0 0 200 170" role="img" aria-label="Langkah 3: gosok telapak dan sela jari dengan jari saling terkait" class="hand-ill">
+  <defs><marker id="ah3" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#00843a"/></marker></defs>
+  <g stroke="#12233d" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><g transform="translate(93 102)"><g fill="#ffffff"><rect x="-5.5" y="-30" width="11" height="34" rx="5.5" transform="translate(-21 16) rotate(-38)"/><rect x="-22" y="-46" width="11" height="46" rx="5.5"/><rect x="-10.5" y="-55" width="11" height="55" rx="5.5"/><rect x="1" y="-53" width="11" height="53" rx="5.5"/><rect x="12.5" y="-42" width="11" height="42" rx="5.5"/><path d="M-23 -6 C-25 18 -20 34 -13 40 L-12 64 L12 64 L13 40 C21 32 25 18 23.5 -6 Z"/><path d="M-14 24 Q0 30 14 22" fill="none"/></g></g><g transform="translate(105 96) scale(-1 1)"><g fill="#d6e4fa"><rect x="-5.5" y="-30" width="11" height="34" rx="5.5" transform="translate(-21 16) rotate(-38)"/><rect x="-22" y="-46" width="11" height="46" rx="5.5"/><rect x="-10.5" y="-55" width="11" height="55" rx="5.5"/><rect x="1" y="-53" width="11" height="53" rx="5.5"/><rect x="12.5" y="-42" width="11" height="42" rx="5.5"/><path d="M-23 -6 C-25 18 -20 34 -13 40 L-12 64 L12 64 L13 40 C21 32 25 18 23.5 -6 Z"/><path d="M-14 24 Q0 30 14 22" fill="none"/></g></g><circle cx="64" cy="70" r="3.5" fill="#fff" stroke="#7fa8e6" stroke-width="1.6"/><circle cx="140" cy="74" r="3" fill="#fff" stroke="#7fa8e6" stroke-width="1.6"/><path d="M160 52 L160 112" fill="none" stroke="#00843a" stroke-width="3" stroke-linecap="round" marker-start="url(#ah3)" marker-end="url(#ah3)"/></g>
+</svg>
+            <figcaption><span class="big-no">3</span><span>Gosok telapak tangan dan sela-sela jari dengan jari saling terkait.</span></figcaption>
+          </figure>
+          <figure class="hand-step">
+            <svg viewBox="0 0 200 170" role="img" aria-label="Langkah 4: gosok punggung jari dengan kedua tangan saling mengunci" class="hand-ill">
+  <defs><marker id="ah4" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#00843a"/></marker></defs>
+  <g stroke="#12233d" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><g transform="translate(78 92) rotate(90)"><g fill="#ffffff"><path d="M-12 28 L-12 58 L12 58 L12 28"/><path d="M-24 -14 Q-24 -26 -12 -26 L14 -26 Q26 -26 26 -12 L25 14 Q24 26 10 28 L-10 28 Q-24 26 -24 12 Z"/><path d="M-12 -26 V-12 M1 -26 V-12 M14 -26 V-12" fill="none"/></g></g><g transform="translate(118 90) rotate(-90)"><g fill="#d6e4fa"><path d="M-12 28 L-12 58 L12 58 L12 28"/><path d="M-24 -14 Q-24 -26 -12 -26 L14 -26 Q26 -26 26 -12 L25 14 Q24 26 10 28 L-10 28 Q-24 26 -24 12 Z"/><path d="M-12 -26 V-12 M1 -26 V-12 M14 -26 V-12" fill="none"/></g></g><circle cx="98" cy="52" r="3.5" fill="#fff" stroke="#7fa8e6" stroke-width="1.6"/><circle cx="100" cy="130" r="3" fill="#fff" stroke="#7fa8e6" stroke-width="1.6"/><path d="M66 140 L134 140" fill="none" stroke="#00843a" stroke-width="3" stroke-linecap="round" marker-start="url(#ah4)" marker-end="url(#ah4)"/></g>
+</svg>
+            <figcaption><span class="big-no">4</span><span>Gosok punggung jari dengan posisi kedua tangan saling mengunci.</span></figcaption>
+          </figure>
+          <figure class="hand-step">
+            <svg viewBox="0 0 200 170" role="img" aria-label="Langkah 5: gosok ibu jari memutar dalam genggaman tangan lain" class="hand-ill">
+  <defs><marker id="ah5" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#00843a"/></marker></defs>
+  <g stroke="#12233d" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><g transform="translate(118 100) rotate(14)"><g fill="#ffffff"><rect x="-5.5" y="-30" width="11" height="34" rx="5.5" transform="translate(-21 16) rotate(-38)"/><rect x="-22" y="-46" width="11" height="46" rx="5.5"/><rect x="-10.5" y="-55" width="11" height="55" rx="5.5"/><rect x="1" y="-53" width="11" height="53" rx="5.5"/><rect x="12.5" y="-42" width="11" height="42" rx="5.5"/><path d="M-23 -6 C-25 18 -20 34 -13 40 L-12 64 L12 64 L13 40 C21 32 25 18 23.5 -6 Z"/><path d="M-14 24 Q0 30 14 22" fill="none"/></g></g><g transform="translate(84 104) rotate(-60) scale(.78)"><g fill="#d6e4fa"><path d="M-12 28 L-12 58 L12 58 L12 28"/><path d="M-24 -14 Q-24 -26 -12 -26 L14 -26 Q26 -26 26 -12 L25 14 Q24 26 10 28 L-10 28 Q-24 26 -24 12 Z"/><path d="M-12 -26 V-12 M1 -26 V-12 M14 -26 V-12" fill="none"/></g></g><circle cx="150" cy="52" r="3.5" fill="#fff" stroke="#7fa8e6" stroke-width="1.6"/><circle cx="156" cy="112" r="3" fill="#fff" stroke="#7fa8e6" stroke-width="1.6"/><path d="M42 70 A 30 30 0 1 0 98 82" fill="none" stroke="#00843a" stroke-width="3" stroke-linecap="round" marker-end="url(#ah5)"/></g>
+</svg>
+            <figcaption><span class="big-no">5</span><span>Gosok ibu jari secara memutar dalam genggaman tangan lainnya, bergantian.</span></figcaption>
+          </figure>
+          <figure class="hand-step">
+            <svg viewBox="0 0 200 170" role="img" aria-label="Langkah 6: gosok ujung jari memutar di telapak tangan lain" class="hand-ill">
+  <defs><marker id="ah6" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#00843a"/></marker></defs>
+  <g stroke="#12233d" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><g transform="translate(100 128) rotate(-84)"><g fill="#d6e4fa"><rect x="-5.5" y="-30" width="11" height="34" rx="5.5" transform="translate(-21 16) rotate(-38)"/><rect x="-22" y="-46" width="11" height="46" rx="5.5"/><rect x="-10.5" y="-55" width="11" height="55" rx="5.5"/><rect x="1" y="-53" width="11" height="53" rx="5.5"/><rect x="12.5" y="-42" width="11" height="42" rx="5.5"/><path d="M-23 -6 C-25 18 -20 34 -13 40 L-12 64 L12 64 L13 40 C21 32 25 18 23.5 -6 Z"/><path d="M-14 24 Q0 30 14 22" fill="none"/></g></g><g transform="translate(96 84) scale(.9)"><g fill="#ffffff"><path d="M-16 -50 L16 -50 Q20 -6 6 22 Q0 32 -6 22 Q-20 -6 -16 -50 Z"/><path d="M-7 -20 Q-4 6 -1 24 M7 -20 Q4 6 1 24" fill="none"/></g></g><circle cx="150" cy="118" r="3.5" fill="#fff" stroke="#7fa8e6" stroke-width="1.6"/><circle cx="64" cy="104" r="3" fill="#fff" stroke="#7fa8e6" stroke-width="1.6"/><path d="M150 40 A 20 20 0 1 1 124 30" fill="none" stroke="#00843a" stroke-width="3" stroke-linecap="round" marker-end="url(#ah6)"/></g>
+</svg>
+            <figcaption><span class="big-no">6</span><span>Gosok ujung jari pada telapak tangan lainnya dengan gerakan memutar, bergantian.</span></figcaption>
+          </figure>
         </div>
-      </div>
-    </section>
-
-    <!-- BUKTI CUCI TANGAN -->
-    <section class="sec" id="praktik-cuci-tangan">
-      <div class="wrap">
-        <div class="sec-head">
-          <span class="label reveal"><span class="n">03</span> Praktik</span>
-          <h2 class="h2 reveal">Praktik cuci tangan di Ruang Teratai</h2>
-          <p class="lead reveal">Petugas membersihkan tangan sebelum dan sesudah menangani setiap pasien.</p>
-        </div>
-        <div class="trio reveal">
-          <div class="media r-4x5" data-img="teratai/bukti-cuci-tangan-1, rs/ilustrasi-cuci-tangan" data-cap="Mencuci tangan dengan air mengalir"></div>
-          <div class="media r-4x5" data-img="teratai/bukti-cuci-tangan-2" data-cap="Foto praktik cuci tangan"></div>
-          <div class="media r-4x5" data-img="teratai/bukti-cuci-tangan-3" data-cap="Foto praktik cuci tangan"></div>
-        </div>
-        <p class="src mt-s">Foto pertama sementara memakai foto ilustrasi dari Wikimedia Commons (karya Sgt. Grace L. Waladkewics, domain publik) dan akan diganti dengan foto petugas Ruang Teratai.</p>
+        <p class="src mt-m">Langkah mengikuti pedoman kebersihan tangan WHO.</p>
       </div>
     </section>
 
     <!-- PENCEGAHAN INFEKSI -->
-    <section class="sec bg-2" id="pencegahan-infeksi">
+    <section class="sec" id="pencegahan-infeksi">
       <div class="wrap">
         <div class="cols cols-1-2">
           <div class="sticky reveal">
-            <span class="label"><span class="n">04</span> Pencegahan infeksi</span>
+            <span class="label"><span class="n">03</span> Pencegahan infeksi</span>
             <h2 class="h2 mt-s">Untuk pasien dan pengunjung</h2>
             <div class="media r-4x5 mt-m" data-img="teratai/edukasi-keluarga" data-cap="Informasi pencegahan infeksi"></div>
           </div>
@@ -158,10 +188,10 @@
     </section>
 
     <!-- PERSIAPAN PULANG -->
-    <section class="sec" id="persiapan-pulang">
+    <section class="sec bg-2" id="persiapan-pulang">
       <div class="wrap">
         <div class="sec-head">
-          <span class="label reveal"><span class="n">05</span> Persiapan pulang</span>
+          <span class="label reveal"><span class="n">04</span> Persiapan pulang</span>
           <h2 class="h2 reveal">Sebelum pasien pulang</h2>
           <p class="lead reveal">Perawat akan menjelaskan hal-hal berikut. Pastikan keluarga yang akan merawat di rumah ikut mendengarkan, dan tanyakan bila ada yang belum jelas.</p>
         </div>
@@ -173,7 +203,7 @@
           <div><svg class="ill" aria-hidden="true"><use href="#hand"/></svg><h3 class="h3">Perawatan di rumah</h3><p>Bila ada luka operasi atau alat yang terpasang, minta perawat menunjukkan cara merawatnya.</p></div>
           <div><svg class="ill" aria-hidden="true"><use href="#bell"/></svg><h3 class="h3">Kapan harus kembali</h3><p>Ada tanda bahaya? Segera ke IGD tanpa menunggu jadwal kontrol.</p></div>
         </div>
-        <div class="danger mt-l reveal">
+        <div class="danger mt-l reveal" id="tanda-bahaya">
           <h3 class="h3">Tanda bahaya: segera ke IGD</h3>
           <ul class="danger-list">
             <li>Demam tinggi yang tidak turun</li>
@@ -189,7 +219,7 @@
 
     <section class="sec-tight">
       <div class="wrap">
-        <p class="src">Materi ini disusun dari pedoman umum kebersihan tangan WHO, pencegahan infeksi di fasilitas kesehatan, dan edukasi pasien pulang yang umum diberikan di rumah sakit. Materi dapat diganti atau dilengkapi dengan materi Tim PPI (Pencegahan dan Pengendalian Infeksi) RSUD AWS.</p>
+        <p class="src">Materi ini disusun dari pedoman kebersihan tangan WHO, pencegahan infeksi di fasilitas kesehatan, dan edukasi pasien pulang yang umum diberikan di rumah sakit. Materi dapat diganti atau dilengkapi dengan materi Tim PPI (Pencegahan dan Pengendalian Infeksi) RSUD AWS.</p>
       </div>
     </section>
   </main>

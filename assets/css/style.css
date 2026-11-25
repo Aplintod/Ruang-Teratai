@@ -964,3 +964,39 @@ html[data-size="xl"] { zoom: 1.2; }
 .ill-grid.six.five { grid-template-columns: repeat(5, 1fr); }
 @media (max-width: 960px) { .ill-grid.six.five { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 560px) { .ill-grid.six.five { grid-template-columns: 1fr 1fr; } }
+
+/* Edukasi: pilihan topik di awal halaman */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+main [id] { scroll-margin-top: 96px; }
+.topics-wrap { padding: clamp(24px, 3vw, 36px) 0; border-bottom: 1px solid var(--line); }
+.topics-title { font-size: 14px; font-weight: 500; color: var(--ink-2); margin-bottom: 12px; }
+.topics { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.topics a {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px;
+  border: 1px solid var(--line-strong); border-radius: 8px; text-decoration: none; background: var(--paper);
+  font-weight: 500; font-size: 15.5px; line-height: 1.3; transition: border-color .2s, background .2s, transform .2s;
+}
+.topics a .ill { width: 36px; height: 36px; color: var(--blue); }
+.topics a:hover { border-color: var(--blue); background: var(--paper-2); transform: translateY(-2px); }
+.topics a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+@media (max-width: 1080px) { .topics { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) {
+  .topics { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .topics a { flex-direction: row; align-items: center; gap: 10px; padding: 12px; font-size: 14.5px; }
+  .topics a .ill { width: 28px; height: 28px; }
+}
+
+/* Daftar dua kolom */
+.ticks-2 { columns: 2; column-gap: clamp(28px, 4vw, 56px); }
+.ticks-2 li { break-inside: avoid; }
+@media (max-width: 760px) { .ticks-2 { columns: 1; } }
+
+/* Ilustrasi 6 langkah cuci tangan */
+.hand-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.hand-step { margin: 0; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.hand-step .hand-ill { display: block; width: 100%; height: auto; background: #eaf1fb; }
+.hand-step figcaption { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; padding: 16px 18px 20px; font-size: 16px; line-height: 1.5; }
+.hand-step .big-no { font-size: 2.2rem; line-height: 1; color: var(--green-deep); }
+@media (max-width: 900px) { .hand-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .hand-steps { grid-template-columns: 1fr; } }

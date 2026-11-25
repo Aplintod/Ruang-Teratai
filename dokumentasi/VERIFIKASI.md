@@ -81,6 +81,7 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 | # | Isi di web | Sumber | Info fix |
 |---|---|---|---|
 | E1 | Saat membersihkan tangan (sebelum/sesudah menyentuh pasien, sesudah menyentuh sekitar pasien, sebelum makan/menyuapi, sesudah dari kamar mandi) | [3] disesuaikan dari "5 momen" WHO untuk keluarga | |
+| E0 | Tombol pilihan topik di awal halaman Edukasi: kapan cuci tangan, 6 langkah, pencegahan infeksi, memilah sampah, persiapan pulang, tanda bahaya | permintaan klien | OK |
 | E2 | Enam langkah membersihkan tangan | [3] WHO | |
 | E3 | Durasi: hand rub 20–30 detik, sabun & air 40–60 detik | [3] WHO | |
 | E4 | Etika batuk dan bersin | [3] | |
@@ -89,7 +90,7 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 | E7 | Jangan menyentuh alat medis | [3] | |
 | E8 | Kantong kuning = sampah infeksius, kantong hitam = sampah biasa | [R] label tempat sampah RS | |
 | E9 | Materi PPI resmi RSUD AWS (kalau ada, sebaiknya dipakai) | perlu ditanyakan | |
-| E10 | Foto praktik cuci tangan: sementara foto ilustrasi domain publik (Wikimedia Commons, Sgt. Grace L. Waladkewics) | – | |
+| E10 | Cara mencuci tangan memakai 6 ilustrasi garis buatan sendiri (tanpa foto), atas permintaan klien | klien | OK |
 | E11 | Persiapan pulang: obat, jadwal kontrol, dokumen, makan & aktivitas, perawatan di rumah | [3] | |
 | E13 | Foto tempat sampah (poin buang sampah sesuai warna kantong) | foto dari klien | |
 | E14 | Rincian isi kantong kuning (infeksius) dan kantong hitam (domestik), diringkas untuk pasien & keluarga | [R] label tempat sampah Instalasi Kesehatan Lingkungan dan Limbah RSUD AWS | |

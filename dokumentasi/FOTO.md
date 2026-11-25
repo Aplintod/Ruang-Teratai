@@ -13,7 +13,6 @@ Foto akan **terpasang otomatis** kalau disimpan dengan nama dan folder yang pers
 |---|---|---|---|
 | `hero.jpg` | Beranda (latar paling atas) dan Profil RS | Foto gedung atau gerbang RSUD AWS | Mendatar |
 | `profil.jpg` | Profil RS (opsional) | Foto lain RSUD AWS. Kalau tidak ada, Profil RS memakai `hero.jpg` | Mendatar |
-| `ilustrasi-cuci-tangan.jpg` | Edukasi (cadangan) | Sudah ada: foto domain publik dari Wikimedia Commons, dipakai sampai ada `bukti-cuci-tangan-1` | – |
 
 ## Foto Ruang Teratai → `assets/img/teratai/`
 
@@ -29,10 +28,9 @@ Foto akan **terpasang otomatis** kalau disimpan dengan nama dan folder yang pers
 | `kamar-mandi.jpg` | Galeri | Kamar mandi dalam kamar | Persegi |
 | `taman.jpg` | Galeri | Taman di area Ruang Teratai | Persegi atau tegak |
 | `kamar-kelas-1.jpg` | Fasilitas | Kamar Kelas 1 dari sudut pintu. Kalau tidak ada, dipakai `kamar-pasien` | Mendatar |
-| `bukti-cuci-tangan-1.jpg` s.d. `-3.jpg` | Edukasi: praktik cuci tangan | Petugas Ruang Teratai sedang mencuci tangan / memakai hand rub | Tegak |
 | `tempat-sampah.jpg` | Edukasi: memilah sampah | Sudah ada: tiga tempat sampah berlabel | Mendatar |
 | `tempat-sampah-2.jpg` (opsional) | Edukasi: memilah sampah | Foto tempat sampah kedua; muncul di bawah foto pertama bila ada | Mendatar |
-| `cuci-tangan.jpg` | Fasilitas & Edukasi | Wastafel atau hand rub di depan kamar | Tegak |
+| `cuci-tangan.jpg` | Fasilitas | Wastafel atau hand rub di depan kamar | Tegak |
 | `edukasi-keluarga.jpg` | Edukasi | Papan informasi atau poster pencegahan infeksi | Tegak |
 | `struktur-organisasi.png` | Petugas & Struktur | Bagan struktur organisasi (gambar dari RS) | – |
 | `jalur-evakuasi.jpg` | Denah | Sudah ada: poster jalur evakuasi resmi. Denah interaktif digambar ulang dari poster ini | – |
