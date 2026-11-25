@@ -96,12 +96,16 @@
           </aside>
         </div>
 
-        <div class="review-done" id="review-done" hidden>
-          <svg class="ill ill-lg" aria-hidden="true"><use href="#star"/></svg>
-          <h2 class="h2 mt-s">Terima kasih</h2>
-          <p class="lead">Penilaian Anda sudah kami terima dan akan dipakai untuk memperbaiki situs ini.</p>
-          <a class="btn mt-m" href="../index.html">Kembali ke beranda</a>
-        </div>
+        <!-- Pop-up setelah review terkirim -->
+        <dialog class="modal" id="review-done" aria-labelledby="review-done-judul">
+          <div class="modal-icon"><svg class="ill" aria-hidden="true"><use href="#star"/></svg></div>
+          <h2 class="h3" id="review-done-judul">Review terkirim</h2>
+          <p>Terima kasih. Penilaian Anda sudah kami terima dan akan dipakai untuk memperbaiki situs ini.</p>
+          <div class="modal-actions">
+            <a class="btn" href="../index.html">Kembali ke beranda</a>
+            <button class="btn btn-ghost" type="button" data-tutup>Tutup</button>
+          </div>
+        </dialog>
       </div>
     </section>
   </main>

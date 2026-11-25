@@ -42,14 +42,32 @@
     btn.textContent = "Mengirim...";
     try {
       await fetch(SITE.reviewUrl, { method: "POST", mode: "no-cors", body: kirim });
-      form.closest(".review-layout").hidden = true;
-      document.getElementById("review-done").hidden = false;
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      // kosongkan formulir lalu tampilkan pop-up
+      form.reset();
+      stars.forEach((l) => l.classList.remove("on"));
+      starText.textContent = "Pilih 1 sampai 5 bintang";
+      document.getElementById("sisa").textContent = 1000;
+      bukaPopup();
     } catch (x) {
       err.textContent = "Gagal mengirim. Periksa koneksi internet lalu coba lagi.";
       err.hidden = false;
+    } finally {
       btn.disabled = false;
       btn.textContent = "Kirim penilaian";
     }
   });
+
+  // Pop-up "Review terkirim"
+  const popup = document.getElementById("review-done");
+  function bukaPopup() {
+    if (typeof popup.showModal === "function") popup.showModal();
+    else popup.setAttribute("open", "");
+  }
+  function tutupPopup() {
+    if (typeof popup.close === "function") popup.close();
+    else popup.removeAttribute("open");
+  }
+  popup.querySelector("[data-tutup]").addEventListener("click", tutupPopup);
+  // klik di luar kotak pop-up juga menutup
+  popup.addEventListener("click", (e) => { if (e.target === popup) tutupPopup(); });
 })();

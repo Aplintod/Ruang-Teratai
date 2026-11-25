@@ -912,9 +912,6 @@ html[data-size="xl"] { zoom: 1.2; }
 .side-box .ill { width: 40px; height: 40px; color: var(--blue); margin-bottom: 10px; }
 .side-box.warn { background: #fff6cf; }
 .side-box.warn .ill { color: #8a6a00; }
-.review-done { text-align: center; max-width: 560px; margin: 0 auto; padding: 40px 0; }
-.review-done .ill { color: #c79a00; margin: 0 auto; }
-.review-done .lead { margin: 12px auto 0; }
 .stars svg, .chips span, .likert-opts span { pointer-events: none; }
 .likert { padding: 18px 0 20px; }
 .likert legend { float: left; width: 100%; margin-bottom: 12px; }
@@ -1016,3 +1013,23 @@ main [id] { scroll-margin-top: 96px; }
 .hand-step .big-no { font-size: 2.2rem; line-height: 1; color: var(--green-deep); }
 @media (max-width: 900px) { .hand-steps { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .hand-steps { grid-template-columns: 1fr; } }
+
+/* Atribut hidden selalu menang atas aturan display lain */
+[hidden] { display: none !important; }
+
+/* Pop-up (dialog) */
+.modal {
+  border: 0; padding: clamp(28px, 4vw, 40px); border-radius: 12px; width: min(92vw, 460px);
+  background: var(--paper); color: var(--ink); text-align: center;
+  box-shadow: 0 30px 80px -20px rgba(8, 28, 66, .45); border-top: 5px solid var(--green);
+}
+.modal::backdrop { background: rgba(8, 28, 66, .55); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+.modal[open] { animation: modal-masuk .35s var(--ease); }
+@keyframes modal-masuk { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+.modal-icon { width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 50%; background: #fff6cf; display: grid; place-items: center; }
+.modal-icon .ill { width: 36px; height: 36px; color: #c79a00; }
+.modal .h3 { margin-bottom: 10px; }
+.modal p { color: var(--ink-2); font-size: 16.5px; }
+.modal-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 22px; }
+.modal-actions .btn { padding: 14px 22px; }
+@media (prefers-reduced-motion: reduce) { .modal[open] { animation: none; } }
