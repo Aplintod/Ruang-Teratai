@@ -16,7 +16,7 @@ const SITE = {
   besuk: "16.00–18.00", // dari lembar Tata Tertib Ruang Teratai
   // Alamat Web App Google Apps Script untuk menyimpan review (lihat dokumentasi/REVIEW.md).
   // Selama masih kosong, formulir review tampil tetapi belum bisa mengirim data.
-  reviewUrl: "",
+  reviewUrl: "https://script.google.com/macros/s/AKfycbysxp5UYmgF1V5X8PlY0IPuBtYcczBOa1N7gm6lhERylI220st46D_2kw68jV-j0ruTFg/exec",
 };
 
 /* Jadwal harian Ruang Teratai. Jam ditulis desimal: 7.5 = 07.30.
