@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Petugas & Struktur · Ruang Teratai</title>
-  <meta name="description" content="Kepala ruangan, ketua tim, perawat pelaksana, staf pendukung, dan struktur organisasi Ruang Teratai RSUD Abdoel Wahab Sjahranie.">
+  <meta name="description" content="Kepala ruangan, clinical case manager, ketua tim, perawat pelaksana, dan struktur organisasi Ruang Teratai RSUD Abdoel Wahab Sjahranie.">
   <meta name="theme-color" content="#ffffff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
         <div class="crumbs"><a href="../../../index.html">Beranda</a><span>/</span><a href="../../ruangan.html">Ruangan</a><span>/</span><a href="index.html">Ruang Teratai</a><span>/</span><span>Petugas &amp; struktur</span></div>
         <div class="grid-head">
           <h1 class="h1 reveal">Petugas <em>&amp;</em> struktur</h1>
-          <p class="lead reveal d1">Kepala ruangan, ketua tim, perawat pelaksana, dan staf pendukung Ruang Teratai.</p>
+          <p class="lead reveal d1">Kepala ruangan, clinical case manager, ketua tim, dan perawat pelaksana Ruang Teratai.</p>
         </div>
       </div>
     </section>
@@ -41,7 +41,7 @@
         <div class="sec-head">
           <span class="label reveal"><span class="n">02</span> Tim kami</span>
           <h2 class="h2 reveal">Petugas Ruang Teratai</h2>
-          <p class="lead reveal">Nama nyusul, data petugas sedang dilengkapi pihak ruangan.</p>
+          <p class="lead reveal">Perawat dan petugas yang bertugas di Ruang Teratai, beserta pendidikan terakhirnya.</p>
         </div>
         <div id="daftar-petugas"></div>
       </div>
@@ -76,8 +76,8 @@
       ${foto(k, "r-4x5", "Kepala Ruangan")}
       <div>
         <span class="label"><span class="n">01</span> Kepala Ruangan (Karu)</span>
-        <h2 class="h2 mt-s tbd" title="Nama menyusul" style="display:inline-block">${esc(k.nama)}</h2>
-        ${k.pendidikan ? `<p class="small mt-s">${esc(k.pendidikan)}</p>` : ""}
+        <h2 class="h2 mt-s">${esc(k.nama)}</h2>
+        ${k.pendidikan ? `<p class="small" style="margin-top:6px">Pendidikan: ${esc(k.pendidikan)}</p>` : ""}
         <blockquote class="quote mt-m">${esc(k.sambutan)}</blockquote>
       </div>`;
 
@@ -90,8 +90,8 @@
         <div class="people">${list.map((p) => `
           <article class="person">
             ${foto(p, "r-3x4", "Foto petugas")}
-            <span class="role">${esc(p.jabatan)}</span>
             <h4>${esc(p.nama)}</h4>
+            ${p.pendidikan ? `<span class="meta">${esc(p.pendidikan)}</span>` : ""}
           </article>`).join("")}</div>
       </div>`;
     }).join("");
@@ -105,8 +105,8 @@
     document.getElementById("bagan").innerHTML = `
       <div class="org-level">${node(KEPALA_RUANGAN, true)}</div>
       <div class="org-level org-row">${[...grup("ccm"), ...grup("katim")].map((p) => node(p)).join("")}</div>
-      <div class="org-level"><div class="org-group"><strong>Perawat Pelaksana</strong><span>${grup("pp").length} orang, terbagi dalam tim di bawah ketua tim</span></div></div>
-      <div class="org-level org-side"><div class="org-group"><strong>Staf</strong><span>${grup("staf").length} orang, langsung di bawah kepala ruangan</span></div></div>`;
+      ${grup("pp").length ? `<div class="org-level"><div class="org-group"><strong>Perawat Pelaksana</strong><span>${grup("pp").length} orang, di bawah ketua tim</span></div></div>` : ""}
+      ${grup("staf").length ? `<div class="org-level org-side"><div class="org-group"><strong>Staf</strong><span>${grup("staf").length} orang, langsung di bawah kepala ruangan</span></div></div>` : ""}`;
 
     initImages();
   </script>

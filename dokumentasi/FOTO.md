@@ -41,17 +41,32 @@ Foto akan **terpasang otomatis** kalau disimpan dengan nama dan folder yang pers
 
 ## Foto petugas Ruang Teratai → `assets/img/teratai/pegawai/`
 
-Nama file memakai kode jabatan. Nama orang dan jabatan diisi di `assets/js/data-pegawai.js`.
+Satu file per orang, sesuai tabel di bawah. Ekstensi boleh `.jpg` atau `.jpeg` (huruf kecil). Potret tegak.
 
-| Nama file | Siapa |
-|---|---|
-| `karu.jpg` | Kepala Ruangan |
-| `ccm-01.jpg` | Clinical Case Manager |
-| `katim-01.jpg`, `katim-02.jpg`, … | Ketua Tim |
-| `pp-01.jpg` s.d. `pp-15.jpg` | Perawat Pelaksana |
-| `staf-01.jpg`, … | Staf |
+| Nama file | Nama | Jabatan |
+|---|---|---|
+| `karu.jpg` | Jemmi Anggraini | Kepala Ruangan (sudah ada) |
+| `ccm-01.jpg` | Awal Darmawan | Clinical Case Manager (sudah ada) |
+| `katim-01.jpg` | Astuti Widiawati | Ketua Tim |
+| `pp-01.jpg` | Deasy Novianti | Perawat Pelaksana |
+| `pp-02.jpg` | Nani Mariani | Perawat Pelaksana |
+| `pp-03.jpg` | Nina Sultani | Perawat Pelaksana |
+| `pp-04.jpg` | Rista Nurzulita Rima | Perawat Pelaksana |
+| `pp-05.jpg` | Ina Yusmina Zainah | Perawat Pelaksana |
+| `pp-06.jpg` | Hairina | Perawat Pelaksana |
+| `pp-07.jpg` | Firman Aditya | Perawat Pelaksana |
+| `pp-08.jpg` | Maulana | Perawat Pelaksana |
+| `pp-09.jpg` | Ayu Rachmadani | Perawat Pelaksana |
+| `pp-10.jpg` | Maulidaini | Perawat Pelaksana |
+| `pp-11.jpg` | Fera Ayudiati Shinta | Perawat Pelaksana |
+| `pp-12.jpg` | Deby Octa Fitri | Perawat Pelaksana |
+| `pp-13.jpg` | Muhammad Ridho | Perawat Pelaksana |
+| `pp-14.jpg` | Didik | Perawat Pelaksana |
+| `pp-15.jpg` | Agus Imam Kusairi | Perawat Pelaksana |
+| `pp-16.jpg` | Dewi Sobba | Perawat Pelaksana |
+| `pp-17.jpg` | Karina Oktavia | Perawat Pelaksana |
 
-Kalau pembagiannya belum diketahui, foto boleh di-push dulu dengan nama apa saja (misalnya nama bawaan WhatsApp) ke folder ini. Nanti diganti namanya setelah jabatan tiap orang jelas.
+Kalau ada petugas baru, tambahkan barisnya di `assets/js/data-pegawai.js` dengan nama file berikutnya (misalnya `pp-18`).
 
 ## Tips memotret pakai HP
 

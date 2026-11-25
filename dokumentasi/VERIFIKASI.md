@@ -132,11 +132,11 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 
 | # | Isi di web | Sumber | Info fix |
 |---|---|---|---|
-| I1 | Kelompok petugas: Karu, CCM, Katim, PP, Staf | klien | |
-| I2 | Jumlah per kelompok: 1 Karu, 1 CCM, 3 Katim, 15 PP, 5 Staf (total 25, sesuai jumlah foto) | [4] tebakan | |
-| I3 | Nama, gelar, dan jabatan tiap petugas ("Nama menyusul") | belum ada | |
+| I1 | 20 petugas: 1 Karu (Jemmi Anggraini), 1 CCM (Awal Darmawan), 1 Katim (Astuti Widiawati), 17 Perawat Pelaksana, beserta pendidikan terakhir | [R] daftar petugas dari ruangan | |
+| I2 | Nama ditulis dengan huruf kapital di awal kata (daftar asli huruf besar semua); gelar belum dicantumkan | – | |
+| I3 | Staf non-perawat (administrasi, pramu husada, dll.) belum ada di daftar | perlu ditanyakan | |
 | I4 | Sambutan kepala ruangan | [4] | |
-| I5 | Bagan struktur dibuat otomatis dari data petugas: Karu → CCM & Katim → PP; Staf langsung di bawah Karu | [3] perlu dicek | |
+| I5 | Bagan struktur dibuat otomatis: Karu → CCM & Katim → PP | [3] perlu dicek | |
 | I6 | Bagan resmi (gambar) akan muncul otomatis bila ada `assets/img/teratai/struktur-organisasi.png` | belum ada | |
 
 ## J. Ruang Teratai – Denah (`denah.html`)
