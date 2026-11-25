@@ -87,11 +87,12 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 | E5 | Tunda kunjungan saat sakit | [3] | |
 | E6 | Jangan duduk di tempat tidur pasien | [3] | |
 | E7 | Jangan menyentuh alat medis | [3] | |
-| E8 | Kantong kuning = sampah infeksius, kantong hitam = sampah biasa | [3] | |
+| E8 | Kantong kuning = sampah infeksius, kantong hitam = sampah biasa | [R] label tempat sampah RS | |
 | E9 | Materi PPI resmi RSUD AWS (kalau ada, sebaiknya dipakai) | perlu ditanyakan | |
 | E10 | Foto praktik cuci tangan: sementara foto ilustrasi domain publik (Wikimedia Commons, Sgt. Grace L. Waladkewics) | – | |
 | E11 | Persiapan pulang: obat, jadwal kontrol, dokumen, makan & aktivitas, perawatan di rumah | [3] | |
 | E13 | Foto tempat sampah (poin buang sampah sesuai warna kantong) | foto dari klien | |
+| E14 | Rincian isi kantong kuning (infeksius) dan kantong hitam (domestik), diringkas untuk pasien & keluarga | [R] label tempat sampah Instalasi Kesehatan Lingkungan dan Limbah RSUD AWS | |
 | E12 | Tanda bahaya setelah pulang (demam tinggi, sesak/nyeri dada, perdarahan, luka bernanah, muntah terus, lemas/bingung) | [3] | |
 
 ## F. Hak & Kewajiban (`halaman/hak-kewajiban.html`)
