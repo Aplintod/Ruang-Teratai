@@ -22,25 +22,32 @@ Nomor 1–4 wajib diisi, nomor 5–6 boleh dikosongkan. Formulir tidak meminta n
 
 1. Buat Google Sheet baru, misalnya beri nama **Review Situs RSUD AWS**.
 2. Di Sheet itu buka **Ekstensi → Apps Script**.
-3. Hapus isi `Code.gs` bawaan, lalu salin seluruh isi file [`apps-script/Code.gs`](apps-script/Code.gs) ke sana. Simpan (ikon disket).
-4. Klik **Terapkan (Deploy) → Deployment baru**.
+3. Hapus isi `Code.gs` bawaan, lalu salin seluruh isi file [`apps-script/Code.gs`](apps-script/Code.gs) ke sana. Simpan (ikon disket atau Ctrl+S).
+4. **Jalankan setup tampilan:** di toolbar atas, pada pilihan fungsi, pilih **`setup`**, lalu klik **Jalankan (Run)**.
+   - Pertama kali akan diminta izin. Klik **Tinjau izin**, pilih akun Anda. Kalau muncul "Google belum memverifikasi aplikasi ini", klik **Lanjutan → Buka (nama project)**, lalu **Izinkan**. Ini normal untuk script milik sendiri.
+   - Setelah selesai, kembali ke Sheet. Akan ada dua tab:
+     - **Ringkasan**: total review, rata-rata bintang, persentase bintang 4–5, review 7 hari terakhir, dan 5 grafik (distribusi bintang, rata-rata tiap aspek, siapa yang mengisi, bagian paling membantu, review per hari).
+     - **Review**: tabel jawaban dengan header biru, baris berwarna selang-seling, dan nilai 1–5 yang otomatis berwarna merah, kuning, atau hijau.
+5. Klik **Terapkan (Deploy) → Deployment baru**.
    - Pilih jenis: **Aplikasi web (Web app)**.
    - *Jalankan sebagai*: **Saya** (akun Anda).
    - *Yang memiliki akses*: **Siapa saja (Anyone)**.
-   - Klik **Terapkan**, lalu izinkan akses saat diminta. Kalau muncul peringatan "Google belum memverifikasi aplikasi ini", klik **Lanjutan → Buka (nama project)**. Itu normal untuk script milik sendiri.
-5. Salin **URL aplikasi web** yang muncul (berakhiran `/exec`).
-6. Buka URL itu di browser. Kalau muncul `{"ok":true,"pesan":"Endpoint review aktif"}`, berarti sudah jalan.
-7. Di repo, buka `assets/js/main.js`, isi `reviewUrl` di objek `SITE`:
+   - Klik **Terapkan**.
+6. Salin **URL aplikasi web** yang muncul (berakhiran `/exec`).
+7. Buka URL itu di browser. Kalau muncul `{"ok":true,"pesan":"Endpoint review aktif"}`, berarti sudah jalan.
+8. Di repo, buka `assets/js/main.js`, isi `reviewUrl` di objek `SITE`:
 
    ```js
    reviewUrl: "https://script.google.com/macros/s/XXXXXXXX/exec",
    ```
 
-8. Commit dan push. Coba isi formulir di situs, lalu cek apakah baris baru muncul di tab **Review** pada Sheet.
+9. Commit dan push. Coba isi formulir di situs, lalu cek tab **Review** dan **Ringkasan**.
+
+Angka dan grafik di tab Ringkasan ikut berubah setiap ada review baru. Kalau tampilannya berantakan (misalnya kolom tidak sengaja diubah), pakai menu **Review Situs → Rapikan tampilan & perbarui grafik** di Sheet. Menu ini muncul setelah Sheet dibuka ulang.
 
 ## Catatan
 
 - Kalau isi `Code.gs` diubah, deploy ulang lewat **Terapkan → Kelola deployment → Edit (ikon pensil) → Versi: Versi baru**. Dengan cara ini URL tidak berubah.
-- Formulir memakai kolom jebakan tersembunyi untuk menyaring bot sederhana. Bila nanti banyak isian sampah, bisa ditambah pembatasan lain.
+- Formulir memakai kolom jebakan tersembunyi untuk menyaring bot, dan Apps Script membatasi 40 kiriman per 10 menit. Jawaban yang tidak sesuai pilihan formulir ditolak.
 - Isian teks yang diawali `=`, `+`, `-`, atau `@` otomatis diberi tanda kutip supaya tidak dibaca sebagai rumus oleh Sheets.
 - Review ini khusus tentang **situs**. Keluhan pelayanan diarahkan ke jalur pengaduan rumah sakit, dan keterangan ini sudah tertulis di halaman Review.
