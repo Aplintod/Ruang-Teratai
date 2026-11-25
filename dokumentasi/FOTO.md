@@ -28,8 +28,7 @@ Foto akan **terpasang otomatis** kalau disimpan dengan nama dan folder yang pers
 | `kamar-pasien.jpg` | Galeri | Kamar pasien secara umum | Mendatar atau persegi |
 | `kamar-mandi.jpg` | Galeri | Kamar mandi dalam kamar | Persegi |
 | `taman.jpg` | Galeri | Taman di area Ruang Teratai | Persegi atau tegak |
-| `kamar-vip.jpg` | Fasilitas | Kamar VIP dari sudut pintu. Kalau tidak ada, dipakai `kamar-pasien` | Mendatar |
-| `kamar-vvip.jpg` | Fasilitas | Kamar VVIP dari sudut pintu. Kalau tidak ada, dipakai `kamar-pasien` | Mendatar |
+| `kamar-kelas-1.jpg` | Fasilitas | Kamar Kelas 1 dari sudut pintu. Kalau tidak ada, dipakai `kamar-pasien` | Mendatar |
 | `bukti-cuci-tangan-1.jpg` s.d. `-3.jpg` | Edukasi: praktik cuci tangan | Petugas Ruang Teratai sedang mencuci tangan / memakai hand rub | Tegak |
 | `tempat-sampah.jpg` | Edukasi: memilah sampah | Sudah ada: tiga tempat sampah berlabel | Mendatar |
 | `tempat-sampah-2.jpg` (opsional) | Edukasi: memilah sampah | Foto tempat sampah kedua; muncul di bawah foto pertama bila ada | Mendatar |
@@ -47,24 +46,24 @@ Satu file per orang, sesuai tabel di bawah. Ekstensi boleh `.jpg` atau `.jpeg` (
 |---|---|---|
 | `karu.jpg` | Jemmi Anggraini | Kepala Ruangan (sudah ada) |
 | `ccm-01.jpg` | Awal Darmawan | Clinical Case Manager (sudah ada) |
-| `katim-01.jpg` | Astuti Widiawati | Ketua Tim |
-| `pp-01.jpg` | Deasy Novianti | Perawat Pelaksana |
-| `pp-02.jpg` | Nani Mariani | Perawat Pelaksana |
-| `pp-03.jpg` | Nina Sultani | Perawat Pelaksana |
-| `pp-04.jpg` | Rista Nurzulita Rima | Perawat Pelaksana |
-| `pp-05.jpg` | Ina Yusmina Zainah | Perawat Pelaksana |
-| `pp-06.jpg` | Hairina | Perawat Pelaksana |
-| `pp-07.jpg` | Firman Aditya | Perawat Pelaksana |
-| `pp-08.jpg` | Maulana | Perawat Pelaksana |
-| `pp-09.jpg` | Ayu Rachmadani | Perawat Pelaksana |
-| `pp-10.jpg` | Maulidaini | Perawat Pelaksana |
-| `pp-11.jpg` | Fera Ayudiati Shinta | Perawat Pelaksana |
-| `pp-12.jpg` | Deby Octa Fitri | Perawat Pelaksana |
-| `pp-13.jpg` | Muhammad Ridho | Perawat Pelaksana |
-| `pp-14.jpg` | Didik | Perawat Pelaksana |
-| `pp-15.jpg` | Agus Imam Kusairi | Perawat Pelaksana |
-| `pp-16.jpg` | Dewi Sobba | Perawat Pelaksana |
-| `pp-17.jpg` | Karina Oktavia | Perawat Pelaksana |
+| `katim-01.jpg` | Astuti Widiawati | Ketua Tim (sudah ada) |
+| `pp-01.jpg` | Deasy Novianti | Perawat Pelaksana (sudah ada) |
+| `pp-02.jpg` | Nani Mariani | Perawat Pelaksana (sudah ada) |
+| `pp-03.jpg` | Nina Sultani | Perawat Pelaksana (sudah ada) |
+| `pp-04.jpg` | Rista Nurzulita Rima | Perawat Pelaksana (sudah ada) |
+| `pp-05.jpg` | Ina Yusmina Zainah | Perawat Pelaksana (sudah ada) |
+| `pp-06.jpg` | Hairina | Perawat Pelaksana (sudah ada) |
+| `pp-07.jpg` | Firman Aditya | Perawat Pelaksana (sudah ada) |
+| `pp-08.jpg` | Maulana | Perawat Pelaksana (sudah ada) |
+| `pp-09.jpg` | Ayu Rachmadani | Perawat Pelaksana (sudah ada) |
+| `pp-10.jpg` | Maulidaini | Perawat Pelaksana (sudah ada) |
+| `pp-11.jpg` | Fera Ayudiati Shinta | Perawat Pelaksana (sudah ada) |
+| `pp-12.jpg` | Deby Octa Fitri | Perawat Pelaksana (sudah ada) |
+| `pp-13.jpg` | Muhammad Ridho | Perawat Pelaksana (sudah ada) |
+| `pp-14.jpg` | Didik | Perawat Pelaksana (sudah ada) |
+| `pp-15.jpg` | Agus Imam Kusairi | Perawat Pelaksana (sudah ada) |
+| `pp-16.jpg` | Dewi Sobba | Perawat Pelaksana (sudah ada) |
+| `pp-17.jpg` | Karina Oktavia | Perawat Pelaksana (sudah ada) |
 
 Kalau ada petugas baru, tambahkan barisnya di `assets/js/data-pegawai.js` dengan nama file berikutnya (misalnya `pp-18`).
 

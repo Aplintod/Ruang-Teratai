@@ -117,9 +117,9 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 | # | Isi di web | Sumber | Info fix |
 |---|---|---|---|
 | H1 | Ruang Teratai melayani pasien rawat inap (istilah "Paviliun" diganti "Ruangan" atas permintaan klien) | klien | |
-| H2 | Teratai 1: 12 tempat tidur | [R] halaman Instalasi Rawat Inap | |
-| H3 | Teratai 2: 7 tempat tidur | [R] | |
-| H4 | Teratai 3: 27 tempat tidur | [R] | |
+| H2 | 21 tempat tidur | klien | OK |
+| H3 | 17 perawat jaga | klien | OK |
+| H4 | Keterangan Teratai 1 (12 TT), Teratai 2 (7 TT), Teratai 3 (27 TT) dari situs RS dihapus atas permintaan klien; diganti 21 tempat tidur, 11 kamar, 17 perawat jaga, Kelas 1 | klien | OK |
 | H5 | Perawat jaga 24 jam dalam tiga shift; satu perawat penanggung jawab per pasien tiap shift | [3] | |
 | H6 | Sambutan & nama kepala ruangan | [4] | |
 | H7 | Alur pasien 5 tahap (pendaftaran → masuk kamar → perawatan → persiapan pulang → pulang) | [3] | |
@@ -144,18 +144,18 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 | # | Isi di web | Sumber | Info fix |
 |---|---|---|---|
 | J1 | Rute dari gerbang ke Ruang Teratai & lantai ruangan | [4] | |
-| J2 | Denah interaktif: 12 kamar (masing-masing 2 tempat tidur + kamar mandi), ruang obat, ruang karu, nurse station, ruang alat, edukasi, lobi, pintu jalur ke-2 | [R] denah jalur evakuasi dari klien | |
+| J2 | Denah interaktif: 11 kamar Kelas 1 (Kamar 1–7 dan 9–12, tidak ada Kamar 8) dengan kamar mandi di dalam, ruang obat, ruang karu, nurse station, ruang alat, edukasi, lobi, pintu jalur ke-2 | [R] denah jalur evakuasi dari klien | |
 | J3 | Poster jalur evakuasi + petunjuk: kamar 1–7 & nurse station ke pintu utama, kamar 9–12 & ruang alat ke pintu jalur ke-2 | [R] denah jalur evakuasi | |
 | J4 | Pengunjung melapor ke nurse station sebelum masuk kamar | [3] | |
-| J5 | Denah menunjukkan 12 kamar × 2 tempat tidur = 24 tempat tidur, berbeda dengan angka situs RS (Teratai 1: 12, Teratai 2: 7, Teratai 3: 27) di beranda Ruang Teratai | perlu dikonfirmasi | |
+| J5 | Jumlah tempat tidur di web memakai angka klien (21), bukan hitungan dari gambar denah | klien | OK |
 
 ## K. Ruang Teratai – Fasilitas (`fasilitas.html`)
 
 | # | Isi di web | Sumber | Info fix |
 |---|---|---|---|
-| K1 | Tipe kamar: VIP dan VVIP | [R] – apakah keduanya ada di Teratai perlu dicek | |
-| K2 | Isi kamar VIP dan VVIP (kapasitas, sofa bed, AC, TV, kulkas, dll.) | [4] | |
-| K3 | Foto kamar VIP & VVIP sementara memakai foto `kamar-pasien` | – | |
+| K1 | Semua kamar Kelas 1 (sebelumnya VIP/VVIP) | klien | OK |
+| K2 | Isi kamar: tempat tidur berpagar, bel perawat, oksigen sentral (umum); AC, nakas, kursi pendamping masih contoh | [3] / [4] | |
+| K3 | Foto kamar Kelas 1 sementara memakai foto `kamar-pasien` (bisa diganti dengan `kamar-kelas-1.jpg`) | – | |
 | K4 | Fasilitas bersama: hand rub, bel perawat, tiga shift, Wi-Fi (belum dikonfirmasi) | [3] / [4] | |
 | K5 | Kondisi ruangan: kebersihan 2x sehari, linen, pemilahan sampah, keselamatan, lampu malam, kawasan tanpa rokok | [3] | |
 
@@ -172,8 +172,7 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 
 1. Nomor telepon/ekstensi Ruang Teratai dan kontak unit pengaduan RSUD AWS.
 2. Apakah jam besuk hanya sore (16.00–18.00), atau ada jam besuk siang?
-3. Ruang Teratai di web mencakup Teratai 1, 2, dan 3 sekaligus? Jumlah tempat tidurnya masih 12, 7, dan 27?
-4. Kelas kamar yang ada di Ruang Teratai (VIP, VVIP, Bungalow?) dan isi tiap kamar.
+4. Isi kamar Kelas 1 (AC, nakas, kursi/sofa pendamping, dll.).
 5. Daftar petugas (nama, gelar, jabatan, pendidikan, foto) dan bagan struktur organisasi.
 6. Denah resmi dan lantai ruangan.
 7. Jadwal harian ruangan: visite, jam makan, jam istirahat.
