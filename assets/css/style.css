@@ -908,3 +908,40 @@ html[data-size="xl"] { zoom: 1.2; }
 @media (max-width: 760px) { #kepala-ruangan { grid-template-columns: 1fr; } #kepala-ruangan .media { max-width: 300px; } }
 .cols-2.al-c:has(> .media.r-4x5:first-child) { grid-template-columns: minmax(0, 360px) 1fr; }
 @media (max-width: 760px) { .cols-2.al-c:has(> .media.r-4x5:first-child) { grid-template-columns: 1fr; } .cols-2.al-c > .media.r-4x5:first-child { max-width: 300px; } }
+
+/* Denah Ruang Teratai (dari denah jalur evakuasi resmi) */
+.plan { grid-template-columns: 1fr; }
+.plan-svg svg { min-width: 760px; }
+.plan-svg .bld { fill: #e6f3dd; stroke: var(--ink); stroke-width: 3; }
+.plan-svg .corridor { fill: #ffffff; }
+.plan-svg .area rect { fill: #ffffff; stroke: var(--ink-2); stroke-width: 1; }
+.plan-svg .area.sup rect { fill: #dce8f8; }
+.plan-svg .area.edu rect { fill: #f6dcc0; }
+.plan-svg .area.exit-area rect { fill: #a9dca0; stroke: var(--green); }
+.plan-svg .area text { font-size: 13px; font-weight: 600; }
+.plan-svg .area text.sub { font-size: 10.5px; font-weight: 400; }
+.plan-svg .area:hover rect, .plan-svg .area:focus rect { fill: #fff3b8; }
+.plan-svg .area.on rect { fill: var(--blue); stroke: var(--blue); }
+.plan-svg .area.on text { fill: #fff; }
+.plan-svg .door { fill: var(--green); }
+.plan-svg .apar { fill: #d32f2f; stroke: #fff; stroke-width: 1.5; }
+.plan-svg .hydrant { fill: #d32f2f; }
+.plan-svg .evac { stroke: var(--ink); stroke-width: 2.5; }
+.plan-svg .exit { font: 700 11px var(--sans); fill: var(--green-deep); letter-spacing: .06em; }
+.plan-info { max-width: 720px; }
+.plan-legend { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 14px; font-size: 14.5px; color: var(--ink-2); }
+.plan-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.plan-legend i { display: inline-block; width: 16px; height: 12px; border: 1px solid var(--ink-2); }
+.plan-legend .lg-room { background: #fff; }
+.plan-legend .lg-sup { background: #dce8f8; }
+.plan-legend .lg-exit { background: var(--green); border-color: var(--green); }
+.plan-legend .lg-apar { width: 12px; border-radius: 50%; background: #d32f2f; border-color: #d32f2f; }
+.plan-legend .lg-hyd { width: 8px; height: 16px; background: #d32f2f; border-color: #d32f2f; }
+.plan-legend .lg-arrow { width: 22px; height: 0; border: 0; border-top: 2.5px solid var(--ink); }
+.evac-poster { display: block; text-decoration: none; }
+.evac-poster img { width: 100%; border: 1px solid var(--line); border-radius: 6px; }
+.evac-poster .small { display: block; margin-top: 8px; }
+.r-4x3 { aspect-ratio: 4 / 3; }
+.inline-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 260px)); gap: 12px; margin-top: 14px; }
+.inline-photos .media { border-radius: 4px; }
+@media (max-width: 560px) { .inline-photos { grid-template-columns: 1fr 1fr; } }

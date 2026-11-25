@@ -91,6 +91,7 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 | E9 | Materi PPI resmi RSUD AWS (kalau ada, sebaiknya dipakai) | perlu ditanyakan | |
 | E10 | Foto praktik cuci tangan: sementara foto ilustrasi domain publik (Wikimedia Commons, Sgt. Grace L. Waladkewics) | – | |
 | E11 | Persiapan pulang: obat, jadwal kontrol, dokumen, makan & aktivitas, perawatan di rumah | [3] | |
+| E13 | Foto tempat sampah (poin buang sampah sesuai warna kantong) | foto dari klien | |
 | E12 | Tanda bahaya setelah pulang (demam tinggi, sesak/nyeri dada, perdarahan, luka bernanah, muntah terus, lemas/bingung) | [3] | |
 
 ## F. Hak & Kewajiban (`halaman/hak-kewajiban.html`)
@@ -141,9 +142,11 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 
 | # | Isi di web | Sumber | Info fix |
 |---|---|---|---|
-| J1 | Rute dari gerbang ke Paviliun Teratai & lantai ruangan | [4] | |
-| J2 | Denah skematik (kamar 101–108, nurse station, ruang tindakan, pantry, ruang tunggu, WC, tangga & lift) | [4] | |
-| J3 | Pengunjung melapor ke nurse station sebelum masuk kamar | [3] | |
+| J1 | Rute dari gerbang ke Ruang Teratai & lantai ruangan | [4] | |
+| J2 | Denah interaktif: 12 kamar (masing-masing 2 tempat tidur + kamar mandi), ruang obat, ruang karu, nurse station, ruang alat, edukasi, lobi, pintu jalur ke-2 | [R] denah jalur evakuasi dari klien | |
+| J3 | Poster jalur evakuasi + petunjuk: kamar 1–7 & nurse station ke pintu utama, kamar 9–12 & ruang alat ke pintu jalur ke-2 | [R] denah jalur evakuasi | |
+| J4 | Pengunjung melapor ke nurse station sebelum masuk kamar | [3] | |
+| J5 | Denah menunjukkan 12 kamar × 2 tempat tidur = 24 tempat tidur, berbeda dengan angka situs RS (Teratai 1: 12, Teratai 2: 7, Teratai 3: 27) di beranda Ruang Teratai | perlu dikonfirmasi | |
 
 ## K. Ruang Teratai – Fasilitas (`fasilitas.html`)
 

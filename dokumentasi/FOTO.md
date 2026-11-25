@@ -31,10 +31,12 @@ Foto akan **terpasang otomatis** kalau disimpan dengan nama dan folder yang pers
 | `kamar-vip.jpg` | Fasilitas | Kamar VIP dari sudut pintu. Kalau tidak ada, dipakai `kamar-pasien` | Mendatar |
 | `kamar-vvip.jpg` | Fasilitas | Kamar VVIP dari sudut pintu. Kalau tidak ada, dipakai `kamar-pasien` | Mendatar |
 | `bukti-cuci-tangan-1.jpg` s.d. `-3.jpg` | Edukasi: praktik cuci tangan | Petugas Ruang Teratai sedang mencuci tangan / memakai hand rub | Tegak |
+| `tempat-sampah.jpg` (+ `tempat-sampah-2.jpg` opsional) | Edukasi: poin buang sampah | Tempat sampah dengan kantong kuning dan hitam | Mendatar |
 | `cuci-tangan.jpg` | Fasilitas & Edukasi | Wastafel atau hand rub di depan kamar | Tegak |
 | `edukasi-keluarga.jpg` | Edukasi | Papan informasi atau poster pencegahan infeksi | Tegak |
 | `struktur-organisasi.png` | Petugas & Struktur | Bagan struktur organisasi (gambar dari RS) | – |
-| `denah.png` | Denah | Denah resmi dari RS. Begitu file ini ada, denah skematik otomatis diganti. | – |
+| `jalur-evakuasi.jpg` | Denah | Sudah ada: poster jalur evakuasi resmi. Denah interaktif digambar ulang dari poster ini | – |
+| `denah.png` | (tidak dipakai lagi) | Denah resmi dari RS. Begitu file ini ada, denah skematik otomatis diganti. | – |
 
 ## Foto petugas Ruang Teratai → `assets/img/teratai/pegawai/`
 
