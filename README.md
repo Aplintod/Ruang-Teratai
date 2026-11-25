@@ -1,12 +1,12 @@
 # Situs Informasi Pasien – RSUD Abdoel Wahab Sjahranie
 
-Situs statis (HTML, CSS, JavaScript biasa) berisi informasi untuk pasien dan keluarga: profil rumah sakit, ruang rawat inap (dimulai dari Ruang Teratai), edukasi, serta hak dan kewajiban pasien. Tidak ada build step dan tidak ada backend, jadi bisa di-hosting gratis di GitHub Pages, Netlify, Vercel, atau Cloudflare Pages.
+Situs statis (HTML, CSS, JavaScript biasa) berisi informasi untuk pasien dan keluarga: profil rumah sakit, ruang rawat inap (dimulai dari Ruang Teratai), edukasi, serta hak dan kewajiban pasien. Tanpa server, database, maupun framework, sehingga ringan dan permukaan serangannya kecil. Di-deploy gratis ke Cloudflare Pages.
 
 ## Struktur folder
 
 ```
 /
-├── index.html                  Beranda umum RSUD AWS (wajib di root untuk GitHub Pages)
+├── index.html                  Beranda umum RSUD AWS
 ├── 404.html                    Halaman "tidak ditemukan"
 ├── halaman/
 │   ├── profil.html             Profil RS: visi, misi, nilai, sejarah, layanan unggulan, kontak
@@ -24,8 +24,12 @@ Situs statis (HTML, CSS, JavaScript biasa) berisi informasi untuk pasien dan kel
 │           └── tata-tertib.html   Tata tertib & jam besuk (dari lembar resmi ruangan)
 ├── assets/
 │   ├── css/style.css           Seluruh tampilan
+│   ├── fonts/                  Font Newsreader & Geist (disimpan sendiri, lisensi OFL)
 │   ├── js/main.js              Header, footer, menu, sub-menu ruangan, data kontak, jadwal, ilustrasi, foto otomatis
 │   ├── js/data-pegawai.js      Data petugas Ruang Teratai
+│   ├── js/petugas.js           Kartu petugas & bagan struktur
+│   ├── js/beranda-ruangan.js   Nama & sambutan karu di beranda ruangan
+│   ├── js/review.js            Formulir review
 │   └── img/
 │       ├── rs/                 Foto rumah sakit
 │       └── teratai/            Foto Ruang Teratai (+ pegawai/ untuk foto petugas)
@@ -33,9 +37,13 @@ Situs statis (HTML, CSS, JavaScript biasa) berisi informasi untuk pasien dan kel
 │   ├── FOTO.md                 Daftar foto + nama filenya
 │   ├── VERIFIKASI.md           Semua isi web + sumbernya, untuk dicek klien
 │   ├── REVIEW.md               Cara menyambungkan formulir review ke Google Sheets
+│   ├── DEPLOY-CLOUDFLARE.md    Cara deploy ke Cloudflare Pages & menjadikan repo private
+│   ├── KEAMANAN.md             Langkah keamanan, batasan, dan kewajiban tim
 │   └── apps-script/Code.gs     Kode Apps Script untuk review
-├── netlify.toml
-└── .nojekyll
+├── _headers                    Header keamanan Cloudflare Pages (CSP, dll.)
+├── build.sh                    Menyiapkan folder _site/ yang di-publish
+├── LICENSE                     Hak cipta
+└── .nojekyll                   Hanya untuk GitHub Pages, boleh dihapus setelah pindah ke Cloudflare
 ```
 
 Link menu dan foto diatur otomatis oleh `main.js`, jadi tetap benar dari folder mana pun.
@@ -80,14 +88,13 @@ python3 -m http.server 8000
 
 lalu buka http://localhost:8000
 
-## Deploy ke Netlify (gratis)
+## Deploy
 
-1. Push repo ini ke GitHub.
-2. Login di netlify.com pakai akun GitHub → **Add new site** → **Import an existing project** → pilih repo ini.
-3. Build command dikosongkan, publish directory `.` (sudah diatur di `netlify.toml`).
-4. Deploy. Alamatnya akan berbentuk `nama-situs.netlify.app` dan namanya bisa diganti di Site settings.
+Situs di-deploy ke **Cloudflare Pages** dengan build command `bash build.sh` dan output `_site`. Langkah lengkapnya ada di [dokumentasi/DEPLOY-CLOUDFLARE.md](dokumentasi/DEPLOY-CLOUDFLARE.md).
 
-Setiap ada push ke branch utama, Netlify otomatis memperbarui situs.
+Hal yang perlu diingat soal keamanan (detail di [dokumentasi/KEAMANAN.md](dokumentasi/KEAMANAN.md)):
+- Jangan menulis script langsung di HTML. Buat file `.js` di `assets/js/`, karena script inline diblokir Content Security Policy.
+- Kalau memakai layanan luar baru (peta, video, dll.), tambahkan alamatnya ke `_headers`.
 
 ## Rencana berikutnya
 

@@ -225,7 +225,7 @@ function renderFooter() {
       </div>
       <div class="foot-word" aria-hidden="true">RSUD <em>AWS</em></div>
       <div class="foot-bottom">
-        <span>&copy; ${new Date().getFullYear()} ${SITE.rs}, ${SITE.kota}</span>
+        <span>&copy; ${new Date().getFullYear()} ${SITE.rs}, ${SITE.kota}. Hak cipta dilindungi.</span>
         <span>Keadaan darurat di kamar: tekan bel pasien atau panggil perawat jaga.</span>
       </div>
     </div>`;

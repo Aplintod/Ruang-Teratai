@@ -3,6 +3,22 @@
    Warna & huruf diatur lewat variabel di :root.
    ========================================================= */
 
+/* Font disimpan sendiri (lisensi SIL OFL 1.1, lihat assets/fonts/LICENSE-*.txt) */
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url("../fonts/newsreader.woff2") format("woff2-variations"), url("../fonts/newsreader.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("../fonts/geist.woff2") format("woff2-variations"), url("../fonts/geist.woff2") format("woff2");
+}
+
 :root {
   /* Palet mengikuti logo RSUD AWS: biru, hijau, hijau-kuning, dan putih */
   --paper: #ffffff;

@@ -6,9 +6,6 @@
   <title>Ruang Teratai · RSUD Abdoel Wahab Sjahranie</title>
   <meta name="description" content="Ruang Teratai, ruang rawat inap RSUD Abdoel Wahab Sjahranie Samarinda: petugas, denah, fasilitas, tata tertib, dan jadwal harian.">
   <meta name="theme-color" content="#ffffff">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&family=Newsreader:opsz,wght@6..72,400..600&display=swap" rel="stylesheet">
   <link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../../assets/css/style.css">
 </head>
@@ -164,10 +161,6 @@
   <footer id="site-footer"></footer>
   <script src="../../../assets/js/main.js"></script>
   <script src="../../../assets/js/data-pegawai.js"></script>
-  <script>
-    // Nama & sambutan kepala ruangan diambil dari data-pegawai.js
-    document.querySelectorAll('[data-karu="nama"]').forEach((el) => { el.textContent = KEPALA_RUANGAN.nama; });
-    document.querySelectorAll('[data-karu="sambutan"]').forEach((el) => { el.textContent = KEPALA_RUANGAN.sambutan; });
-  </script>
+  <script src="../../../assets/js/beranda-ruangan.js"></script>
 </body>
 </html>

@@ -7,6 +7,15 @@
  */
 
 const NAMA_SHEET = "Review";
+
+// Hanya jawaban yang sama persis dengan pilihan di formulir yang diterima
+const PILIHAN_PERAN = ["Pasien", "Keluarga pasien", "Pengunjung", "Mahasiswa", "Petugas RS", "Lainnya"];
+const PILIHAN_RUANGAN = ["Ruang Teratai", "Ruangan lain", "Tidak sedang dirawat"];
+const PILIHAN_BAGIAN = ["Profil RS", "Petugas & struktur", "Denah", "Fasilitas", "Tata tertib & jam besuk", "Edukasi", "Hak & kewajiban"];
+
+// Batas kiriman untuk menahan banjir kiriman otomatis (spam)
+const BATAS_KIRIMAN = 40; // kiriman maksimal...
+const JENDELA_DETIK = 600; // ...dalam 10 menit
 const KOLOM = [
   "Waktu",
   "Peran",
@@ -28,11 +37,24 @@ function doPost(e) {
   if (p.website) return balas({ ok: true });
 
   const bintang = angka(p.bintang);
-  if (!bintang) return balas({ ok: false, error: "bintang tidak valid" });
+  const peran = pilih(p.peran, PILIHAN_PERAN);
+  const ruangan = pilih(p.ruangan, PILIHAN_RUANGAN);
+  if (!bintang || !peran || !ruangan) return balas({ ok: false, error: "isian tidak valid" });
+  const bagian = String(p.bagian || "")
+    .split(",")
+    .map((x) => x.trim())
+    .filter((x) => PILIHAN_BAGIAN.indexOf(x) !== -1)
+    .join(", ");
 
   const lock = LockService.getScriptLock();
   lock.waitLock(10000);
   try {
+    // Pembatas jumlah kiriman
+    const cache = CacheService.getScriptCache();
+    const jumlah = Number(cache.get("jumlah_kiriman") || 0);
+    if (jumlah >= BATAS_KIRIMAN) return balas({ ok: false, error: "terlalu banyak kiriman, coba lagi nanti" });
+    cache.put("jumlah_kiriman", String(jumlah + 1), JENDELA_DETIK);
+
     const ss = SpreadsheetApp.getActiveSpreadsheet();
     const sheet = ss.getSheetByName(NAMA_SHEET) || ss.insertSheet(NAMA_SHEET);
     if (sheet.getLastRow() === 0) {
@@ -41,14 +63,14 @@ function doPost(e) {
     }
     sheet.appendRow([
       new Date(),
-      teks(p.peran, 40),
-      teks(p.ruangan, 40),
+      peran,
+      ruangan,
       bintang,
       angka(p.mudah),
       angka(p.bahasa),
       angka(p.membantu),
       angka(p.hp),
-      teks(p.bagian, 300),
+      bagian,
       teks(p.saran, 1000),
       teks(p.halaman, 200),
     ]);
@@ -61,6 +83,12 @@ function doPost(e) {
 // Untuk mengecek apakah Web App sudah aktif: buka URL-nya di browser
 function doGet() {
   return balas({ ok: true, pesan: "Endpoint review aktif" });
+}
+
+// Jawaban harus salah satu pilihan yang tersedia
+function pilih(v, daftar) {
+  const s = String(v || "").trim();
+  return daftar.indexOf(s) !== -1 ? s : "";
 }
 
 // Nilai 1-5, selain itu dikosongkan
