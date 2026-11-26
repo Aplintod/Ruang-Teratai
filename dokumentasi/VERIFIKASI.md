@@ -145,8 +145,8 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 | # | Isi di web | Sumber | Info fix |
 |---|---|---|---|
 | J1 | Rute dari gerbang ke Ruang Teratai & lantai ruangan | [4] | |
-| J2 | Denah interaktif: 11 kamar Kelas 1 (Kamar 1–7 dan 9–12, tidak ada Kamar 8) dengan kamar mandi di dalam, ruang obat, ruang karu, nurse station, ruang alat, edukasi, lobi, pintu jalur ke-2 | [R] denah jalur evakuasi dari klien | |
-| J3 | Poster jalur evakuasi + petunjuk: kamar 1–7 & nurse station ke pintu utama, kamar 9–12 & ruang alat ke pintu jalur ke-2 | [R] denah jalur evakuasi | |
+| J2 | Denah interaktif: 11 kamar Kelas 1 (Kamar 1–7 dan 9–12), ruang obat, ruang karu, nurse station, ruang alat, edukasi; **pintu utama di ujung kanan**, sisi kiri adalah **parkiran** (bukan pintu utama) | [R] denah jalur evakuasi + koreksi klien | OK |
+| J3 | Poster jalur evakuasi (label diedit: "Lobi" → "Parkiran", "Jalur ke-2" → "Pintu utama") + petunjuk: kamar 1–7 & nurse station ke sisi parkiran, kamar 9–12 & ruang alat ke pintu utama | [R] + koreksi klien | |
 | J4 | Pengunjung melapor ke nurse station sebelum masuk kamar | [3] | |
 | J5 | Jumlah tempat tidur di web memakai angka klien (21), bukan hitungan dari gambar denah | klien | OK |
 

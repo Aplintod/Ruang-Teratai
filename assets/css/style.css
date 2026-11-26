@@ -1033,3 +1033,6 @@ main [id] { scroll-margin-top: 96px; }
 .modal-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 22px; }
 .modal-actions .btn { padding: 14px 22px; }
 @media (prefers-reduced-motion: reduce) { .modal[open] { animation: none; } }
+.plan-svg .area.park rect { fill: #e8eaee; stroke: #8a94a6; stroke-dasharray: 5 4; }
+.plan-svg .area.park text { fill: #3e4c63; }
+.plan-svg .area.park.on text { fill: #fff; }
