@@ -2,10 +2,9 @@
 
 Foto akan **terpasang otomatis** kalau disimpan dengan nama dan folder yang persis seperti di bawah. Tidak perlu mengubah kode. Cukup taruh filenya, commit, lalu push.
 
-- Format: `.jpg` (disarankan), `.png`, atau `.webp`. Nama file **huruf kecil semua**.
-- Ukuran: lebar sekitar 1600–2000 px untuk foto ruangan, sekitar 800 px untuk foto pegawai.
-- Besar file: usahakan di bawah 400 KB. Kompres dulu lewat squoosh.app atau tinypng.com.
-- Kalau sebuah file belum ada, tempatnya tetap menampilkan kotak placeholder seperti sekarang.
+- Format: `.jpg`, `.jpeg`, `.png`, atau `.webp`. Nama file **huruf kecil semua**. Foto yang sudah ada di repo sudah diperkecil dan diubah ke `.webp` supaya ringan.
+- Foto baru boleh `.jpg` langsung dari HP, tapi sebaiknya kompres dulu (misalnya squoosh.app, pilih format WebP, lebar ±1600 px untuk ruangan dan ±600 px untuk petugas). Foto besar membuat halaman lambat di HP.
+- Kalau ada dua file dengan nama sama tapi ekstensi beda (misalnya `lorong.webp` dan `lorong.jpg`), yang dipakai `.webp`. Hapus salah satunya agar tidak membingungkan.
 
 ## Foto rumah sakit → `assets/img/rs/`
 

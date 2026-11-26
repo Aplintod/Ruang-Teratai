@@ -19,10 +19,11 @@ Semua informasi di web beserta asal sumbernya. Kolom **Info fix** diisi setelah 
 | # | Isi di web | Sumber | Info fix |
 |---|---|---|---|
 | A1 | Alamat: Jl. Palang Merah Indonesia No. 1, Sidodadi, Samarinda Ulu, Samarinda, Kalimantan Timur 75123 | [1] | |
-| A2 | Telepon RS: (0541) 738070 | [1] | |
+| A2 | Telepon RS: (0541) 738118 / 741793 (sebelumnya 738070) | [R] situs resmi rsudaws.co.id, bagian Hubungi Kami | OK |
 | A3 | Telepon/ekstensi Ruang Teratai: belum ada ("Ext. —") | [4] | |
 | A4 | Jam besuk Ruang Teratai: sore 16.00–18.00 | [R] lembar tata tertib | |
 | A5 | Nama situs di header: "RSUD Abdoel Wahab Sjahranie" tanpa logo | keputusan tim | |
+| A7 | Nomor IGD khusus tidak dicantumkan di situs resmi RS, sehingga tombol darurat IGD tidak ditambahkan | [R] | |
 | A6 | Warna situs mengikuti logo AWS: biru #0c54cc, hijau #00843a, hijau-kuning, kuning, putih | logo dari klien | |
 
 ## B. Beranda umum (`index.html`)
@@ -166,6 +167,7 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 |---|---|---|---|
 | L1 | 9 poin tata tertib (jam besuk, larangan anak < 12 tahun, tikar, menjemur, merokok, alat elektronik, barang berharga, kerapian, kebersihan) | [R] lembar Tata Tertib Ruang Rawat Inap, ditandatangani "R Teratai" | |
 | L2 | Redaksi disesuaikan ke huruf kecil dan kalimat baku tanpa mengubah isi | – | |
+| L3 | Tata tertib pengunjung RSUD AWS (13 poin) | [R] situs resmi, halaman Tata Tertib Pengunjung | OK |
 
 ---
 

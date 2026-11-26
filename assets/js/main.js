@@ -8,8 +8,9 @@ const SITE = {
   rsPendek: "RSUD AWS",
   kota: "Samarinda, Kalimantan Timur",
   alamat: "Jl. Palang Merah Indonesia No. 1, Sidodadi, Samarinda Ulu, Samarinda, Kalimantan Timur 75123",
-  telpRs: "(0541) 738070",
-  telpRsLink: "+62541738070",
+  telpRs: "(0541) 738118",      // sesuai situs resmi rsudaws.co.id
+  telpRsLink: "+62541738118",
+  telpRs2: "(0541) 741793",
   peta: "https://www.google.com/maps/search/?api=1&query=RSUD+Abdoel+Wahab+Sjahranie+Samarinda",
   // Ruang Teratai
   telpRuang: "Ext. —", // TODO: belum ada data
@@ -121,7 +122,8 @@ function applySize(s) {
   document.querySelectorAll(".size-btn").forEach((b) => {
     const i = SIZES.indexOf(s || "");
     b.querySelectorAll(".dots i").forEach((d, k) => d.classList.toggle("on", k <= i));
-    b.setAttribute("aria-label", `Ukuran teks: ${["normal", "besar", "lebih besar"][i]}. Tekan untuk mengubah.`);
+    const st = b.querySelector(".size-state");
+    if (st) st.textContent = ` (ukuran teks ${["normal", "besar", "lebih besar"][i]})`;
   });
 }
 applySize(store("teratai-size") || "");
@@ -132,16 +134,17 @@ function renderHeader() {
 
   const items = NAV.map((n) => `<a href="${url(n.href)}"${isActive(n) ? ' class="active" aria-current="page"' : ""}>${n.label}</a>`).join("");
   const mobile = NAV.map((n, i) => `<li><a href="${url(n.href)}"><small>0${i + 1}</small>${n.label}</a></li>`).join("");
-  const sizeBtn = `<button class="size-btn" type="button"><b>Aa</b><span class="t">Ukuran teks</span><span class="dots"><i></i><i></i><i></i></span></button>`;
+  const sizeBtn = `<button class="size-btn" type="button"><b aria-hidden="true">Aa</b><span class="t">Ukuran teks</span><span class="sr size-state"></span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></button>`;
 
   el.className = "site-header";
   el.innerHTML = `
     <div class="wrap">
-      <a class="brand" href="${url("index.html")}" aria-label="${SITE.rs}, beranda">
+      <a class="brand" href="${url("index.html")}">
         <span><span class="brand-name"><span class="brand-full">${SITE.rs}</span><span class="brand-short">${SITE.rsPendek}</span></span><span class="brand-sub">${SITE.kota}</span></span>
       </a>
       <nav class="nav" aria-label="Menu utama">${items}</nav>
       <div class="head-right">
+        <button class="search-btn" type="button" aria-label="Cari informasi" title="Cari"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
         ${sizeBtn}
         <a class="nav-cta" href="${url("halaman/profil.html#kontak")}">Kontak</a>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu <i></i></button>
@@ -202,22 +205,22 @@ function renderFooter() {
     <div class="wrap">
       <div class="foot-top">
         <div>
-          <h4>Alamat</h4>
+          <p class="foot-h">Alamat</p>
           <p>${SITE.rs}<br>${SITE.alamat}</p>
           <p><a href="${SITE.peta}" target="_blank" rel="noopener">Buka di Google Maps</a></p>
         </div>
         <div>
-          <h4>Menu</h4>
+          <p class="foot-h">Menu</p>
           <ul>${NAV.map((n) => `<li><a href="${url(n.href)}">${n.label}</a></li>`).join("")}</ul>
         </div>
         <div>
-          <h4>${t.nama}</h4>
+          <p class="foot-h">${t.nama}</p>
           <ul>${t.menu.map(([f, label]) => `<li><a href="${url(t.folder + f)}">${label}</a></li>`).join("")}</ul>
         </div>
         <div>
-          <h4>Kontak</h4>
+          <p class="foot-h">Kontak</p>
           <ul>
-            <li><a href="tel:${SITE.telpRsLink}">Telepon RS ${SITE.telpRs}</a></li>
+            <li><a href="tel:${SITE.telpRsLink}">Telepon RS ${SITE.telpRs}</a> / ${SITE.telpRs2}</li>
             <li>${t.nama} <span class="tbd" title="Data belum ada">${SITE.telpRuang}</span></li>
             <li>Jam besuk ${t.nama}: ${SITE.besuk}</li>
           </ul>
@@ -258,11 +261,18 @@ function fillSiteData() {
    <div class="media" data-img="teratai/lorong"> akan mencari
    assets/img/teratai/lorong.jpg / .jpeg / .png / .webp.
    Kalau ada, foto dipasang. Kalau tidak, placeholder tetap tampil. */
-const EXT = ["jpg", "png", "webp", "jpeg"];
+const EXT = ["webp", "jpg", "jpeg", "png"];
+/* Saat build (build.sh), baris di bawah diganti daftar foto yang benar-benar ada,
+   sehingga browser tidak perlu menebak ekstensi (tidak ada permintaan 404). */
+const FOTO = null; // __DAFTAR_FOTO__
 function findImage(list, done) {
   // list boleh berisi beberapa nama dipisah koma: dicoba berurutan, yang pertama ada dipakai
-  const tries = list.split(",").map((b) => b.trim()).filter(Boolean)
-    .flatMap((b) => EXT.map((e) => `${ROOT}assets/img/${b}.${e}`));
+  const names = list.split(",").map((b) => b.trim()).filter(Boolean);
+  if (FOTO) {
+    for (const b of names) for (const e of EXT) if (FOTO.includes(`${b}.${e}`)) return done(`${ROOT}assets/img/${b}.${e}`);
+    return;
+  }
+  const tries = names.flatMap((b) => EXT.map((e) => `${ROOT}assets/img/${b}.${e}`));
   let i = 0;
   const next = () => {
     if (i >= tries.length) return;
@@ -335,7 +345,6 @@ function initPlan() {
   areas.forEach((a) => {
     a.setAttribute("tabindex", "0");
     a.setAttribute("role", "button");
-    a.setAttribute("aria-label", a.dataset.title);
     a.addEventListener("click", () => pick(a));
     a.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(a); } });
   });
@@ -354,9 +363,105 @@ function initReveal() {
   if (hero) requestAnimationFrame(() => setTimeout(() => hero.classList.add("ready"), 60));
 }
 
+/* ---------- Pencarian ---------- */
+const CARI = [
+  ["Jam besuk", "Jam besuk Ruang Teratai pukul 16.00–18.00", "halaman/ruangan/teratai/tata-tertib.html", "besuk kunjungan jenguk waktu sore jam"],
+  ["Tata tertib Ruang Teratai", "Aturan untuk pasien, keluarga, dan pengunjung", "halaman/ruangan/teratai/tata-tertib.html", "aturan larangan tikar merokok anak penunggu"],
+  ["Tata tertib pengunjung RS", "Aturan pengunjung yang berlaku di seluruh RSUD AWS", "halaman/ruangan/teratai/tata-tertib.html#tatib-rs", "aturan penunggu pendamping rokok jualan inventaris"],
+  ["Denah Ruang Teratai", "Letak kamar, nurse station, dan pintu masuk", "halaman/ruangan/teratai/denah.html", "peta lokasi kamar nurse station parkir pintu"],
+  ["Jalur evakuasi", "Pintu keluar saat keadaan darurat", "halaman/ruangan/teratai/denah.html#evakuasi", "darurat kebakaran apar hydrant keluar"],
+  ["Petugas Ruang Teratai", "Kepala ruangan, CCM, ketua tim, dan perawat", "halaman/ruangan/teratai/petugas.html", "perawat karu dokter tim nama struktur organisasi"],
+  ["Fasilitas kamar", "Kamar Kelas 1, tempat tidur, dan kamar mandi", "halaman/ruangan/teratai/fasilitas.html", "kamar kelas tempat tidur fasilitas ac kamar mandi"],
+  ["Jadwal harian", "Kegiatan dari pagi sampai malam di Ruang Teratai", "halaman/ruangan/teratai/index.html#jadwal", "visite dokter makan shift istirahat jadwal"],
+  ["Cuci tangan", "Kapan dan bagaimana mencuci tangan", "halaman/edukasi.html#cara-cuci-tangan", "cuci tangan hand rub sabun kebersihan langkah"],
+  ["Pencegahan infeksi", "Etika batuk, masker, dan kebersihan", "halaman/edukasi.html#pencegahan-infeksi", "infeksi batuk masker kuman"],
+  ["Memilah sampah", "Kantong kuning dan kantong hitam", "halaman/edukasi.html#sampah", "sampah limbah kuning hitam buang"],
+  ["Persiapan pulang", "Obat, jadwal kontrol, dan dokumen", "halaman/edukasi.html#persiapan-pulang", "pulang obat kontrol resep dokumen"],
+  ["Tanda bahaya", "Kapan harus segera ke IGD setelah pulang", "halaman/edukasi.html#tanda-bahaya", "bahaya igd darurat demam sesak"],
+  ["Hak & kewajiban pasien", "Menurut UU Nomor 17 Tahun 2023", "halaman/hak-kewajiban.html", "hak kewajiban pasien undang-undang"],
+  ["Saran & keluhan", "Cara menyampaikan keluhan pelayanan", "halaman/hak-kewajiban.html#keluhan", "keluhan pengaduan saran komplain"],
+  ["Profil RSUD AWS", "Visi, misi, nilai, dan sejarah", "halaman/profil.html", "visi misi sejarah nilai profil rumah sakit"],
+  ["Kontak rumah sakit", "Alamat dan nomor telepon", "halaman/profil.html#kontak", "telepon alamat kontak lokasi maps"],
+  ["Daftar ruangan", "Ruang rawat inap dan perawatan intensif", "halaman/ruangan.html", "ruangan rawat inap anggrek cempaka melati icu"],
+  ["Review situs", "Beri penilaian dan saran", "halaman/review.html", "review rating bintang saran kritik"],
+];
+function initSearch() {
+  const btn = document.querySelector(".search-btn");
+  if (!btn) return;
+  const dlg = document.createElement("dialog");
+  dlg.className = "modal search-modal";
+  dlg.setAttribute("aria-label", "Cari informasi");
+  dlg.innerHTML = `<form method="dialog" class="search-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="text" inputmode="search" enterkeyhint="search" placeholder="Cari: jam besuk, denah, cuci tangan..." aria-label="Kata kunci" autocomplete="off">
+      <button class="search-close" type="submit" aria-label="Tutup">Esc</button>
+    </form>
+    <ul class="search-list" role="list"></ul>`;
+  document.body.appendChild(dlg);
+  const input = dlg.querySelector("input"), list = dlg.querySelector(".search-list");
+  const norm = (t) => t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const tampil = () => {
+    const q = norm(input.value.trim());
+    const kata = q.split(/\s+/).filter(Boolean);
+    const hasil = CARI.filter(([j, d, , k]) => kata.every((w) => norm(`${j} ${d} ${k}`).includes(w)));
+    list.innerHTML = "";
+    if (!hasil.length) { const li = document.createElement("li"); li.className = "search-empty"; li.textContent = "Tidak ditemukan. Coba kata lain."; list.appendChild(li); return; }
+    hasil.forEach(([j, d, u]) => {
+      const li = document.createElement("li"), a = document.createElement("a"), b = document.createElement("strong"), s = document.createElement("span");
+      a.href = url(u); b.textContent = j; s.textContent = d;
+      a.append(b, s); li.appendChild(a); list.appendChild(li);
+      a.addEventListener("click", () => dlg.close());
+    });
+  };
+  input.addEventListener("input", tampil);
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { e.preventDefault(); dlg.close(); }
+    if (e.key === "Enter") { e.preventDefault(); const a = list.querySelector("a"); if (a) a.click(); }
+  });
+  btn.addEventListener("click", () => { input.value = ""; tampil(); dlg.showModal(); input.focus(); });
+  dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+}
+
+/* ---------- Tombol kembali ke atas ---------- */
+function initToTop() {
+  const b = document.createElement("button");
+  b.className = "to-top";
+  b.type = "button";
+  b.setAttribute("aria-label", "Kembali ke atas");
+  b.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>`;
+  document.body.appendChild(b);
+  b.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  const cek = () => b.classList.toggle("show", window.scrollY > 900);
+  window.addEventListener("scroll", cek, { passive: true });
+  cek();
+}
+
+/* ---------- Cetak / simpan PDF & salin link: <div data-tools></div> ---------- */
+function initTools() {
+  document.querySelectorAll("[data-tools]").forEach((el) => {
+    el.className = "page-tools";
+    el.innerHTML = `<button type="button" data-cetak><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg>Cetak / simpan PDF</button>
+      <button type="button" data-salin><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span>Salin link halaman</span></button>`;
+    el.querySelector("[data-cetak]").addEventListener("click", () => window.print());
+    const salin = el.querySelector("[data-salin]");
+    salin.addEventListener("click", async () => {
+      const link = location.href.split("#")[0];
+      try {
+        if (navigator.share && matchMedia("(pointer: coarse)").matches) { await navigator.share({ title: document.title, url: link }); return; }
+        await navigator.clipboard.writeText(link);
+        salin.querySelector("span").textContent = "Link tersalin";
+      } catch (e) {
+        salin.querySelector("span").textContent = "Gagal menyalin";
+      }
+      setTimeout(() => { salin.querySelector("span").textContent = "Salin link halaman"; }, 2500);
+    });
+  });
+}
+
 document.body.insertAdjacentHTML("afterbegin", SPRITE);
 document.documentElement.classList.remove("no-js");
 renderHeader();
+initSearch();
 renderSubnav();
 renderFooter();
 fillSiteData();
@@ -365,3 +470,5 @@ initTabs();
 initPlan();
 initImages();
 initReveal();
+initToTop();
+initTools();

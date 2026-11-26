@@ -1037,3 +1037,57 @@ main [id] { scroll-margin-top: 96px; }
 .plan-svg .area.park text { fill: #3e4c63; }
 .plan-svg .area.park.on text { fill: #fff; }
 .hand-step img.hand-ill { display: block; width: 100%; height: auto; aspect-ratio: 900 / 462; object-fit: cover; background: #f4f4f4; }
+
+/* =========================================================
+   v6: pencarian, kembali ke atas, cetak & salin link, a11y
+   ========================================================= */
+.search-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid currentColor; background: none; color: inherit; cursor: pointer; display: grid; place-items: center; opacity: .9; }
+.search-btn svg { width: 20px; height: 20px; }
+@media (max-width: 520px) { .search-btn { width: 40px; height: 40px; } }
+
+.search-modal { width: min(94vw, 620px); padding: 0; text-align: left; border-top: 0; top: 10vh; margin-top: 0; align-self: start; }
+.search-head { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--line); }
+.search-head svg { width: 22px; height: 22px; color: var(--blue); flex-shrink: 0; }
+.search-head input { flex: 1; border: 0; font: inherit; font-size: 17px; outline: none; background: none; color: var(--ink); min-width: 0; }
+.search-close { font: 500 12.5px var(--sans); border: 1px solid var(--line-strong); border-radius: 6px; padding: 4px 8px; background: var(--paper-2); color: var(--ink-2); cursor: pointer; }
+.search-list { list-style: none; margin: 0; padding: 8px; max-height: 60vh; overflow-y: auto; }
+.search-list a { display: block; padding: 12px 14px; border-radius: 8px; text-decoration: none; }
+.search-list a:hover, .search-list a:focus-visible { background: var(--paper-2); }
+.search-list strong { display: block; font-weight: 600; }
+.search-list span { display: block; font-size: 14.5px; color: var(--ink-2); }
+.search-empty { padding: 18px 14px; color: var(--ink-2); }
+
+.to-top { position: fixed; right: 18px; bottom: 18px; z-index: 80; width: 48px; height: 48px; border-radius: 50%; border: 0; background: var(--blue); color: #fff; cursor: pointer; display: grid; place-items: center; box-shadow: 0 10px 24px -8px rgba(8, 28, 66, .5); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity .25s, transform .25s, visibility .25s; }
+.to-top svg { width: 22px; height: 22px; }
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { background: var(--dark); }
+
+.page-tools { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.page-tools button { display: inline-flex; align-items: center; gap: 8px; font: 500 14.5px var(--sans); padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--paper); color: var(--ink); cursor: pointer; }
+.page-tools button:hover { border-color: var(--blue); color: var(--blue); }
+.page-tools svg { width: 18px; height: 18px; }
+
+/* Aksesibilitas */
+.bg-green .label, .bg-blue .label { color: #fff; }
+
+/* Tampilan cetak / simpan PDF */
+@media print {
+  .site-header, .mobile-menu, .subnav, .site-footer, .to-top, .page-tools, .topics-wrap, .skip-link, .search-modal { display: none !important; }
+  body { font-size: 11.5pt; background: #fff; color: #000; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .page-head { padding: 0 0 12pt; border: 0; }
+  .sec, .sec-tight { padding: 12pt 0; }
+  .bg-2, .bg-dark, .bg-blue, .bg-green, .bg-yellow { background: #fff !important; color: #000 !important; }
+  .bg-dark *, .bg-blue *, .bg-green * { color: #000 !important; }
+  .media:not(.has-img) { display: none; }
+  .hand-step, .rows > li, .danger, .waste-col, .visit { break-inside: avoid; }
+  a { text-decoration: none; }
+  .page-head::after { content: "RSUD Abdoel Wahab Sjahranie Samarinda · Telp. (0541) 738118"; display: block; margin-top: 8pt; font-size: 9pt; color: #444; }
+}
+.foot-top .foot-h { font-size: 14px; letter-spacing: .03em; color: rgba(255, 255, 255, .65); margin-bottom: 18px; font-weight: 450; }
+.bg-green .label .n, .bg-green .rows > li::before { color: #fff; }
+/* Ruang tetap untuk kepala ruangan agar halaman Petugas tidak bergeser saat dimuat */
+#kepala-ruangan { min-height: 425px; }
+@media (max-width: 760px) { #kepala-ruangan { min-height: 760px; } }
+.ward-feature h2 { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 450; line-height: 1.05; margin: 10px 0 14px; color: #fff; }
+.bg-green .muted { color: #fff; }

@@ -28,20 +28,33 @@ Cloudflare Pages gratis: 500 build per bulan, bandwidth tidak dibatasi, dan mend
    | Build command | `bash build.sh` |
    | Build output directory | `_site` |
 
-5. Klik **Save and Deploy**, tunggu 1–2 menit.
-6. Buka alamat `https://<nama-project>.pages.dev` dan cek semua halaman.
+5. Buka **Environment variables (advanced)**, lalu tambahkan variabel:
+
+   | Variable name | Value |
+   |---|---|
+   | `SITE_URL` | alamat situs tanpa garis miring di akhir, misalnya `https://rsudaws-info.pages.dev` |
+
+   Variabel ini dipakai untuk pratinjau link di WhatsApp, `sitemap.xml`, dan `robots.txt`. Kalau nama project belum pasti, isi setelah deploy pertama lewat **Settings → Variables and Secrets**, lalu deploy ulang (**Deployments → ⋯ → Retry deployment**).
+6. Klik **Save and Deploy**, tunggu 1–2 menit.
+7. Buka alamat `https://<nama-project>.pages.dev` dan cek semua halaman.
 
 ### 2. Cek keamanannya sudah aktif
 - Buka https://securityheaders.com, masukkan alamat `.pages.dev`. Hasil yang diharapkan: nilai **A**.
 - Coba buka `https://<nama-project>.pages.dev/dokumentasi/VERIFIKASI.md`. Hasil yang benar: **halaman tidak ditemukan**.
 
-### 3. Jadikan repo private
+### 3. Aktifkan statistik pengunjung (opsional, gratis)
+1. Di project Pages: **Metrics → Web Analytics → Enable**.
+2. Statistik (jumlah pengunjung, halaman terpopuler, asal negara, jenis perangkat) muncul di menu **Web Analytics** pada dashboard Cloudflare.
+3. Cloudflare Web Analytics tidak memakai cookie dan tidak melacak pengunjung secara pribadi. Alamat script-nya sudah diizinkan di `_headers`.
+4. Cek pratinjau WhatsApp: tempel alamat situs ke https://www.opengraph.xyz atau kirim ke chat WhatsApp sendiri.
+
+### 4. Jadikan repo private
 1. GitHub → repo `Ruang-Teratai` → **Settings → General**, gulir ke **Danger Zone**.
 2. **Change repository visibility → Make private**.
 3. Situs di Cloudflare tetap jalan, karena Cloudflare membaca repo lewat izin yang diberikan di langkah 1.3.
 4. GitHub Pages otomatis berhenti, karena paket gratis tidak menayangkan repo private. Alamat lama `aplintod.github.io/Ruang-Teratai` tidak bisa dibuka lagi, jadi bagikan alamat baru ke klien.
 
-### 4. Setelah pindah
+### 5. Setelah pindah
 - Setiap commit ke `main` otomatis tayang dalam 1–2 menit, sama seperti sebelumnya.
 - Commit ke branch lain jadi **preview** di alamat terpisah, berguna untuk cek sebelum tayang.
 - File `.nojekyll` hanya dipakai GitHub Pages dan boleh dihapus setelah pindah.

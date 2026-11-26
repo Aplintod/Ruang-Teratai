@@ -1,6 +1,6 @@
 # Audit Kelayakan sebagai Situs Resmi RSUD AWS
 
-Tanggal audit: 25 November 2026. Status: **belum ada perbaikan yang dikerjakan**. Dokumen ini daftar temuan dan rekomendasi.
+Tanggal audit: 25 November 2026. **Pembaruan 26 November 2026:** temuan T1–T3, A1–A3, S1, S2, S4, S5 sudah diperbaiki (lihat bagian 7).
 
 Cara audit:
 - **Lighthouse 12** (alat audit Google) pada 5 halaman, mode HP dan desktop.
@@ -125,3 +125,21 @@ Data contoh yang masih tersisa (detail di [VERIFIKASI.md](VERIFIKASI.md)): nomor
 6. Konten prioritas tinggi lainnya (layanan, jadwal dokter, pendaftaran, BPJS).
 7. CMS untuk staf RS (O1) dan pemindahan kepemilikan akun (O2).
 8. Uji pembaca layar (A4), Turnstile (K1), dan uji penetrasi (K3).
+
+---
+
+## 7. Yang sudah diperbaiki (26 November 2026)
+
+| Temuan | Perbaikan | Hasil |
+|---|---|---|
+| T1, T4 | Semua foto diperkecil dan diubah ke WebP | Total foto 5,8 MB → 1,8 MB; halaman Petugas 4,2 MB → 0,7 MB |
+| T2 | `build.sh` membuat daftar foto yang ada; browser tidak lagi menebak ekstensi | 0 permintaan 404 |
+| T3 | Ruang tetap untuk kotak kepala ruangan | Pergeseran halaman (CLS) 0,58 → 0 |
+| A1–A3 | Label logo & tombol, kontras teks di latar hijau, urutan judul, label area denah | axe-core: 0 pelanggaran di 11 halaman |
+| S1 | Tag Open Graph + gambar pratinjau 1200×630 | Pratinjau link di WhatsApp (aktif setelah `SITE_URL` diisi di Cloudflare) |
+| S2 | `sitemap.xml`, `robots.txt`, URL kanonik dibuat saat build | |
+| S4 | Ikon layar utama HP dan web manifest | |
+| S5 | Halaman 404 dengan header, footer, dan tautan bantuan | |
+| – | Pencarian, tombol kembali ke atas, tombol cetak/simpan PDF dan salin link, tata tertib pengunjung resmi RS | |
+
+Skor Lighthouse halaman Petugas (HP) setelah perbaikan: performa **84** (sebelumnya 58), aksesibilitas, praktik terbaik, dan SEO **100**. Diukur di server lokal tanpa kompresi; di Cloudflare biasanya lebih tinggi.
