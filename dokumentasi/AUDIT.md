@@ -77,6 +77,7 @@ RSUD AWS adalah badan publik milik Pemprov Kaltim, jadi situs resminya terikat a
 | R6 | **Standar pelayanan, maklumat pelayanan, dan kanal pengaduan resmi** (termasuk SP4N-LAPOR!) | UU 25/2009 tentang Pelayanan Publik | Belum ada; halaman keluhan masih umum |
 | R7 | Survei kepuasan masyarakat (SKM) | PermenPAN-RB 14/2017 | Review di situs adalah review **situs**, bukan SKM pelayanan. Bedakan jelas atau tautkan ke SKM resmi RS |
 | R8 | Integrasi dengan arsitektur SPBE daerah | Perpres 95/2018 tentang SPBE | Koordinasi dengan Diskominfo |
+| R9 | Izin pemakaian ilustrasi cuci tangan WHO | Kebijakan hak cipta WHO (poster tidak berlisensi terbuka) | Dipakai dengan mencantumkan sumber; ajukan izin lewat formulir WHO atau ganti dengan poster PPI RSUD AWS |
 
 ---
 

@@ -90,7 +90,7 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 | E7 | Jangan menyentuh alat medis | [3] | |
 | E8 | Kantong kuning = sampah infeksius, kantong hitam = sampah biasa | [R] label tempat sampah RS | |
 | E9 | Materi PPI resmi RSUD AWS (kalau ada, sebaiknya dipakai) | perlu ditanyakan | |
-| E10 | Cara mencuci tangan memakai 6 ilustrasi garis buatan sendiri (tanpa foto), atas permintaan klien | klien | OK |
+| E10 | Ilustrasi 6 langkah cuci tangan diambil dari poster WHO *How to Handwash?* (2009), dipotong per langkah tanpa diubah, sumber dicantumkan. Poster ini tidak berlisensi terbuka: sebelum dipakai sebagai situs resmi, ajukan izin lewat formulir WHO (who.int/about/policies/publishing/permissions) atau ganti dengan poster PPI milik RSUD AWS | klien memilih WHO | |
 | E11 | Persiapan pulang: obat, jadwal kontrol, dokumen, makan & aktivitas, perawatan di rumah | [3] | |
 | E13 | Foto tempat sampah (poin buang sampah sesuai warna kantong) | foto dari klien | |
 | E14 | Rincian isi kantong kuning (infeksius) dan kantong hitam (domestik), diringkas untuk pasien & keluarga | [R] label tempat sampah Instalasi Kesehatan Lingkungan dan Limbah RSUD AWS | |
