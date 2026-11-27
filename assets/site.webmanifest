@@ -1,6 +1,6 @@
 {
-  "name": "RSUD Abdoel Wahab Sjahranie – Informasi Pasien",
-  "short_name": "RSUD AWS",
+  "name": "Etam Smart – RSUD Abdoel Wahab Sjahranie",
+  "short_name": "Etam Smart",
   "start_url": "../index.html",
   "scope": "../",
   "display": "standalone",

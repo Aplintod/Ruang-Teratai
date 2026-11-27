@@ -1,4 +1,4 @@
-# Situs Informasi Pasien – RSUD Abdoel Wahab Sjahranie
+# Etam Smart – Situs Informasi Pasien RSUD Abdoel Wahab Sjahranie
 
 Situs statis (HTML, CSS, JavaScript biasa) berisi informasi untuk pasien dan keluarga: profil rumah sakit, ruang rawat inap (dimulai dari Ruang Teratai), edukasi, serta hak dan kewajiban pasien. Tanpa server, database, maupun framework, sehingga ringan dan permukaan serangannya kecil. Di-deploy gratis ke Cloudflare Pages.
 
@@ -11,7 +11,12 @@ Situs statis (HTML, CSS, JavaScript biasa) berisi informasi untuk pasien dan kel
 ├── halaman/
 │   ├── profil.html             Profil RS: visi, misi, nilai, sejarah, layanan unggulan, kontak
 │   ├── ruangan.html            Pilih ruangan (Teratai aktif, ruangan lain "segera hadir")
-│   ├── edukasi.html            Kebersihan tangan & pencegahan infeksi
+│   ├── edukasi/                Edukasi (punya sub-menu sendiri)
+│   │   ├── index.html             Beranda edukasi: 4 topik + galeri poster
+│   │   ├── cuci-tangan.html       Kapan & 6 langkah cuci tangan (ilustrasi WHO)
+│   │   ├── pencegahan-infeksi.html  Cuci tangan, masker, etika batuk, kebersihan
+│   │   ├── manajemen-nyeri.html   Relaksasi napas dalam, kompres dingin & hangat + poster
+│   │   └── pulang.html            Pulang dengan aman: persiapan pulang & tanda bahaya
 │   ├── hak-kewajiban.html      Hak & kewajiban pasien (UU 17/2023)
 │   ├── review.html             Formulir review situs (bintang, skala 1–5, saran) → Google Sheets
 │   ├── orientasi.html          Orientasi mahasiswa (disembunyikan dari menu, file disimpan)
@@ -40,6 +45,7 @@ Situs statis (HTML, CSS, JavaScript biasa) berisi informasi untuk pasien dan kel
 │   ├── DEPLOY-CLOUDFLARE.md    Cara deploy ke Cloudflare Pages & menjadikan repo private
 │   ├── KEAMANAN.md             Langkah keamanan, batasan, dan kewajiban tim
 │   └── apps-script/Code.gs     Kode Apps Script untuk review
+├── _redirects                  Pengalihan alamat lama (Cloudflare)
 ├── _headers                    Header keamanan Cloudflare Pages (CSP, dll.)
 ├── build.sh                    Menyiapkan folder _site/ yang di-publish
 ├── LICENSE                     Hak cipta

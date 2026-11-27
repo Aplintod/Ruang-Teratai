@@ -1091,3 +1091,41 @@ main [id] { scroll-margin-top: 96px; }
 @media (max-width: 760px) { #kepala-ruangan { min-height: 760px; } }
 .ward-feature h2 { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 450; line-height: 1.05; margin: 10px 0 14px; color: #fff; }
 .bg-green .muted { color: #fff; }
+
+/* =========================================================
+   v7: Edukasi multi-halaman, poster, Etam Smart
+   ========================================================= */
+.subnav .ward .ill { width: 24px; height: 24px; color: var(--on-dark-accent); }
+
+/* Kartu topik di beranda Edukasi */
+.edu-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.edu-card { position: relative; display: grid; gap: 10px; align-content: start; padding: clamp(22px, 3vw, 32px); border: 1px solid var(--line-strong); border-radius: 10px; text-decoration: none; background: var(--paper); transition: border-color .2s, transform .2s, box-shadow .2s; }
+.edu-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 18px 40px -24px rgba(8, 28, 66, .4); }
+.edu-card .ill { width: 52px; height: 52px; color: var(--blue); }
+.edu-card .no { position: absolute; top: 22px; right: 24px; font-family: var(--serif); font-size: 1.6rem; color: var(--green-deep); }
+.edu-card p { color: var(--ink-2); margin: 0; }
+.edu-card .link { justify-self: start; margin-top: 6px; }
+@media (max-width: 700px) { .edu-cards { grid-template-columns: 1fr; } }
+
+/* Galeri poster */
+.poster-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.poster-thumb { display: grid; gap: 10px; text-decoration: none; font-weight: 500; }
+.poster-thumb img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); box-shadow: 0 12px 30px -20px rgba(8, 28, 66, .5); transition: transform .2s; }
+.poster-thumb:hover img { transform: translateY(-3px); }
+@media (max-width: 700px) { .poster-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+
+/* Manajemen nyeri: teks + poster */
+.nyeri { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: start; }
+.poster-card { margin: 0; position: sticky; top: 150px; }
+.poster-card img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); box-shadow: 0 16px 40px -24px rgba(8, 28, 66, .5); }
+.poster-card figcaption { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.poster-card .btn { padding: 11px 16px; font-size: 14px; }
+@media (max-width: 900px) { .nyeri { grid-template-columns: 1fr; } .poster-card { position: static; max-width: 420px; } }
+.chips-nav { display: flex; flex-wrap: wrap; gap: 10px; }
+.chips-nav a { padding: 10px 18px; border: 1px solid var(--line-strong); border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 15px; background: var(--paper); }
+.chips-nav a:hover { border-color: var(--blue); color: var(--blue); }
+.kapan-col .pill { display: inline-block; color: #fff; margin-bottom: 8px; }
+.kapan-col.dingin .pill { background: var(--blue); }
+.kapan-col.hangat .pill { background: #c2410c; }
+@media print { .poster-card { position: static; break-inside: avoid; } .poster-card figcaption, .chips-nav { display: none; } }
+.kapan-col .pill { padding: 5px 14px; border-radius: 999px; font-size: 14px; font-weight: 600; }

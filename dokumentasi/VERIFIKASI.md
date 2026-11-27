@@ -77,25 +77,18 @@ Daftar berdasarkan catatan dari pihak rumah sakit (revisi klien).
 | D12 | ICU, ICCU, PICU | Perawatan Intensif | klien | |
 | D13 | Sakura | dihapus (tidak ada di daftar klien) | – | |
 
-## E. Edukasi (`halaman/edukasi.html`)
+## E. Edukasi (`halaman/edukasi/`)
+
+Edukasi dipecah menjadi beranda + 4 halaman atas permintaan klien. Bagian memilah sampah dihapus.
 
 | # | Isi di web | Sumber | Info fix |
 |---|---|---|---|
-| E1 | Saat membersihkan tangan (sebelum/sesudah menyentuh pasien, sesudah menyentuh sekitar pasien, sebelum makan/menyuapi, sesudah dari kamar mandi) | [3] disesuaikan dari "5 momen" WHO untuk keluarga | |
-| E0 | Tombol pilihan topik di awal halaman Edukasi: kapan cuci tangan, 6 langkah, pencegahan infeksi, memilah sampah, persiapan pulang, tanda bahaya | permintaan klien | OK |
-| E2 | Enam langkah membersihkan tangan | [3] WHO | |
-| E3 | Durasi: hand rub 20–30 detik, sabun & air 40–60 detik | [3] WHO | |
-| E4 | Etika batuk dan bersin | [3] | |
-| E5 | Tunda kunjungan saat sakit | [3] | |
-| E6 | Jangan duduk di tempat tidur pasien | [3] | |
-| E7 | Jangan menyentuh alat medis | [3] | |
-| E8 | Kantong kuning = sampah infeksius, kantong hitam = sampah biasa | [R] label tempat sampah RS | |
-| E9 | Materi PPI resmi RSUD AWS (kalau ada, sebaiknya dipakai) | perlu ditanyakan | |
-| E10 | Ilustrasi 6 langkah cuci tangan diambil dari poster WHO *How to Handwash?* (2009), dipotong per langkah tanpa diubah, sumber dicantumkan. Poster ini tidak berlisensi terbuka: sebelum dipakai sebagai situs resmi, ajukan izin lewat formulir WHO (who.int/about/policies/publishing/permissions) atau ganti dengan poster PPI milik RSUD AWS | klien memilih WHO | |
-| E11 | Persiapan pulang: obat, jadwal kontrol, dokumen, makan & aktivitas, perawatan di rumah | [3] | |
-| E13 | Foto tempat sampah (poin buang sampah sesuai warna kantong) | foto dari klien | |
-| E14 | Rincian isi kantong kuning (infeksius) dan kantong hitam (domestik), diringkas untuk pasien & keluarga | [R] label tempat sampah Instalasi Kesehatan Lingkungan dan Limbah RSUD AWS | |
-| E12 | Tanda bahaya setelah pulang (demam tinggi, sesak/nyeri dada, perdarahan, luka bernanah, muntah terus, lemas/bingung) | [3] | |
+| E1 | Cuci tangan: kapan mencuci tangan + 6 langkah dengan ilustrasi poster WHO *How to Handwash?* (2009). Izin resmi WHO belum diajukan | [3] WHO | |
+| E2 | Pencegahan infeksi: cuci tangan (tautan ke halaman cuci tangan), pakai masker, etika batuk, tunda kunjungan saat sakit, jangan duduk di tempat tidur pasien, jangan menyentuh alat medis, jaga kebersihan kamar | [3] | |
+| E3 | Manajemen nyeri: relaksasi napas dalam, kompres dingin, kompres hangat; isi teks disalin dari poster | poster Co-Ners UMKT Kel. 6 | |
+| E4 | Dasar poster: SPO Relaksasi Napas Dalam No. 191/FIK.3/B/2019 (Prodi S1 Keperawatan & Profesi Ners UMKT); SPO Kompres Dingin No. 033/12/03/XI/2022 dan SPO Kompres Hangat No. 032/12/03/XI/2022 (RSUD AWS) | tertera di poster | |
+| E5 | Pulang dengan aman: persiapan sebelum pulang (obat, kontrol, dokumen, makan & aktivitas, perawatan di rumah) + tanda bahaya segera ke IGD | [3] | |
+| E6 | Nama aplikasi "Etam Smart" di header, judul tab, footer, pratinjau WhatsApp, poster QR | klien | OK |
 
 ## F. Hak & Kewajiban (`halaman/hak-kewajiban.html`)
 

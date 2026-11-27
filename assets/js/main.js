@@ -4,6 +4,7 @@
    ========================================================= */
 
 const SITE = {
+  app: "Etam Smart",            // nama aplikasi/situs
   rs: "RSUD Abdoel Wahab Sjahranie",
   rsPendek: "RSUD AWS",
   kota: "Samarinda, Kalimantan Timur",
@@ -44,7 +45,7 @@ const JADWAL = [
 const NAV = [
   { href: "halaman/profil.html", label: "Profil RS" },
   { href: "halaman/ruangan.html", label: "Ruangan", cocok: "halaman/ruangan/" },
-  { href: "halaman/edukasi.html", label: "Edukasi" },
+  { href: "halaman/edukasi/index.html", label: "Edukasi", cocok: "halaman/edukasi/" },
   { href: "halaman/hak-kewajiban.html", label: "Hak & Kewajiban" },
   { href: "halaman/review.html", label: "Review" },
   // Orientasi disembunyikan sementara. Untuk memunculkan lagi, hapus tanda // di baris berikut:
@@ -53,6 +54,19 @@ const NAV = [
 
 /* Sub-menu tiap ruangan. Ruangan baru cukup ditambahkan di sini + dibuatkan foldernya. */
 const RUANGAN = {
+  // Edukasi memakai sub-menu yang sama dengan halaman ruangan
+  edukasi: {
+    nama: "Edukasi",
+    ikon: "wash",
+    folder: "halaman/edukasi/",
+    menu: [
+      ["index.html", "Beranda"],
+      ["cuci-tangan.html", "Cuci tangan"],
+      ["pencegahan-infeksi.html", "Pencegahan infeksi"],
+      ["manajemen-nyeri.html", "Manajemen nyeri"],
+      ["pulang.html", "Pulang dengan aman"],
+    ],
+  },
   teratai: {
     nama: "Ruang Teratai",
     folder: "halaman/ruangan/teratai/",
@@ -140,7 +154,7 @@ function renderHeader() {
   el.innerHTML = `
     <div class="wrap">
       <a class="brand" href="${url("index.html")}">
-        <span><span class="brand-name"><span class="brand-full">${SITE.rs}</span><span class="brand-short">${SITE.rsPendek}</span></span><span class="brand-sub">${SITE.kota}</span></span>
+        <span><span class="brand-name">${SITE.app}</span><span class="brand-sub"><span class="brand-full">${SITE.rs}</span><span class="brand-short">${SITE.rsPendek}</span></span></span>
       </a>
       <nav class="nav" aria-label="Menu utama">${items}</nav>
       <div class="head-right">
@@ -188,7 +202,7 @@ function renderSubnav() {
   el.className = "subnav";
   el.setAttribute("aria-label", `Menu ${r.nama}`);
   el.innerHTML = `<div class="wrap">
-    <a class="ward" href="${url(r.folder + "index.html")}">${LOTUS}${r.nama}</a>
+    <a class="ward" href="${url(r.folder + "index.html")}">${r.ikon ? `<svg class="ill" aria-hidden="true"><use href="#${r.ikon}"/></svg>` : LOTUS}${r.nama}</a>
     <ul>${r.menu.map(([f, label]) => `<li><a href="${url(r.folder + f)}"${isHere(r.folder + f) ? ' class="active" aria-current="page"' : ""}>${label}</a></li>`).join("")}</ul>
   </div>`;
   // geser sub-menu hanya bila menu yang aktif tidak terlihat penuh di layar
@@ -226,9 +240,9 @@ function renderFooter() {
           </ul>
         </div>
       </div>
-      <div class="foot-word" aria-hidden="true">RSUD <em>AWS</em></div>
+      <div class="foot-word" aria-hidden="true">Etam <em>Smart</em></div>
       <div class="foot-bottom">
-        <span>&copy; ${new Date().getFullYear()} ${SITE.rs}, ${SITE.kota}. Hak cipta dilindungi.</span>
+        <span>&copy; ${new Date().getFullYear()} ${SITE.app} · ${SITE.rs}, ${SITE.kota}. Hak cipta dilindungi.</span>
         <span>Keadaan darurat di kamar: tekan bel pasien atau panggil perawat jaga.</span>
       </div>
     </div>`;
@@ -373,11 +387,12 @@ const CARI = [
   ["Petugas Ruang Teratai", "Kepala ruangan, CCM, ketua tim, dan perawat", "halaman/ruangan/teratai/petugas.html", "perawat karu dokter tim nama struktur organisasi"],
   ["Fasilitas kamar", "Kamar Kelas 1, tempat tidur, dan kamar mandi", "halaman/ruangan/teratai/fasilitas.html", "kamar kelas tempat tidur fasilitas ac kamar mandi"],
   ["Jadwal harian", "Kegiatan dari pagi sampai malam di Ruang Teratai", "halaman/ruangan/teratai/index.html#jadwal", "visite dokter makan shift istirahat jadwal"],
-  ["Cuci tangan", "Kapan dan bagaimana mencuci tangan", "halaman/edukasi.html#cara-cuci-tangan", "cuci tangan hand rub sabun kebersihan langkah"],
-  ["Pencegahan infeksi", "Etika batuk, masker, dan kebersihan", "halaman/edukasi.html#pencegahan-infeksi", "infeksi batuk masker kuman"],
-  ["Memilah sampah", "Kantong kuning dan kantong hitam", "halaman/edukasi.html#sampah", "sampah limbah kuning hitam buang"],
-  ["Persiapan pulang", "Obat, jadwal kontrol, dan dokumen", "halaman/edukasi.html#persiapan-pulang", "pulang obat kontrol resep dokumen"],
-  ["Tanda bahaya", "Kapan harus segera ke IGD setelah pulang", "halaman/edukasi.html#tanda-bahaya", "bahaya igd darurat demam sesak"],
+  ["Edukasi pasien", "Semua topik edukasi untuk pasien dan keluarga", "halaman/edukasi/index.html", "edukasi belajar informasi kesehatan poster"],
+  ["Cuci tangan", "Kapan dan 6 langkah mencuci tangan", "halaman/edukasi/cuci-tangan.html", "cuci tangan hand rub sabun kebersihan langkah"],
+  ["Pencegahan infeksi", "Cuci tangan, masker, etika batuk, dan kebersihan", "halaman/edukasi/pencegahan-infeksi.html", "infeksi batuk masker kuman bersin"],
+  ["Manajemen nyeri", "Relaksasi napas dalam, kompres dingin, kompres hangat", "halaman/edukasi/manajemen-nyeri.html", "nyeri sakit relaksasi napas kompres dingin hangat poster"],
+  ["Pulang dengan aman", "Persiapan pulang: obat, jadwal kontrol, dokumen", "halaman/edukasi/pulang.html", "pulang obat kontrol resep dokumen"],
+  ["Tanda bahaya", "Kapan harus segera ke IGD setelah pulang", "halaman/edukasi/pulang.html#tanda-bahaya", "bahaya igd darurat demam sesak"],
   ["Hak & kewajiban pasien", "Menurut UU Nomor 17 Tahun 2023", "halaman/hak-kewajiban.html", "hak kewajiban pasien undang-undang"],
   ["Saran & keluhan", "Cara menyampaikan keluhan pelayanan", "halaman/hak-kewajiban.html#keluhan", "keluhan pengaduan saran komplain"],
   ["Profil RSUD AWS", "Visi, misi, nilai, dan sejarah", "halaman/profil.html", "visi misi sejarah nilai profil rumah sakit"],

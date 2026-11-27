@@ -13,7 +13,7 @@ SITE_URL="${SITE_URL%/}"
 
 rm -rf _site
 mkdir -p _site
-cp index.html 404.html _headers _site/
+cp index.html 404.html _headers _redirects _site/
 cp -r halaman assets _site/
 find _site -name ".gitkeep" -delete
 

@@ -13,6 +13,10 @@ Foto akan **terpasang otomatis** kalau disimpan dengan nama dan folder yang pers
 | `hero.jpg` | Beranda (latar paling atas) dan Profil RS | Foto gedung atau gerbang RSUD AWS | Mendatar |
 | `profil.jpg` | Profil RS (opsional) | Foto lain RSUD AWS. Kalau tidak ada, Profil RS memakai `hero.jpg` | Mendatar |
 
+## Poster edukasi → `assets/img/edukasi/poster/`
+
+Sudah ada: `relaksasi-napas-dalam.webp`, `kompres-dingin.webp`, `kompres-hangat.webp` (1414×2000 px). Poster baru: simpan di folder ini, lalu tambahkan ke halaman yang sesuai (minta bantuan Claude Code).
+
 ## Foto Ruang Teratai → `assets/img/teratai/`
 
 | Nama file | Dipakai di | Isi foto | Posisi HP |
