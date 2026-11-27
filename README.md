@@ -1,4 +1,4 @@
-# Etam Smart – Situs Informasi Pasien RSUD Abdoel Wahab Sjahranie
+# ETAM SMART – Situs Informasi Pasien RSUD Abdoel Wahab Sjahranie
 
 Situs statis (HTML, CSS, JavaScript biasa) berisi informasi untuk pasien dan keluarga: profil rumah sakit, ruang rawat inap (dimulai dari Ruang Teratai), edukasi, serta hak dan kewajiban pasien. Tanpa server, database, maupun framework, sehingga ringan dan permukaan serangannya kecil. Di-deploy gratis ke Cloudflare Pages.
 

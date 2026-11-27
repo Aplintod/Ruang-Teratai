@@ -4,7 +4,7 @@
    ========================================================= */
 
 const SITE = {
-  app: "Etam Smart",            // nama aplikasi/situs
+  app: "ETAM SMART",            // nama aplikasi/situs
   rs: "RSUD Abdoel Wahab Sjahranie",
   rsPendek: "RSUD AWS",
   kota: "Samarinda, Kalimantan Timur",
@@ -240,7 +240,7 @@ function renderFooter() {
           </ul>
         </div>
       </div>
-      <div class="foot-word" aria-hidden="true">Etam <em>Smart</em></div>
+      <div class="foot-word" aria-hidden="true">ETAM <em>SMART</em></div>
       <div class="foot-bottom">
         <span>&copy; ${new Date().getFullYear()} ${SITE.app} · ${SITE.rs}, ${SITE.kota}. Hak cipta dilindungi.</span>
         <span>Keadaan darurat di kamar: tekan bel pasien atau panggil perawat jaga.</span>

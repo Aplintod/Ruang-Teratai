@@ -88,7 +88,7 @@ Edukasi dipecah menjadi beranda + 4 halaman atas permintaan klien. Bagian memila
 | E3 | Manajemen nyeri: relaksasi napas dalam, kompres dingin, kompres hangat; isi teks disalin dari poster | poster Co-Ners UMKT Kel. 6 | |
 | E4 | Dasar poster: SPO Relaksasi Napas Dalam No. 191/FIK.3/B/2019 (Prodi S1 Keperawatan & Profesi Ners UMKT); SPO Kompres Dingin No. 033/12/03/XI/2022 dan SPO Kompres Hangat No. 032/12/03/XI/2022 (RSUD AWS) | tertera di poster | |
 | E5 | Pulang dengan aman: persiapan sebelum pulang (obat, kontrol, dokumen, makan & aktivitas, perawatan di rumah) + tanda bahaya segera ke IGD | [3] | |
-| E6 | Nama aplikasi "Etam Smart" di header, judul tab, footer, pratinjau WhatsApp, poster QR | klien | OK |
+| E6 | Nama aplikasi "ETAM SMART" di header, judul tab, footer, pratinjau WhatsApp, poster QR | klien | OK |
 
 ## F. Hak & Kewajiban (`halaman/hak-kewajiban.html`)
 
